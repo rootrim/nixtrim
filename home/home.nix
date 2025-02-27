@@ -41,7 +41,7 @@ in {
     lazygit
     kitty
     tmux
-
+    onefetch
   ];
 
   home.file = {};
