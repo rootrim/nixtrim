@@ -7,11 +7,11 @@
     enable = true;
     package = pkgs.waybar;
 
-    settings = {
+    settings = builtins.toJSON {
 
       layer = "top";
       position = "top";
-      height = "28";
+      height = 28;
       output = [
         "eDP-1"
       ];
