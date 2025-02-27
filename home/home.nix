@@ -33,6 +33,10 @@ in {
     imagemagick
     lua5_1
     luarocks
+    fzf
+    ripgrep
+    fd
+    curl
   ];
 
   home.file = {};
