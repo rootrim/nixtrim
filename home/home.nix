@@ -32,6 +32,8 @@ in {
     onefetch
     lua
     imagemagick
+    lua5_1
+    luarocks
   ];
 
   home.file = {};

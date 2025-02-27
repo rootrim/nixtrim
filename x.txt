@@ -1,0 +1,36 @@
+  Failed (1)
+    ● image.nvim 0.04ms  start
+        `/home/rootrim/.local/share/nvim/lazy-rocks/hererocks/bin/lua` version `5.1` not installed
+
+        This plugin requires `luarocks`. Try one of the following:
+         - fix your `luarocks` installation
+         - disable *hererocks* with `opts.rocks.hererocks = false`
+         - disable `luarocks` support completely with `opts.rocks.enabled = false`
+
+        Will try building anyway, but will likely fail...
+
+        --------------------------------------------------------------------------------
+
+        Failed to spawn process luarocks {
+          args = { "--tree", "/home/rootrim/.local/share/nvim/lazy-rocks/image.nvim", "--server", "https://nvim-neorocks.github.io/rocks-binaries/", "--lua-version", "5.1", "install", "--force-fast", "--deps-mode", "one", "image.nvim" },
+          cwd = "/home/rootrim/.local/share/nvim/lazy/image.nvim",
+          env = {
+            PATH = "/home/rootrim/.local/share/nvim/lazy-rocks/hererocks/bin:/nix/store/4irv2ha84dl6wdmr5qkq1zwxzm2zk9wi-kitty-0.37.0/bin:/nix/store/q6y0ild31ar51r1x2qkr9gwyhbaiwnsf-imagemagick-7.1.1-43/bin:/nix/store/69v6c64pn1ay26207b0cmzi40qpr9q0w-ncurses-6.4.20221231-dev/bin:/run/wrappers/bin:/home/rootrim/.nix-profile/bin:/nix/profile/bin:/home/rootrim/.local/state/nix/profile/bin:/etc/profiles/per-user/rootrim/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin:/nix/store/npw73w59yd5gj64mb7bs5017v0yjqs2d-neovim-ruby-env/bin"
+          },
+          on_line = <function 1>,
+          timeout = 120000
+        }
+        Failed installing image.nvim with `luarocks`.
+
+        --------------------------------------------------------------------------------
+
+        Trying to build from source.
+        Failed to spawn process luarocks {
+          args = { "--tree", "/home/rootrim/.local/share/nvim/lazy-rocks/image.nvim", "--dev", "--lua-version", "5.1", "make", "--force-fast", "--deps-mode", "one" },
+          cwd = "/home/rootrim/.local/share/nvim/lazy/image.nvim",
+          env = {
+            PATH = "/home/rootrim/.local/share/nvim/lazy-rocks/hererocks/bin:/nix/store/4irv2ha84dl6wdmr5qkq1zwxzm2zk9wi-kitty-0.37.0/bin:/nix/store/q6y0ild31ar51r1x2qkr9gwyhbaiwnsf-imagemagick-7.1.1-43/bin:/nix/store/69v6c64pn1ay26207b0cmzi40qpr9q0w-ncurses-6.4.20221231-dev/bin:/run/wrappers/bin:/home/rootrim/.nix-profile/bin:/nix/profile/bin:/home/rootrim/.local/state/nix/profile/bin:/etc/profiles/per-user/rootrim/bin:/nix/var/nix/profiles/default/bin:/run/current-system/sw/bin:/nix/store/npw73w59yd5gj64mb7bs5017v0yjqs2d-neovim-ruby-env/bin"
+          },
+          on_line = <function 1>,
+          timeout = 120000
+        }
