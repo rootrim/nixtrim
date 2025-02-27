@@ -1,0 +1,120 @@
+# Hyprland opener
+[ "$(tty)" = "/dev/tty1" ] && Hyprland
+
+# Some variables
+export EDITOR=nvim
+
+# Aliasses
+
+alias ls="ls --color"
+alias lah="ls -lah"
+alias grep="grep --color=auto"
+alias tree="tree -C"
+alias zource="source ~/.zshrc"
+alias la="ls -a"
+alias nv=nvim
+alias yay="cowsay -f kitty \"You should use paru, you sussy baka!\" | lolcat "
+alias dotf="cd ~/.dotfiles"
+alias pytrim="cd pytrim"
+alias wright="cd wright"
+alias trust="cd trust"
+alias cmoon="cd cmoon"
+alias crime="cd crime"
+alias konodioda='fzf-tmux --preview="bat -p {}"'
+alias fatihfetch="neofetch --backend kitty --source dotfiles/xfetch/fetchimgs/Fatih-Hocalarda-Beş-Gece.jpg"
+alias kendirlifetch="neofetch --backend kitty --source ~/dotfiles/xfetch/fetchimgs/kendirli.png"
+alias enesfetch="neofetch --backend kitty --source ~/dotfiles/xfetch/fetchimgs/enesoruc.png"
+alias asciifetch="neofetch --source ~/.config/neofetch/aperture.txt --ascii"
+alias python3='~/.venv/bin/python3'
+alias pip3='~/.venv/bin/pip3'
+alias lg="lazygit"
+
+# Plugins
+
+source ~/dotfiles/zsh/plugin_files/ohmyzsh-plugins/sudo-plugin.zsh
+source ~/dotfiles/zsh/plugin_files/ohmyzsh-plugins/command-not-found-plugin.zsh
+source ~/dotfiles/zsh/plugin_files/zsh-completions/zsh-completions.plugin.zsh
+source ~/dotfiles/zsh/plugin_files/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/dotfiles/zsh/plugin_files/fzf-tab/fzf-tab.plugin.zsh
+source ~/dotfiles/zsh/plugin_files/zsh-you-should-use/you-should-use.plugin.zsh
+source ~/dotfiles/zsh/plugin_files/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/dotfiles/zsh/plugin_files/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+# Binds
+
+bindkey "^[[A" history-substring-search-up
+bindkey "^[[B" history-substring-search-down
+bindkey '^[l' clear-screen
+
+# zsh-completions Settings
+
+autoload -U compinit && compinit
+fpath=(~/dotfiles/zsh/plugin-files/zsh-completions/src $fpath)
+
+# Themes
+
+eval "$(starship init zsh)"
+# eval "$(oh-my-posh init zsh --config ~/dotfiles/zsh/themes/oh-my-posh/zen.toml)"
+
+# export FZF_DEFAULT_OPTS=" \
+# --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
+# --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
+# --color=marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 \
+# --color=selected-bg:#45475a \
+# --multi"
+
+# Set up fzf key bindings and fuzzy completion
+
+eval "$(fzf --zsh)"
+
+# Zoxide
+
+eval "$(zoxide init --cmd cd zsh)"
+
+# History
+
+HISTSIZE=10000
+HISTFILE=~/.zsh_history
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
+
+# Completion Styling
+
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+
+# bun completions
+[ -s "/home/rootrim/.bun/_bun" ] && source "/home/rootrim/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# SSH agent
+# (eval "$(ssh-agent -s)" &)
+# (ssh-add ~/.ssh/id_ed25519 &)
+
+# Pywal colors
+# source ~/.cache/wal/colors-tty.sh
+# (cat ~/.cache/wal/sequences &)
+
+source /home/rootrim/.config/broot/launcher/bash/br
+
+export PATH=$PATH:/home/rootrim/.spicetify
+export LD_LIBRARY_PATH=/home/rootrim/.local/lib/arch-mojo:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/home/rootrim/.local/lib/arch-mojo:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/home/rootrim/.local/lib/arch-mojo:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/home/rootrim/.local/lib/arch-mojo:$LD_LIBRARY_PATH
+export ASDF_DATA_DIR="/home/rootrim/.asdf"
+export PATH="$ASDF_DATA_DIR/shims:$PATH"
+
