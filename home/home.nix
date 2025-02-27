@@ -4,11 +4,11 @@ let
   system = "x86_64-linux";
   zen-browser = inputs.zen-browser.packages."${system}".default;
 
-  spicetify = inputs.spicetify-nix.lib.mkSpicetify pkgs {
-    enable = true;
+  #spicetify = inputs.spicetify-nix.lib.mkSpicetify pkgs {
+   # enable = true;
     #enabledExtensions = [
     #  "adblock"
-    #  "hidePodcasts"
+    # "hidePodcasts"
     #  "shuffle"
     #];
     #enabledCustomApps = [
@@ -19,16 +19,23 @@ let
     #  "rotatingCoverart"
     #  "pointer"
     #];
-  };
+  #};
 
 in {
+
+
+  imports = [
+    ./modules/default.nix
+  ];
+
+
   home.username = "rootrim";
   home.homeDirectory = "/home/rootrim";
 
   home.packages = with pkgs; [
     neofetch
     zen-browser
-    spicetify
+    #spicetify
     git
     neovim
     gcc
@@ -42,6 +49,7 @@ in {
     kitty
     tmux
     onefetch
+    lua
   ];
 
   home.file = {};
