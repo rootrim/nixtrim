@@ -31,6 +31,7 @@ in {
     tmux
     onefetch
     lua
+    imagemagick
   ];
 
   home.file = {};
