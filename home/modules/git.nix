@@ -12,20 +12,4 @@
     };
   };
 
-  home.file.".gitconfig".source = ./dotfiles/.gitconfig;
-
-  home.file.".config/git/ignore".text = ''
-    # OS Dosyaları
-    .DS_Store
-    Thumbs.db
-
-    # Python
-    __pycache__/
-    *.pyc
-    *.pyo
-
-    # Editor
-    .vscode/
-    .idea/
-  '';
 }
