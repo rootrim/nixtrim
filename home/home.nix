@@ -1,4 +1,9 @@
-{ config, pkgs, inputs, ... }:
+{
+  #config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 let
   system = "x86_64-linux";
@@ -38,6 +43,7 @@ in {
     fd
     curl
     wl-clipboard
+    unzip
   ];
 
   home.file = {};
