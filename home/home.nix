@@ -37,6 +37,7 @@ in {
     ripgrep
     fd
     curl
+    wl-clipboard
   ];
 
   home.file = {};
