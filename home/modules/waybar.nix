@@ -11,7 +11,7 @@
 
       layer = "top";
       position = "top";
-      height = 28;
+      height = builtins.toJSON 28;
       output = [
         "eDP-1"
       ];
