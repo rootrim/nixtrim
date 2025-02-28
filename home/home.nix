@@ -44,7 +44,9 @@ in {
     curl
     wl-clipboard
     unzip
+    pfetch
   ];
+  
 
   home.file = {};
 

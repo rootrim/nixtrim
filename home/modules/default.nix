@@ -5,5 +5,6 @@
         ./spicetify.nix
         ./hyprland.nix
         ./waybar.nix
+        ./rofi.nix
     ];
 }

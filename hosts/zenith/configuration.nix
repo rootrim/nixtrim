@@ -116,6 +116,11 @@ in
     pkgs.nil
     pkgs.home-manager
   ];
+  
+  fonts.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "CascadiaCode" ]; })
+    cascadia-code
+  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

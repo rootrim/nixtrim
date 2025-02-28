@@ -7,121 +7,124 @@
     enable = true;
     package = pkgs.waybar;
 
-    settings = builtins.toJSON {
+    settings = {
 
-      layer = "top";
-      position = "top";
-      height = 28;
-      output = [
-        "eDP-1"
-      ];
-      modules-left = [
-        "hyprland/workspaces"
-        "hyprland/window"
-      ];
-      modules-center = [
-        "mpris"
-      ];
-      modules-right = [
-        "temperature"
-        "memory"
-        "cpu"
-        "wireplumber"
-        "backlight"
-        "battery"
-        "clock"
-        "tray"
-      ];
+      zabar = {
+
+        layer = "top";
+        position = "top";
+        height = 28; output = [
+          "eDP-1"
+        ];
+        modules-left = [
+          "hyprland/workspaces"
+          "hyprland/window"
+        ];
+        modules-center = [
+          "mpris"
+        ];
+        modules-right = [
+          "temperature"
+          "memory"
+          "cpu"
+          "wireplumber"
+          "backlight"
+          "battery"
+          "clock"
+          "tray"
+        ];
   
-      "hyprland/workspaces"= {
-        format= "{icon}";
-      };
-
-
-      "hyprland/window"= {
-        format = "{title}";
-        max-length = 40;
-        all-outputs = true;
-      };
-
-
-      "mpris"= {
-        format  = " {status_icon} {dynamic}";
-        interval  = 1;
-        dynamic-len  = 40;
-        status-icons  = {
-          playing = "▶";
-          paused = "⏸";
-          stopped = "";
+        "hyprland/workspaces"= {
+          format= "{icon}";
         };
-        dynamic-order = ["title" "artist"];
-        ignored-players = ["firefox"];
-      };
 
 
-      tray = {
-        icon-size = 14;
-        spacing = 10;
-      };
-
-
-      clock = {
-        tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-        format-alt = "{:%Y-%m-%d}";
-      };
-
-      cpu = {
-        format = "{usage}% ";
-        tooltip = false;
-      };
-
-      memory = {
-        format = "{used}G ";
-      };
-
-      temperature = {
-        thermal-zone = 2;
-        hwmon-path = "/sys/class/hwmon/hwmon2/temp1_input";
-        critical-threshold = 80;
-        format-critical = "{temperatureC}°C {icon}";
-        format = "{temperatureC}°C {icon}";
-        format-icons = ["" "" ""];
-      };
-
-      backlight = {
-        format = "{icon} {percent}%";
-        format-icons = ["" "" "" "" "" "" "" "" ""];
-      };
-
-      battery = {
-        states = {
-          warning = 30;
-          critical = 15;
+        "hyprland/window"= {
+          format = "{title}";
+          max-length = 40;
+          all-outputs = true;
         };
-        format = "{icon} {capacity}%";
-        format-full = "{icon} {capacity}%";
-        format-charging = " {capacity}%";
-        format-plugged = " {capacity}%";
-        format-alt = "{icon} {time}";
-        format-icons = ["" "" "" "" ""];
-      };
-      
-       wireplumber = {
-         scroll-step = 5;
-         format = "{icon} {volume}%";
-         format-bluetooth = "{icon} {volume}% ";
-         format-bluetooth-muted = " {icon}";
-         format-muted = "";
-         format-icons = {
-           headphone = "";
-           hands-free = "";
-           headset = "";
-           phone = "";
-           portable = "";
-           car = "";
-           default = ["" "" ""];
+
+
+        "mpris"= {
+          format  = " {status_icon} {dynamic}";
+          interval  = 1;
+          dynamic-len  = 40;
+          status-icons  = {
+            playing = "▶";
+            paused = "⏸";
+            stopped = "";
+          };
+          dynamic-order = ["title" "artist"];
+          ignored-players = ["firefox"];
         };
-         on-click = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+
+
+        "tray" = {
+          icon-size = 14;
+          spacing = 10;
+        };
+
+
+        "clock" = {
+          tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
+          format-alt = "{:%Y-%m-%d}";
+        };
+
+        "cpu" = {
+          format = "{usage}% ";
+          tooltip = false;
+        };
+
+        "memory" = {
+          format = "{used}G ";
+        };
+
+        "temperature" = {
+          thermal-zone = 2;
+          hwmon-path = "/sys/class/hwmon/hwmon2/temp1_input";
+          critical-threshold = 80;
+          format-critical = "{temperatureC}°C {icon}";
+          format = "{temperatureC}°C {icon}";
+          format-icons = ["" "" ""];
+        };
+
+        "backlight" = {
+          format = "{icon} {percent}%";
+          format-icons = ["" "" "" "" "" "" "" "" ""];
+        };
+
+        "battery" = {
+          states = {
+            warning = 30;
+            critical = 15;
+          };
+          format = "{icon} {capacity}%";
+          format-full = "{icon} {capacity}%";
+          format-charging = " {capacity}%";
+          format-plugged = " {capacity}%";
+          format-alt = "{icon} {time}";
+          format-icons = ["" "" "" "" ""];
+        };
+        
+        "wireplumber" = {
+          scroll-step = 5;
+          format = "{icon} {volume}%";
+          format-bluetooth = "{icon} {volume}% ";
+          format-bluetooth-muted = " {icon}";
+          format-muted = "";
+          format-icons = {
+            headphone = "";
+            hands-free = "";
+            headset = "";
+            phone = "";
+            portable = "";
+            car = "";
+            default = ["" "" ""];
+          };
+          on-click = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+        };
+
       };
 
     };
