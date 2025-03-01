@@ -45,6 +45,7 @@ in {
     wl-clipboard
     unzip
     pfetch
+    protonvpn-gui
   ];
   
 
