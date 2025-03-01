@@ -2,12 +2,26 @@
   pkgs,
   ...
 }: {
-  wayland.windowManager.hyprland = {
-    enable = true;
-    withUWSM = true;
-    package = pkgs.hyprland;
-    xwayland.enable = true;
+
+  programs = {
+    uwsm = {
+      enable = true;
+      waylandCompositors = {
+        hyprland = {
+          prettyName = "Hyprland";
+          comment = "Hyprland compositor managed by UWSM";
+          binPath = "/run/current-system/sw/bin/Hyprland";
+        };
+      };
+    };
+    hyprland = {
+      enable = true;
+      package = pkgs.hyprland;
+      xwayland.enable = true;
+      withUWSM = true;
+    };
   };
+
   wayland.windowManager.hyprland.systemd.enable = true;
   wayland.windowManager.hyprland.extraConfig = ''
     $configs = $HOME/.config/nixtrim/dots/hypr/

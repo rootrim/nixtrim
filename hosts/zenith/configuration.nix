@@ -8,8 +8,19 @@
     ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+
+  boot.loader = {
+    efi = {
+      canTouchEfiVariables = true;
+      efiSysMountPoint = "/boot/efi"; # ← use the same mount point here.
+    };
+    grub = {
+      enable = true;
+      efiSupport = true;
+      device = "nodev";
+    };
+  };
+
 
   networking.hostName = "zenith"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -39,13 +50,7 @@
     LC_TIME = "tr_TR.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
-
-  # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -92,9 +97,6 @@
     ];
   };
 
-  # Install firefox.
-  programs.firefox.enable = true;
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -104,12 +106,12 @@
     vim
     nil
     home-manager
+    monocraft
   ];
   
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "CascadiaCode" "Monocraft" ]; })
+    (nerdfonts.override { fonts = [ "CascadiaCode" ]; })
     cascadia-code
-    monocraft
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
