@@ -47,6 +47,9 @@ in {
     pfetch
     protonvpn-gui
     swww
+    rofimoji
+    rofi-power-menu
+    cliphist
   ];
   
 

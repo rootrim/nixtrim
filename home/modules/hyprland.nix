@@ -11,7 +11,6 @@
   wayland.windowManager.hyprland.extraConfig = ''
     $configs = $HOME/.config/nixtrim/dots/hypr/
     monitor=eDP-1,1920x1080@120.00200,0x0,1
-    # monitor = HDMI-A-1, 1920x1080@144Hz, 0x0, 1, transform, 0
     source=$configs/mocha.conf
     source=$configs/gruvbox.conf
     source=$configs/startup.conf
