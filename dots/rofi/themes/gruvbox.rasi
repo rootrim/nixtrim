@@ -9,6 +9,7 @@
 	purple: #d3869b;
 	teal: #8ec07c;
 	gray: #a89984;
+  orange: #fe8019;
 	
 	background-color: @bg;
 }
