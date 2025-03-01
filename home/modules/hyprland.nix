@@ -7,7 +7,7 @@
     package = pkgs.hyprland;
     xwayland.enable = true;
   };
-  wayland.windowManager.hyprland.systemd.enable = false;
+  wayland.windowManager.hyprland.systemd.enable = true;
   wayland.windowManager.hyprland.extraConfig = ''
     $configs = $HOME/.config/nixtrim/dots/hypr/
     monitor=eDP-1,1920x1080@120.00200,0x0,1
