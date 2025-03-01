@@ -4,6 +4,7 @@
 }: {
   wayland.windowManager.hyprland = {
     enable = true;
+    withUWSM = true;
     package = pkgs.hyprland;
     xwayland.enable = true;
   };

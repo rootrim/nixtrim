@@ -50,6 +50,7 @@ in {
     rofimoji
     rofi-power-menu
     cliphist
+    libreoffice-fresh
   ];
   
 
