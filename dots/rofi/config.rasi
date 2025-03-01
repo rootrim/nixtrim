@@ -11,4 +11,4 @@ configuration {
 	terminal: "alacritty";
 }
 
-@theme "~/.config/rofi/themes/gruvbox.rasi"
+@theme "~/.config/nixtrim/dots/rofi/themes/gruvbox.rasi"
