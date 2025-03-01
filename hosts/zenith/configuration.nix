@@ -9,17 +9,10 @@
     ];
 
   # Bootloader.
-
+  
   boot.loader = {
-    efi = {
-      canTouchEfiVariables = true;
-      efiSysMountPoint = "/boot/efi"; # ← use the same mount point here.
-    };
-    grub = {
-      enable = true;
-      efiSupport = true;
-      device = "nodev";
-    };
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
   };
 
 

@@ -6,7 +6,6 @@
     enable = true;
     package = pkgs.hyprland;
     xwayland.enable = true;
-    withUWSM = true;
   };
   wayland.windowManager.hyprland.systemd.enable = true;
   wayland.windowManager.hyprland.extraConfig = ''
