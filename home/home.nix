@@ -46,6 +46,7 @@ in {
     unzip
     pfetch
     protonvpn-gui
+    swww
   ];
   
 

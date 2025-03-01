@@ -6,5 +6,6 @@
         ./hyprland.nix
         ./waybar.nix
         ./rofi.nix
+        #./swww.nix
     ];
 }
