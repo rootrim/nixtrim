@@ -6,11 +6,9 @@
 {
   wayland.windowManager.hyprland = {
     enable = true;
-    #package = null;
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    #portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
     xwayland.enable = true;
-    systemd.enable = false;
+    systemd.enable = true;
     extraConfig = ''
       $configs = $HOME/.config/nixtrim/dots/hypr/
       monitor=eDP-1,1920x1080@120.00200,0x0,1
