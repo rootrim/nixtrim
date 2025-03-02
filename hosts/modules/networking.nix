@@ -1,5 +1,4 @@
 {
-  networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;
 
   # Configure network proxy if necessary
