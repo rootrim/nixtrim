@@ -12,5 +12,6 @@
       ./cursor.nix
       ./xdg.nix
       ./qt.nix
+      ./services.nix
     ];
 }

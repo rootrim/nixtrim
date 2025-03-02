@@ -2,11 +2,11 @@
 {
   services = {
     printing.enable = true;
-    openssh.enable = false;
+    openssh.enable = true;
     hypridle.enable = true;
     dbus.enable = true;
     xserver = {
-      enable = true;
+      enable = false;
       videoDrivers = ["nvidia"];
       xkb = {
         layout = "tr";

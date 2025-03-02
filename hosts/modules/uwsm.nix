@@ -1,7 +1,7 @@
 {...}:
 {
   programs.uwsm = {
-    enable = true;
+    enable = false;
     waylandCompositors = {
       hyprland = {
         prettyName = "Hyprland";

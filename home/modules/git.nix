@@ -1,8 +1,8 @@
 {
   programs.git = {
     enable = true;
-    userName = "nixtrim";    # Buraya kendi adını yaz
-    userEmail = "omuaz01@gmail.com";  # Kendi e-posta adresini yaz
+    userName = "nixtrim";
+    userEmail = "omuaz01@gmail.com";
     extraConfig = {
       init.defaultBranch = "main";
       pull.rebase = true;

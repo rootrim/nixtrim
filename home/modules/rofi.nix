@@ -10,7 +10,6 @@
     theme = "~/.config/nixtrim/dots/rofi/config.rasi";
     plugins = with pkgs; [
       rofimoji
-      rofi-calc
       rofi-power-menu
     ];
 
