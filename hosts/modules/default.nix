@@ -11,5 +11,6 @@
     ./locale.nix
     ./networking.nix
     ./sound.nix
+    ./uwsm.nix
   ];
 }
