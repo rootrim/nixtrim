@@ -11,8 +11,8 @@
         layout = "tr";
         variant = "";
       };
-      libinput.enable = true;
     };
+    libinput.enable = true;
     displayManager = {
       ly = {
         enable = true;
