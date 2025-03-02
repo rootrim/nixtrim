@@ -4,16 +4,16 @@
 }:
 {
   gtk = {
-    enable = false;
+    enable = true;
 
     theme = {
-      package = pkgs.flat-remix-gtk;
-      name = "Flat-Remix-GTK-Grey-Darkest";
+      package = pkgs.gruvbox-gtk-theme;
+      name = "Gruvbox";
     };
 
     iconTheme = {
-      package = pkgs.adwaita-icon-theme;
-      name = "Adwaita";
+      package = pkgs.gruvbox-dark-icons-gtk;
+      name = "oomox-gruvbox-dark";
     };
 
     font = {
