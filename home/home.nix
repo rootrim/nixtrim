@@ -51,6 +51,7 @@ in {
     rofi-power-menu
     cliphist
     libreoffice-fresh
+    playerctl
   ];
   
 
