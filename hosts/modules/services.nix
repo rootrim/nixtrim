@@ -2,7 +2,7 @@
 {
   services = {
     printing.enable = true;
-    openssh.enable = true;
+    openssh.enable = false;
     hypridle.enable = true;
     dbus.enable = true;
     xserver = {
