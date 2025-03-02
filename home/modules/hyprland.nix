@@ -6,7 +6,6 @@
     enable = true;
     package = pkgs.hyprland;
     xwayland.enable = true;
-    withUWSM = true;
     systemd.enable = false;
     extraConfig = ''
       $configs = $HOME/.config/nixtrim/dots/hypr/
