@@ -4,7 +4,7 @@
 }:
 {
   gtk = {
-    enable = true;
+    enable = false;
 
     theme = {
       package = pkgs.flat-remix-gtk;
