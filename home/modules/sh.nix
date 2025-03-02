@@ -15,6 +15,8 @@
 
     ":q" = "exit";
     "q" = "exit";
+
+    "rebuild" = "sudo nixos-rebuild switch --flake ~/.config/nixtrim#zenith";
   };
 in {
   options.shellAliases = with lib;
