@@ -1,5 +1,0 @@
-{
-  programs.swww = {
-    enable = true;
-  };
-}

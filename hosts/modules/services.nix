@@ -7,6 +7,7 @@
     dbus.enable = true;
     xserver = {
       enable = true;
+      videoDrivers = ["nvidia"];
       xkb = {
         layout = "tr";
         variant = "";
