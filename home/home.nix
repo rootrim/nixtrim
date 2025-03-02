@@ -52,6 +52,7 @@ in {
     cliphist
     libreoffice-fresh
     playerctl
+    yt-dlp
   ];
   
 

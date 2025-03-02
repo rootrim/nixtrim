@@ -13,5 +13,6 @@
     ./sound.nix
     ./uwsm.nix
     ./hyprland.nix
+    ./polkit.nix
   ];
 }
