@@ -7,6 +7,10 @@
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
   };
@@ -19,29 +23,16 @@
     spicetify-nix,
     ...
   } @ inputs: let
-    system = "x86_64-linux";
     host = "zenith";
     username = "rootrim";
-    pkgs = import nixpkgs {
-      inherit system;
-      config.allowUnfree = true;
-    };
   in {
     nixosConfigurations = {
       "${host}" = nixpkgs.lib.nixosSystem {
         specialArgs = {
-          inherit nixpkgs;
-          inherit home-manager;
-          inherit zen-browser;
-          inherit spicetify-nix;
-          inherit host;
-          inherit username;
-          inherit system;
           inherit inputs;
         };
-
         modules = [
-          ./hosts/${host}/configuration.nix  # Path to your NixOS configuration file
+          ./hosts/${host}/configuration.nix
           inputs.spicetify-nix.nixosModules.default
           inputs.home-manager.nixosModules.home-manager
           {
@@ -60,7 +51,7 @@
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         home.directory = "/home/${username}";
         user = "${username}";
-        configuration = import ./home/home.nix;  # Path to your home-manager configuration file
+        configuration = import ./home/home.nix;
       };
     };
   };

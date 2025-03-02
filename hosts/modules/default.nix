@@ -12,5 +12,6 @@
     ./networking.nix
     ./sound.nix
     ./uwsm.nix
+    ./hyprland.nix
   ];
 }
