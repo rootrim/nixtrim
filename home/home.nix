@@ -8,6 +8,7 @@
 let
   system = "x86_64-linux";
   zen-browser = inputs.zen-browser.packages."${system}".default;
+  superfile = inputs.superfile.packages.${system}.default;
 in {
 
 
@@ -20,8 +21,9 @@ in {
   home.homeDirectory = "/home/rootrim";
 
   home.packages = with pkgs; [
-    neofetch
     zen-browser
+    superfile
+    neofetch
     git
     neovim
     gcc
