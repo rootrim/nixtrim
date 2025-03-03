@@ -14,5 +14,6 @@
       ./qt.nix
       ./tmux.nix
       ./hypridle.nix
+      ./hyprlock.nix
     ];
 }
