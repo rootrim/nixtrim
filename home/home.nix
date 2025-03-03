@@ -55,6 +55,7 @@ in {
     libreoffice-fresh
     playerctl
     yt-dlp
+    btop
   ];
   
 
