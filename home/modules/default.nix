@@ -13,5 +13,6 @@
       ./xdg.nix
       ./qt.nix
       ./tmux.nix
+      ./hypridle.nix
     ];
 }
