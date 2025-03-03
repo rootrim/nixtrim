@@ -13,5 +13,6 @@
       ./xdg.nix
       ./qt.nix
       ./services.nix
+      ./tmux.nix
     ];
 }
