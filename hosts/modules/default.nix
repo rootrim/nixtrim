@@ -14,5 +14,6 @@
     ./uwsm.nix
     ./hyprland.nix
     ./polkit.nix
+    ./steam.nix
   ];
 }
