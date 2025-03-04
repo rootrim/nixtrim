@@ -1,5 +1,3 @@
-#!/bin/bash
-
 if [ -z "$1" ]; then
   echo "Usage: $0 <folder_path>"
   exit 1
@@ -23,5 +21,4 @@ SELECTED_PATH="$TARGET_DIR/$SELECTED_FILE"
 
 echo $SELECTED_PATH
 
-# wal -i $SELECTED_PATH -n
 swww img $SELECTED_PATH --transition-type=outer --transition-fps=120 --transition-duration=1
