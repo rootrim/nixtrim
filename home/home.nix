@@ -56,6 +56,7 @@ in {
     playerctl
     yt-dlp
     btop
+    nitch
   ];
   
 
