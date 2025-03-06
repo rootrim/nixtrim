@@ -59,6 +59,7 @@ in {
     nitch
     eza
     zoxide
+    cmatrix
   ];
   
 
