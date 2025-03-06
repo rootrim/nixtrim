@@ -57,6 +57,8 @@ in {
     yt-dlp
     btop
     nitch
+    eza
+    zoxide
   ];
   
 
