@@ -32,12 +32,7 @@ in {
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     historySubstringSearch.enable = true;
-    zplug = {
-      enable = true;
-      plugins = [
-        "Aloxaf/fzf-tab"
-      ];
-    };
+
     initExtra = ''
       SHELL=${pkgs.zsh}/bin/zsh
       zstyle ':completion:*' menu select
