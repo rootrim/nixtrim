@@ -61,6 +61,8 @@ in {
     zoxide
     cmatrix
     lutris
+    hyprshot
+    feh
   ];
   
 
