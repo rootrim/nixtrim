@@ -64,6 +64,7 @@ in {
     hyprshot
     feh
     lazydocker
+    gimp
   ];
   
 
