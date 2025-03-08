@@ -63,6 +63,7 @@ in {
     lutris
     hyprshot
     feh
+    lazydocker
   ];
   
 
