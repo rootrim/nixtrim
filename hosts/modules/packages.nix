@@ -7,6 +7,7 @@
     home-manager
     monocraft
     devenv
+    nvidia-docker
   ];
 
   programs.zsh =  {

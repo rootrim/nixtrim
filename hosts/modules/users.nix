@@ -1,5 +1,6 @@
 {pkgs, ...}:
 {
+  users.groups.docker = {};
   users.users.rootrim = {
     shell = pkgs.zsh;
     isNormalUser = true;
