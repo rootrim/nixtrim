@@ -6,6 +6,7 @@
     nil
     home-manager
     monocraft
+    devenv
   ];
 
   programs.zsh =  {
