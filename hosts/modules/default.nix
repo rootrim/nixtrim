@@ -15,5 +15,6 @@
     ./hyprland.nix
     ./polkit.nix
     ./steam.nix
+    ./virtualisation.nix
   ];
 }
