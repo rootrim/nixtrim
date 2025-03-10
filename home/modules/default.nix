@@ -15,5 +15,6 @@
       ./tmux.nix
       ./hypridle.nix
       ./hyprlock.nix
+      ./zoxide.nix
     ];
 }
