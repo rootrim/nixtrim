@@ -48,4 +48,10 @@ in {
     enable = true;
     initExtra = "SHELL=${pkgs.bash}";
   };
+  options.programs.zsh.antidote = {
+    enabled = true;
+    plugins = [
+      "Aloxaf/fzf-tab"
+    ];
+  };
 }

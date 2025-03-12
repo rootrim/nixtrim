@@ -8,7 +8,7 @@
     runAsService = true;
 
     config = {
-      search.placeholder = "Who will run next?";
+      search.placeholder = "What will be runned next?";
       ui.fullscreen = true;
       list = {
         height = 200;
