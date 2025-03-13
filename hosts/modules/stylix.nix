@@ -1,0 +1,3 @@
+{
+  stylix.enable = true;
+}

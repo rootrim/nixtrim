@@ -16,5 +16,6 @@
     ./polkit.nix
     ./steam.nix
     ./virtualisation.nix
+    ./stylix.nix
   ];
 }

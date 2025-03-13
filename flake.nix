@@ -7,6 +7,7 @@
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    stylix.url = "github:danth/stylix/release-24.11";
     hyprland = {
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -37,6 +38,7 @@
           ./hosts/${host}/configuration.nix
           inputs.spicetify-nix.nixosModules.default
           inputs.home-manager.nixosModules.home-manager
+          inputs.stylix.nixosModules.stylix
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
