@@ -3,6 +3,9 @@
   pkgs,
   ...
 }:
+let
+  configs = ../../dots/hypr;
+in
 {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -10,7 +13,7 @@
     xwayland.enable = true;
     systemd.enable = true;
     extraConfig = ''
-      $configs = $HOME/.config/nixtrim/dots/hypr/
+      $configs = ${configs}
       monitor=eDP-1,1920x1080@120.00200,0x0,1
       source=$configs/mocha.conf
       source=$configs/gruvbox.conf
