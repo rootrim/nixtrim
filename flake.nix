@@ -12,6 +12,14 @@
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    astal = {
+      url = "github:aylur/astal";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    ags = {
+      url = "github:aylur/ags";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     superfile.url = "github:yorukot/superfile";
@@ -22,20 +30,21 @@
     self,
     nixpkgs,
     home-manager,
-    zen-browser,
-    spicetify-nix,
+    ags,
+    astal,
     ...
   } @ inputs: let
-    host = "zenith";
+    hostname = "zenith";
     username = "rootrim";
+    system  = "x86_64-linux";
   in {
     nixosConfigurations = {
-      "${host}" = nixpkgs.lib.nixosSystem {
+      "${hostname}" = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs;
         };
         modules = [
-          ./hosts/${host}/configuration.nix
+          ./hosts/${hostname}/configuration.nix
           inputs.spicetify-nix.nixosModules.default
           inputs.home-manager.nixosModules.home-manager
           inputs.stylix.nixosModules.stylix
@@ -52,11 +61,33 @@
 
     homeConfigurations = {
       nixtrim = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        pkgs = nixpkgs.legacyPackages.${system};
         home.directory = "/home/${username}";
         user = "${username}";
         configuration = import ./home/home.nix;
       };
+    };
+
+    packages.${system}. default = nixpkgs.stdenvNoCC.mkDerivation rec {
+      name = "DeskShell";
+      src = ./dots/.;
+
+      nativeBuildInputs = [
+        ags.packages.${system}.default
+        nixpkgs.wrapGAppsHook
+        nixpkgs.gobject-introspection
+      ];
+
+      buildInputs = with astal.packages.${system}; [
+        astal3
+        io
+        # any other package
+      ];
+
+      installPhase = ''
+        mkdir -p $out/bin
+        ags bundle app.ts $out/bin/${name}
+      '';
     };
   };
 }
