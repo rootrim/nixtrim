@@ -8,8 +8,6 @@
       ./rofi.nix
       ./sh.nix
       ./starship.nix
-    #./gtk.nix
-    #./cursor.nix
       ./xdg.nix
       ./qt.nix
       ./tmux.nix
@@ -18,6 +16,5 @@
       ./zoxide.nix
       ./stylix.nix
       ./ghostty.nix
-      ./astal.nix
     ];
 }

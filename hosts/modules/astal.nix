@@ -1,4 +1,7 @@
-{ pkgs, system, ags, astal, ... }:
+{ pkgs, ags, astal, ... }:
+let
+  system  = "x86_64-linux";
+in
 {
   packages.${system}. default = pkgs.stdenvNoCC.mkDerivation rec {
     name = "deskshell";
