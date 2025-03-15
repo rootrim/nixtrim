@@ -8,7 +8,7 @@
       ./rofi.nix
       ./sh.nix
       ./starship.nix
-      ./gtk.nix
+    #./gtk.nix
       ./cursor.nix
       ./xdg.nix
       ./qt.nix
