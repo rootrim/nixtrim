@@ -17,7 +17,7 @@
       };
 
       monospace = {
-        package = pkgs.cascadia-code;
+        package = pkgs.nerdfonts.override {fonts = ["CascadiaCode"];};
         name = "Cascadia Code";
       };
 
@@ -25,6 +25,12 @@
         package = pkgs.twemoji-color-font;
         name = "Twemoji Color Emoji";
       };
+    };
+
+    cursor = {
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Ice";
+      size = 24;
     };
   };
 }

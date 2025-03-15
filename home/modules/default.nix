@@ -16,5 +16,6 @@
       ./hypridle.nix
       ./hyprlock.nix
       ./zoxide.nix
+      ./stylix.nix
     ];
 }
