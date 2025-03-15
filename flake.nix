@@ -70,7 +70,7 @@
 
     packages.${system}. default = nixpkgs.stdenvNoCC.mkDerivation rec {
       name = "DeskShell";
-      src = ./dots/.;
+      src = ./dots/astal;
 
       nativeBuildInputs = [
         ags.packages.${system}.default
