@@ -18,5 +18,6 @@
       ./zoxide.nix
       ./stylix.nix
       ./ghostty.nix
+      ./astal.nix
     ];
 }

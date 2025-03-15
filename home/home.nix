@@ -26,6 +26,7 @@ in {
     superfile
     astal
     neofetch
+    deskshell
     git
     neovim
     gcc

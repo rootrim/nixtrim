@@ -37,7 +37,7 @@
     hostname = "zenith";
     username = "rootrim";
     system  = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
+      #pkgs = nixpkgs.legacyPackages.${system};
   in {
     nixosConfigurations = {
       "${hostname}" = nixpkgs.lib.nixosSystem {
@@ -69,26 +69,5 @@
       };
     };
 
-    packages.${system}. default = pkgs.stdenvNoCC.mkDerivation rec {
-      name = "DeskShell";
-      src = ./dots/astal;
-
-      nativeBuildInputs = [
-        ags.packages.${system}.default
-        pkgs.wrapGAppsHook
-        pkgs.gobject-introspection
-      ];
-
-      buildInputs = with astal.packages.${system}; [
-        astal3
-        io
-        # any other package
-      ];
-
-      installPhase = ''
-        mkdir -p $out/bin
-        ags bundle app.ts $out/bin/${name}
-      '';
-    };
   };
 }
