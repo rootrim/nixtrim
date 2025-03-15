@@ -87,10 +87,7 @@
 
       installPhase = ''
         mkdir -p $out/bin
-        echo "Starting the install phase..." > /tmp/debug_install.txt
-        echo "Using ags to bundle app.ts into $out/bin/${name}" >> /tmp/debug_install.txt
-        ags bundle app.ts $out/bin/${name} || echo "Error occurred during ags bundling" >> /tmp/debug_install.txt
-        echo "Installation complete" >> /tmp/debug_install.txt
+        ags bundle app.ts $out/bin/${name}
       '';
     };
   };
