@@ -37,7 +37,6 @@
     hostname = "zenith";
     username = "rootrim";
     system  = "x86_64-linux";
-      #pkgs = nixpkgs.legacyPackages.${system};
   in {
     nixosConfigurations = {
       "${hostname}" = nixpkgs.lib.nixosSystem {
@@ -68,6 +67,5 @@
         configuration = import ./home/home.nix;
       };
     };
-
   };
 }
