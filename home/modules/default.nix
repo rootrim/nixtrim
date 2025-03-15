@@ -9,7 +9,7 @@
       ./sh.nix
       ./starship.nix
     #./gtk.nix
-      ./cursor.nix
+    #./cursor.nix
       ./xdg.nix
       ./qt.nix
       ./tmux.nix
