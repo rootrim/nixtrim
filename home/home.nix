@@ -10,6 +10,7 @@ let
   zen-browser = inputs.zen-browser.packages."${system}".default;
   superfile = inputs.superfile.packages.${system}.default;
   astal = inputs.astal.packages.${system}.default;
+  yazi = inputs.yazi.packages.${system}.default;
 in {
 
 
@@ -25,6 +26,7 @@ in {
     zen-browser
     superfile
     astal
+    yazi
     neofetch
     git
     neovim

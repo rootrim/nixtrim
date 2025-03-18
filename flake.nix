@@ -24,6 +24,7 @@
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     superfile.url = "github:yorukot/superfile";
     walker.url = "github:abenz1267/walker";
+    yazi.url = "github:sxyazi/yazi";
   };
 
   outputs = {
