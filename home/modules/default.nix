@@ -17,5 +17,6 @@
       ./stylix.nix
       ./ghostty.nix
       ./eww.nix
+      ./nvim.nix
     ];
 }
