@@ -1,23 +1,20 @@
 (defwindow exbar
   :monitor 0
   :geometry (geometry :x "0%"
-                      :y "20px"
+                      :y "0%"
                       :width "100%"
                       :height "28px"
-                      :anchor "top left right")
+                      :anchor "top center")
   :stacking "overlay"
   :exclusive true
-  :focusable "none"
+  :focusable false
   :namespace "KONODIODA"
-  (greeter :text "Give Selam!"
-           :name "Trim"))
+  (music))
 
 
 
 
-(defwidget greeter [?text name]
+(defwidget music []
   (box :orientation "horizontal"
        :halign "center"
-    text
-    (button :onclick "notify-send 'Hello' 'Hello, ${name}'"
-      "Greet")))
+    (button :onclick "playerctl play-pause -p spotify" "Start-Stop")))
