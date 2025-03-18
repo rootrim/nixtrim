@@ -1,0 +1,23 @@
+(defwindow exbar
+  :monitor 0
+  :geometry (geometry :x "0%"
+                      :y "20px"
+                      :width "100%"
+                      :height "28px"
+                      :anchor "top left right")
+  :stacking "overlay"
+  :exclusive true
+  :focusable "none"
+  :namespace "KONODIODA"
+  (greeter :text "Give Selam!"
+           :name "Trim"))
+
+
+
+
+(defwidget greeter [?text name]
+  (box :orientation "horizontal"
+       :halign "center"
+    text
+    (button :onclick "notify-send 'Hello' 'Hello, ${name}'"
+      "Greet")))

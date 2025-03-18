@@ -1,3 +1,3 @@
 {
-    home.file."~/.config/nvim".source = ../../dots/nvim;
+    home.file.".config/nvim".source = ../../dots/nvim;
 }

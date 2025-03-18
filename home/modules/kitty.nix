@@ -1,3 +1,3 @@
 {
-    home.file."~/.config/kitty/kitty.conf".source = ../../dots/kitty/kitty.conf;
+    home.file.".config/kitty/kitty.conf".source = ../../dots/kitty/kitty.conf;
 }
