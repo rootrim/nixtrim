@@ -27,6 +27,7 @@ in {
     superfile
     astal
     yazi
+    npm
     neofetch
     git
     neovim
