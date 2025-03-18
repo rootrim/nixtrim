@@ -27,7 +27,7 @@ in {
     superfile
     astal
     yazi
-    npm
+    nodejs_23
     neofetch
     git
     neovim
