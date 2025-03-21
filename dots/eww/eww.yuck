@@ -1,6 +1,9 @@
 (defpoll time :interval "1s"
   `date "+%H:%M:%S"`)
 
+(deflisten songtist :initial "Musci"
+  `playerctl --follow metadata --format "{{artist}} - {{title}}"`)
+
 (defwidget clock []
   (box :orientation "horizontal"
        :halign "right"
@@ -9,18 +12,21 @@
 (defwidget music []
   (box :orientation "horizontal"
        :halign "center"
-    (button :onclick "playerctl play-pause -p spotify" "Start-Stop")))
+    (button :onclick "playerctl play-pause -p spotify" songtist)))
 
 (defwidget left [] 
   (box :orientation "horizontal"
+    :halign "start"
     (label :text "I Use NixOS")))
 
 (defwidget right []
   (box :orientation "horizontal"
+    :halign "end"
     (clock)))
 
 (defwidget center []
   (box :orientation "horizontal"
+    :halign "center"
     (music)))
 
 (defwidget toc []
