@@ -1,3 +1,34 @@
+(defpoll time :interval "1s"
+  `date "+%H:%M:%S"`)
+
+(defwidget clock []
+  (box :orientation "horizontal"
+       :halign "right"
+    (label :text time)))
+
+(defwidget music []
+  (box :orientation "horizontal"
+       :halign "center"
+    (button :onclick "playerctl play-pause -p spotify" "Start-Stop")))
+
+(defwidget left [] 
+  (box :orientation "horizontal"
+    (label :text "I Use NixOS")))
+
+(defwidget right []
+  (box :orientation "horizontal"
+    (clock)))
+
+(defwidget center []
+  (box :orientation "horizontal"
+    (music)))
+
+(defwidget toc []
+  (centerbox :orientation "horizontal"
+    (left)
+    (center)
+    (right)))
+
 (defwindow exbar
   :monitor 0
   :geometry (geometry :x "0%"
@@ -9,12 +40,4 @@
   :exclusive true
   :focusable false
   :namespace "KONODIODA"
-  (music))
-
-
-
-
-(defwidget music []
-  (box :orientation "horizontal"
-       :halign "center"
-    (button :onclick "playerctl play-pause -p spotify" "Start-Stop")))
+  (toc))
