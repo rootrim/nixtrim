@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:{
+{ pkgs, ... }:{
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
@@ -8,7 +8,6 @@
     monocraft
     devenv
     nvidia-docker
-    inputs.self.packages.${system}.deskshell
   ];
 
   programs.zsh =  {

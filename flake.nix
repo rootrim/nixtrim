@@ -20,6 +20,10 @@
       url = "github:aylur/ags";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    fabric = {
+      url = "github:Fabric-Development/fabric";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     superfile.url = "github:yorukot/superfile";
@@ -33,6 +37,7 @@
     home-manager,
     ags,
     astal,
+    fabric,
     ...
   } @ inputs: let
     hostname = "zenith";
@@ -41,27 +46,43 @@
     pkgs = nixpkgs.legacyPackages.${system};
   in {
 
-    packages.${system}.deskshell = pkgs.stdenvNoCC.mkDerivation rec {
-      name = "deskshell";
-      src = ./dots/astal;
+    #packages.${system}.deskshell = pkgs.stdenvNoCC.mkDerivation rec {
+    #  name = "deskshell";
+    #  src = ./dots/astal;
 
-      nativeBuildInputs = [
-        ags.packages.${system}.default
-        pkgs.wrapGAppsHook
-        pkgs.gobject-introspection
+    #  nativeBuildInputs = [
+    #    ags.packages.${system}.default
+    #    pkgs.wrapGAppsHook
+    #    pkgs.gobject-introspection
+    #  ];
+
+    #  buildInputs = with astal.packages.${system}; [
+    #    astal3
+    #    io
+    #    # any other package
+    #  ];
+
+    #  installPhase = ''
+    #    mkdir -p $out/bin
+    #    ags bundle app.ts $out/bin/${name}
+    #    chmod +x $out/bin/${name}
+    #  '';
+    #};
+    packages.${system}.deskinator = pkgs.python3Packages.buildPythonApplication {
+      pname = "deskinator";
+      version = "0.1.0";
+      pyproject = true;
+
+      src = ./dots/fabric;
+
+      build-system = with pkgs.python3Packages; [
+        setuptools
       ];
 
-      buildInputs = with astal.packages.${system}; [
-        astal3
-        io
-        # any other package
+      dependencies = with pkgs.python3Packages; [
+        python-daemon
+        fabric.packages.${system}.default
       ];
-
-      installPhase = ''
-        mkdir -p $out/bin
-        ags bundle app.ts $out/bin/${name}
-        chmod +x $out/bin/${name}
-      '';
     };
 
     nixosConfigurations = {

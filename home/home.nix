@@ -10,6 +10,7 @@ let
   superfile = inputs.superfile.packages.${system}.default;
   astal = inputs.astal.packages.${system}.default;
   yazi = inputs.yazi.packages.${system}.default;
+  deskinator = inputs.self.packages.${system}.deskinator;
 in {
 
 
@@ -22,6 +23,7 @@ in {
     superfile
     astal
     yazi
+    deskinator
     nodejs_23
     neofetch
     git
