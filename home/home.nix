@@ -1,5 +1,4 @@
 {
-  #config,
   pkgs,
   inputs,
   ...
@@ -18,10 +17,6 @@ in {
     ./modules/default.nix
   ];
 
-
-  home.username = "rootrim";
-  home.homeDirectory = "/home/rootrim";
-
   home.packages = with pkgs; [
     zen-browser
     superfile
@@ -35,6 +30,9 @@ in {
     python3
     rustc
     cargo
+    rust-analyzer
+    rustfmt
+    clippy
     gnumake
     wget
     curl
@@ -71,10 +69,11 @@ in {
     feh
     lazydocker
     gimp
+    vesktop
   ];
   
-
-  home.file = {};
+  home.username = "rootrim";
+  home.homeDirectory = "/home/rootrim";
 
   home.sessionVariables = {};
 
