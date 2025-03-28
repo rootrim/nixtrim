@@ -72,14 +72,17 @@ in {
     lazydocker
     gimp
     vesktop
+    aircrack-ng
+    wifite2
+    brightnessctl
   ];
   
-  home.username = "rootrim";
-  home.homeDirectory = "/home/rootrim";
-
-  home.sessionVariables = {};
+  home = {
+    username = "rootrim";
+    homeDirectory = "/home/rootrim";
+    sessionVariables = {};
+    stateVersion = "24.05";
+  };
 
   programs.home-manager.enable = true;
-
-  home.stateVersion = "24.05";  # Keep this unchanged.
 }
