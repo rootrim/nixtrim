@@ -8,6 +8,7 @@
     monocraft
     devenv
     nvidia-docker
+    wirelesstools
   ];
 
   programs.zsh =  {

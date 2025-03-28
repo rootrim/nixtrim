@@ -15,6 +15,7 @@ in
     extraConfig = ''
       $configs = ${configs}
       monitor=eDP-1,1920x1080@120.00200,0x0,1
+      monitor=HDMI-2,1920x1080@60.00200,0x0,1
       source=$configs/mocha.conf
       source=$configs/gruvbox.conf
       source=$configs/startup.conf
