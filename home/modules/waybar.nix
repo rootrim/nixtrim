@@ -13,50 +13,75 @@
 
         layer = "top";
         position = "top";
-        height = 28; output = [
+        height = 30;
+        spacing = 5;
+        output = [
           "eDP-1"
         ];
         modules-left = [
+          "custom/blank"
           "hyprland/workspaces"
           "hyprland/window"
         ];
         modules-center = [
-          "mpris"
+          "custom/music"
         ];
         modules-right = [
-          "temperature"
-          "memory"
-          "cpu"
           "wireplumber"
-          "backlight"
+          "custom/brightness"
+          "network"
+          "cpu"
+          "memory"
           "battery"
           "clock"
           "tray"
+          "custom/blank"
         ];
   
-        "hyprland/workspaces"= {
-          format= "{icon}";
+        "hyprland/workspaces" = {
+          format= "{name}";
+          #on-click = "activate";
         };
 
 
-        "hyprland/window"= {
-          format = "{title}";
-          max-length = 40;
-          all-outputs = true;
+        "hyprland/window" = {
+          format = "  {}";
+          max-length = 50;
         };
 
 
-        "mpris"= {
-          format  = " {status_icon} {dynamic}";
-          interval  = 1;
-          dynamic-len  = 40;
-          status-icons  = {
-            playing = "▶";
-            paused = "⏸";
-            stopped = "";
-          };
-          dynamic-order = ["title" "artist"];
-          ignored-players = ["firefox"];
+        "custom/music" = {  
+            exec = "playerctl -p spotify metadata --format '  {{artist}} - {{title}}'";
+            interval = 1;
+            on-click = "playerctl -p spotify play-pause";
+            on-scroll-up = "playerctl -p spotify next";
+            on-scroll-down = "playerctl -p spotify previous";
+            max-length = 50;
+            format-icons = {
+              "Playing" = "";
+              "Paused" = "";
+            };
+            on-click-middle = "spotify";
+        };
+
+
+        "custom/brightness" = {
+            exec = "brightnessctl -m | awk -F, '{print substr($4, 0, length($4)-1)}'";
+            format = "󰃠 {}";
+            on-scroll-up = "brightnessctl s +10%";
+            on-scroll-down = "brightnessctl s 10%-";
+            interval = 1;
+        };
+
+        "custom/blank" = {
+            format = " ";
+        };
+
+        "network" = {
+          format-wifi = "  {essid}";
+          format-ethernet = "󰈀  {ipaddr}";
+          format-disconnected = "  Offline";
+          tooltip = false;
         };
 
 
@@ -67,17 +92,18 @@
 
 
         "clock" = {
-          tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-          format-alt = "{:%Y-%m-%d}";
+          format = "  {:%H:%M}";
+          tooltip = "  {:%d/%m/%Y}";
         };
 
         "cpu" = {
-          format = "{usage}% ";
-          tooltip = false;
+          format = "  {usage}%";
+          interval = 2;
         };
 
         "memory" = {
-          format = "{used}G ";
+          format = "  {}%";
+          interval = 5;
         };
 
         "temperature" = {
@@ -130,141 +156,70 @@
     };
 
     style = /*css*/ ''
-      * {
-        font-size: 14px;
-      }
-      
-      window#waybar {
-        font-family:
-          FontAwesome,
-          Caskaydia Cove NFM;
-        background-color: transparent;
-        color: #ebdbb2;
-        transition-property: background-color;
-        transition-duration: 0.5s;
-        background-color: #282828;
-      }
-      
-      #workspaces button {
-        padding: 0 5px;
-        background-color: transparent;
-        color: #ebdbb2;
-      }
-      
-      #workspaces button:hover {
-        color: #d79921;
-      }
-      
-      #workspaces button.active {
-        border-top: 3px solid #d79921;
-        border-radius: 0px;
-      }
-      
-      #workspaces button.focused {
-        background-color: #665c54;
-      }
-      
-      #workspaces button.urgent {
-        border-top: 3px solid #fb4934;
-        border-radius: 0px;
-      }
-      
-      #idle_inhibitor,
-      #temprature,
-      #memory,
-      #cpu,
-      #cava,
-      #scratchpad,
-      #mode,
-      #window,
-      #clock,
-      #battery,
-      #backlight,
-      #wireplumber,
-      #mpris,
-      #load {
-        padding: 0 10px;
-        background-color: #282828;
-        color: #ebdbb2;
-      }
-      
-      #mode {
-        background-color: #689d6a;
-        color: #282828;
-        /* box-shadow: inset 0 -3px #ffffff; */
-      }
-      
-      #tray {
-        padding: 0 10px;
-        background-color: #282828;
-        color: #ebdbb2;
-      }
-      /* If workspaces is the leftmost module, omit left margin */
-      .modules-left > widget:first-child > #workspaces {
-        margin-left: 0;
-      }
-      
-      /* If workspaces is the rightmost module, omit right margin */
-      .modules-right > widget:last-child > #workspaces {
-        margin-right: 0;
-      }
-      
-      #cava {
-        padding: 0 5px;
-      }
-      
-      #battery.charging,
-      #battery.plugged {
-        background-color: #98971a;
-        color: #282828;
-      }
-      
-      @keyframes blink {
-        to {
-          background-color: #282828;
-          color: #ebdbb2;
-        }
-      }
-      
-      /* Using steps() instead of linear as a timing function to limit cpu usage */
-      #battery.critical:not(.charging) {
-        background-color: #cc241d;
-        color: #ebdbb2;
-        animation-name: blink;
-        animation-duration: 0.5s;
-        animation-timing-function: steps(12);
-        animation-iteration-count: infinite;
-        animation-direction: alternate;
-      }
-      
-      label:focus {
-        background-color: #000000;
-      }
-      
-      #wireplumber.muted {
-        background-color: #458588;
-      }
-      
-      #tray > .passive {
-        -gtk-icon-effect: dim;
-      }
-      
-      #tray > .needs-attention {
-        -gtk-icon-effect: highlight;
-      }
-      
-      #mpris.playing {
-        background-color: #d79921;
-        color: #282828;
-      }
-      
-      #tray menu {
-        font-family: sans-serif;
-      }
-      
-      #scratchpad.empty {
-        background: transparent;
-      }
+* {
+    border: 1px;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    /*background: rgba(40, 42, 54, 0.9);*/
+    /*background-color: rgba(0,0,0,0);*/
+    /*color: #f8f8f2;*/
+}
+
+#workspaces button {
+    padding: 0 8px;
+    margin: 5px 3px;
+    /*color: #6272a4;*/
+    /*background: #44475a;*/
+    border-radius: 100px;
+}
+
+#workspaces button.active {
+    /*color: #50fa7b;*/
+}
+
+#window {
+    /*color: #ff79c6;*/
+    padding: 0 12px;
+    /*margin: 5 3px;
+    background: #44475a;
+    border-radius: 100px;*/
+}
+
+#cpu, #memory, #network, #wireplumber, #clock, #battery {
+    padding: 0 10px;
+    margin: 5px 3px;
+    /*background: #44475a;*/
+    border-radius: 100px;
+}
+
+#custom-music {  
+    /*color: #1db954;*/
+    /*color: #50fa7b;*/ 
+    padding: 0 10px;
+    margin: 5px 3px;  
+    /*background: #44475a;*/  
+    border-radius: 100px;  
+}  
+
+#custom-music:hover {
+    /*background: #6272a4;*/
+    transition: 0.3s;
+}
+
+#custom-brightness {
+    /*background: #44475a;*/
+    padding: 0 10px;
+    margin: 5px 3px;
+    border-radius: 100px;
+}
+
+#clock {
+    /*color: #bd93f9;*/
+}
     '';
 
 
