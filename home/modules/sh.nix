@@ -5,18 +5,18 @@
   ...
 }: let
   aliases = {
-    "db" = "distrobox";
     "tree" = "eza --tree";
     "nv" = "nvim";
 
     "ll" = "eza -la --sort name --group-directories-first --no-permissions --no-filesize --no-user --no-time";
-
     "l" = "ls";
 
     ":q" = "exit";
     "q" = "exit";
 
     "rebuild" = "sudo nixos-rebuild switch --flake ~/.config/nixtrim#zenith";
+
+    "lspwd" = "pwd;eza";
   };
 in {
   options.shellAliases = with lib;
