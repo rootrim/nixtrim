@@ -58,8 +58,8 @@
             on-scroll-down = "playerctl -p spotify previous";
             max-length = 50;
             format-icons = {
-              "Playing" = "";
-              "Paused" = "";
+              Playing = "";
+              Paused = "";
             };
             on-click-middle = "spotify";
         };
@@ -135,9 +135,9 @@
         
         "wireplumber" = {
           scroll-step = 5;
-          format = "{icon} {volume}%";
-          format-bluetooth = "{icon} {volume}% ";
-          format-bluetooth-muted = " {icon}";
+          format = "{icon}  {volume}%";
+          format-bluetooth = "{icon}  {volume}% ";
+          format-bluetooth-muted = "  {icon}";
           format-muted = "";
           format-icons = {
             headphone = "";
