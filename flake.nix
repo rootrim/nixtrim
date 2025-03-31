@@ -24,6 +24,10 @@
       url = "github:Fabric-Development/fabric";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    sherlock = {
+      url = "github:Skxxtz/sherlock";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     superfile.url = "github:yorukot/superfile";
