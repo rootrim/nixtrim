@@ -17,5 +17,6 @@
     ./steam.nix
     ./virtualisation.nix
     ./stylix.nix
+    ./nix-ld.nix
   ];
 }
