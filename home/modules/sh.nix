@@ -32,7 +32,6 @@ in {
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     historySubstringSearch.enable = true;
-
     initExtra = ''
       SHELL=${pkgs.zsh}/bin/zsh
       zstyle ':completion:*' menu select
