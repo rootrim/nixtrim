@@ -17,7 +17,7 @@
       };
 
       monospace = {
-        package = pkgs.nerdfonts.override {fonts = ["CascadiaCode"];};
+        package = pkgs.nerd-fonts.caskaydia-cove;
         name = "Cascadia Code";
       };
 

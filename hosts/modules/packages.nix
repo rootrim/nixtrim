@@ -2,12 +2,8 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    vim
-    nil
     home-manager
     monocraft
-    devenv
-    nvidia-docker
     wirelesstools
     cacert
   ];

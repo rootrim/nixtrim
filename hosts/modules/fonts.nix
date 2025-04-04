@@ -1,7 +1,6 @@
 {pkgs, ...}:
 {
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "CascadiaCode" ]; })
-    cascadia-code
+    nerd-fonts.caskaydia-cove
   ];
 }
