@@ -9,7 +9,7 @@
     devenv
     nvidia-docker
     wirelesstools
-    nss-cacert
+    cacert
   ];
 
   programs.zsh =  {
