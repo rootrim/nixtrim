@@ -5,7 +5,6 @@
     home-manager
     monocraft
     wirelesstools
-    cacert
   ];
 
   programs.zsh =  {

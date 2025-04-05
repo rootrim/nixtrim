@@ -8,7 +8,6 @@
       ./rofi.nix
       ./sh.nix
       ./starship.nix
-      ./xdg.nix
       ./qt.nix
       ./tmux.nix
       ./hypridle.nix

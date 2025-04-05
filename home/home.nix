@@ -7,11 +7,8 @@
 let
   system = "x86_64-linux";
   zen-browser = inputs.zen-browser.packages."${system}".default;
-  superfile = inputs.superfile.packages.${system}.default;
-  astal = inputs.astal.packages.${system}.default;
   yazi = inputs.yazi.packages.${system}.default;
   sherlock = inputs.sherlock.packages.${system}.default;
-  deskinator = inputs.self.packages.${system}.deskinator;
 in {
 
 
@@ -21,10 +18,7 @@ in {
 
   home.packages = with pkgs; [
     zen-browser
-    superfile
-    astal
     yazi
-    deskinator
     sherlock
     nodejs_23
     neofetch

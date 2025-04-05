@@ -18,6 +18,5 @@
     ./virtualisation.nix
     ./stylix.nix
     ./nix-ld.nix
-    ./security.nix
   ];
 }
