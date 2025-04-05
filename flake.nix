@@ -15,6 +15,10 @@
       url = "github:Skxxtz/sherlock";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixcalibur = {
+      url = "github:rootrim/nixcalibur";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     yazi.url = "github:sxyazi/yazi";
