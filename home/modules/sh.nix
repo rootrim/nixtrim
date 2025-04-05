@@ -3,12 +3,15 @@
   config,
   lib,
   ...
-}: let
+}:
+let
   aliases = {
     "tree" = "eza --tree";
     "nv" = "nvim";
+    "nvx" = "nix run github:rootrim/nixcalibur";
 
-    "ll" = "eza -la --sort name --group-directories-first --no-permissions --no-filesize --no-user --no-time";
+    "ll" =
+      "eza -la --sort name --group-directories-first --no-permissions --no-filesize --no-user --no-time";
     "l" = "ls";
 
     ":q" = "exit";
@@ -19,11 +22,13 @@
     "lspwd" = "pwd;eza";
     "konodioda" = "onefetch -i def.jpg --nerd-fonts";
   };
-in {
-  options.shellAliases = with lib;
+in
+{
+  options.shellAliases =
+    with lib;
     mkOption {
       type = types.attrsOf types.str;
-      default = {};
+      default = { };
     };
 
   config.programs.zsh = {
