@@ -17,6 +17,7 @@
     "rebuild" = "sudo nixos-rebuild switch --flake ~/.config/nixtrim#zenith";
 
     "lspwd" = "pwd;eza";
+    "konodioda" = "onefetch -i def.jpg --nerd-fonts";
   };
 in {
   options.shellAliases = with lib;
