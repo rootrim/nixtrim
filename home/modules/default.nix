@@ -1,7 +1,6 @@
 {
     imports = [
       ./git.nix
-      ./kitty.nix
       ./spicetify.nix
       ./hyprland.nix
       ./waybar.nix
@@ -15,7 +14,6 @@
       ./zoxide.nix
       ./stylix.nix
       ./ghostty.nix
-      ./eww.nix
       ./nvim.nix
     ];
 }
