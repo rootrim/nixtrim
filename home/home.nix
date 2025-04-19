@@ -9,9 +9,9 @@ let
   zen-browser = inputs.zen-browser.packages."${system}".default;
   yazi = inputs.yazi.packages.${system}.default;
   sherlock = inputs.sherlock.packages.${system}.default;
-  nixcalibur = inputs.nixcalibur.packages.${system}.default;
-in {
-
+  nixvim = inputs.nixvim.packages.${system}.default;
+in
+{
 
   imports = [
     ./modules/default.nix
@@ -21,7 +21,7 @@ in {
     zen-browser
     yazi
     sherlock
-    nixcalibur
+    #nixvim
     nodejs_23
     neofetch
     git
@@ -73,12 +73,13 @@ in {
     aircrack-ng
     wifite2
     brightnessctl
+    godot
   ];
-  
+
   home = {
     username = "rootrim";
     homeDirectory = "/home/rootrim";
-    sessionVariables = {};
+    sessionVariables = { };
     stateVersion = "24.05";
   };
 

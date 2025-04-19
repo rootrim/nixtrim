@@ -15,8 +15,8 @@
       url = "github:Skxxtz/sherlock";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixcalibur = {
-      url = "github:rootrim/nixcalibur";
+    nixvim = {
+      url = "github:rootrim/nvix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
@@ -24,45 +24,47 @@
     yazi.url = "github:sxyazi/yazi";
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    home-manager,
-    ...
-  } @ inputs: let
-    hostname = "zenith";
-    username = "rootrim";
-    system  = "x86_64-linux";
-  in {
+  outputs =
+    {
+      nixpkgs,
+      home-manager,
+      ...
+    }@inputs:
+    let
+      hostname = "zenith";
+      username = "rootrim";
+      system = "x86_64-linux";
+    in
+    {
 
-    nixosConfigurations = {
-      "${hostname}" = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          inherit inputs;
+      nixosConfigurations = {
+        "${hostname}" = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs;
+          };
+          modules = [
+            ./hosts/${hostname}/configuration.nix
+            inputs.spicetify-nix.nixosModules.default
+            inputs.home-manager.nixosModules.home-manager
+            inputs.stylix.nixosModules.stylix
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.${username} = import ./home/home.nix;
+              home-manager.extraSpecialArgs = { inherit inputs; };
+            }
+          ];
+
         };
-        modules = [
-          ./hosts/${hostname}/configuration.nix
-          inputs.spicetify-nix.nixosModules.default
-          inputs.home-manager.nixosModules.home-manager
-          inputs.stylix.nixosModules.stylix
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.${username} = import ./home/home.nix;
-            home-manager.extraSpecialArgs = {inherit inputs;};
-          }
-        ];
+      };
 
+      homeConfigurations = {
+        nixtrim = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.${system};
+          home.directory = "/home/${username}";
+          user = "${username}";
+          configuration = import ./home/home.nix;
+        };
       };
     };
-
-    homeConfigurations = {
-      nixtrim = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.${system};
-        home.directory = "/home/${username}";
-        user = "${username}";
-        configuration = import ./home/home.nix;
-      };
-    };
-  };
 }

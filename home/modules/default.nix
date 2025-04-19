@@ -14,6 +14,5 @@
       ./zoxide.nix
       ./stylix.nix
       ./ghostty.nix
-      ./nvim.nix
     ];
 }
