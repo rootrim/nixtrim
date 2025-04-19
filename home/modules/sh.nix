@@ -8,7 +8,7 @@ let
   aliases = {
     "tree" = "eza --tree";
     "nv" = "nvim";
-    "nvx" = "nix run github:rootrim/nixcalibur";
+    "nvx" = "nix run github:rootrim/nvix";
 
     "ll" =
       "eza -la --sort name --group-directories-first --no-permissions --no-filesize --no-user --no-time";
