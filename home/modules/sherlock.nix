@@ -186,7 +186,7 @@
           alias = "ws";
           type = "web_launcher";
           args = {
-            search_engine = "duckduckgo";
+            search_engine = "https://duckduckgo.com/?q={keyword}";
             icon = "duckduckgo";
           };
           priority = 100;
@@ -202,6 +202,14 @@
             icon = "sherlock-youtube";
           };
           priority = 0;
+        }
+        {
+          name = "Kill Process";
+          alias = "kill";
+          type = "process";
+          args = { };
+          priority = 6;
+          home = false;
         }
       ];
     };

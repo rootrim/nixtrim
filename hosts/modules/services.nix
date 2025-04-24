@@ -7,13 +7,17 @@
     dbus.enable = true;
     xserver = {
       enable = false;
-      videoDrivers = ["nvidia"];
+      videoDrivers = [ "nvidia" ];
       xkb = {
         layout = "tr";
         variant = "";
       };
     };
     libinput.enable = true;
+    udev.packages = [
+      #pkgs.platformio-core
+      pkgs.openocd
+    ];
     displayManager = {
       ly = {
         enable = true;

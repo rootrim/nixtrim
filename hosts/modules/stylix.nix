@@ -3,7 +3,7 @@
   stylix = {
     enable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
-    image = ../../dots/walls/dekimashita.png;
+    #image = ../../dots/walls/dekimashita.png;
 
     fonts = {
       serif = {

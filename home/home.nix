@@ -21,7 +21,7 @@ in
     zen-browser
     yazi
     sherlock
-    #nixvim
+    nixvim
     nodejs_23
     neofetch
     git
@@ -74,6 +74,8 @@ in
     wifite2
     brightnessctl
     godot
+    binutils
+    gdb
   ];
 
   home = {
