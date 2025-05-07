@@ -76,6 +76,7 @@ in
     godot
     binutils
     gdb
+    kicad
   ];
 
   home = {
