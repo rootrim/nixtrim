@@ -82,7 +82,12 @@ in
   home = {
     username = "rootrim";
     homeDirectory = "/home/rootrim";
-    sessionVariables = { };
+    sessionVariables = {
+      GTK_IM_MODULE = "fcitx";
+      QT_IM_MODULE = "fcitx";
+      SDL_IM_MODULE = "fcitx";
+      XMODIFIERS = "@im=fcitx";
+    };
     stateVersion = "24.05";
   };
 
