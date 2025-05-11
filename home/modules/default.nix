@@ -15,5 +15,6 @@
     ./stylix.nix
     ./ghostty.nix
     ./sherlock.nix
+    ./fctix.nix
   ];
 }
