@@ -18,5 +18,6 @@
     ./virtualisation.nix
     ./stylix.nix
     ./nix-ld.nix
+    ./fcitx.nix
   ];
 }
