@@ -15,6 +15,5 @@
     ./stylix.nix
     ./ghostty.nix
     ./sherlock.nix
-    ./mongohud.nix
   ];
 }
