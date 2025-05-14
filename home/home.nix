@@ -77,6 +77,7 @@ in
     binutils
     gdb
     kicad
+    heroic
   ];
 
   home = {
