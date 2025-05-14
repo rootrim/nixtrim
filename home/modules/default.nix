@@ -15,7 +15,6 @@
     ./stylix.nix
     ./ghostty.nix
     ./sherlock.nix
-    ./mongodb.nix
-    ./gamethingys.nix
+    ./mongohud.nix
   ];
 }
