@@ -16,5 +16,6 @@
     ./ghostty.nix
     ./sherlock.nix
     ./ncmpcpp.nix
+    ./mpd.nix
   ];
 }
