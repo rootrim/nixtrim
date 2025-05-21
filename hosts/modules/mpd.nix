@@ -5,15 +5,19 @@
   ...
 }:
 
+let
+  musicDir = "/home/${username}/Music";
+  mpdDir = "/home/${username}/.config/mpd";
+in
 {
   services.mpd = {
     enable = true;
     user = username;
-    musicDirectory = "/home/${username}/Music";
+    musicDirectory = musicDir;
+    dbFile = "${mpdDir}/database";
+    playlistDirectory = "${mpdDir}/playlists";
     extraConfig = ''
-      db_file "/home/${username}/.config/mpd/database"
       state_file "/home/${username}/.config/mpd/state"
-      playlist_directory "/home/${username}/.config/mpd/playlists"
 
       audio_output {
         type "pipewire"
