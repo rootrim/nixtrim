@@ -1,7 +1,7 @@
 {
   programs.ncmpcpp = {
     enable = true;
-    config = ''
+    settings = ''
       album_art = true;
       default_view = "albumart";
       font = "Cascadia Code 13";
