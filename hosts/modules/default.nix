@@ -19,5 +19,6 @@
     ./stylix.nix
     ./nix-ld.nix
     ./fcitx.nix
+    ./mpd.nix
   ];
 }
