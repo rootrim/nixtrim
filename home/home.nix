@@ -78,6 +78,7 @@ in
     gdb
     kicad
     heroic
+    mpc
   ];
 
   home = {

@@ -1,8 +1,8 @@
 {
+  username,
   config,
   lib,
   pkgs,
-  username,
   ...
 }:
 
@@ -25,6 +25,4 @@ in
       }
     '';
   };
-
-  users.users.${username}.extraGroups = [ "audio" ];
 }
