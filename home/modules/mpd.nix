@@ -11,11 +11,10 @@ in
   services.mpd = {
     enable = true;
     musicDirectory = musicDir;
+    dataDir = mpdDir;
+    dbFile = "${mpdDir}/database";
+    playlistDirectory = "${mpdDir}/playlists";
     extraConfig = ''
-      db_file "${mpdDir}/database"
-      state_file "${mpdDir}/state"
-      playlist_directory "${mpdDir}/playlists"
-
       audio_output {
         type "pipewire"
         name "My PipeWire Output"
