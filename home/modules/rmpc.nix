@@ -1,5 +1,0 @@
-{
-  programs.rmpc = {
-    enable = true;
-  };
-}

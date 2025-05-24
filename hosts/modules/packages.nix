@@ -1,4 +1,5 @@
-{ pkgs, ... }:{
+{ pkgs, ... }:
+{
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
@@ -7,7 +8,7 @@
     wirelesstools
   ];
 
-  programs.zsh =  {
+  programs.zsh = {
     enable = true;
   };
 

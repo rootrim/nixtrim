@@ -17,6 +17,5 @@
     ./sherlock.nix
     ./ncmpcpp.nix
     ./mpd.nix
-    ./rmpc.nix
   ];
 }
