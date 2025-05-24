@@ -79,6 +79,7 @@ in
     kicad
     heroic
     mpc
+    fritzing
   ];
 
   home = {
