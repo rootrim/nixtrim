@@ -17,5 +17,6 @@
     ./sherlock.nix
     ./ncmpcpp.nix
     ./mpd.nix
+    ./dunst.nix
   ];
 }
