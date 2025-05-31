@@ -1,5 +1,7 @@
 export default function Bar(monitor = 0) {
   return <window cssName="Bar" monitor={monitor}>
-    <box>Content of the widget</box>
+    <box>
+      <label label="Nani" />
+    </box>
   </window>
 }

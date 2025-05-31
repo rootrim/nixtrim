@@ -6,5 +6,6 @@ App.start({
   css: style,
   main() {
     Bar(0);
+    Bar(1);
   },
 });
