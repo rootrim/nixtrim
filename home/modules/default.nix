@@ -18,5 +18,6 @@
     ./ncmpcpp.nix
     ./mpd.nix
     ./dunst.nix
+    ./dark-shell.nix
   ];
 }

@@ -10,6 +10,7 @@ let
   yazi = inputs.yazi.packages.${system}.default;
   sherlock = inputs.sherlock.packages.${system}.default;
   nixvim = inputs.nixvim.packages.${system}.default;
+  astal = inputs.astal.packages.${system}.default;
 in
 {
 
@@ -80,6 +81,7 @@ in
     heroic
     mpc
     fritzing
+    astal
   ];
 
   home = {
