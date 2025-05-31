@@ -20,5 +20,6 @@
     ./nix-ld.nix
     ./fcitx.nix
     ./mpd.nix
+    ./certs.nix
   ];
 }
