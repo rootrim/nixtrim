@@ -23,6 +23,7 @@ in
     yazi
     sherlock
     nixvim
+    astal
     nodejs_23
     neofetch
     git
@@ -81,7 +82,7 @@ in
     heroic
     mpc
     fritzing
-    astal
+    rmpc
   ];
 
   home = {

@@ -21,5 +21,6 @@
     ./fcitx.nix
     ./mpd.nix
     ./certs.nix
+    ./bluetooth.nix
   ];
 }

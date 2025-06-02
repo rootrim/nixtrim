@@ -38,6 +38,7 @@
         "discord.com"
       ];
     };
+    blueman.enable = true;
   };
 
 }
