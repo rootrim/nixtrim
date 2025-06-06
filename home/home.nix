@@ -83,6 +83,8 @@ in
     mpc
     fritzing
     rmpc
+    superTuxKart
+    qbittorrent
   ];
 
   home = {

@@ -19,5 +19,6 @@
     ./mpd.nix
     ./dunst.nix
     ./dark-shell.nix
+    ./wezterm.nix
   ];
 }
