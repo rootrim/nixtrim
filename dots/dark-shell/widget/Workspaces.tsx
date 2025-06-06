@@ -18,7 +18,14 @@ export default function Workspaces() {
           self.hook(hyprland, 'event', () => {
             self.toggleClassName('active', hyprland.get_focused_workspace().get_id() === i + 1)
           })
-        }} />
+        }}>
+        <label label={`${numToKanji(i)}`} />
+      </button>
     )}
   </box>
+}
+
+function numToKanji(num: number): string {
+  const kanjiNumbers = ["一", "二", "三", "四", "五"];
+  return num.toString().split('').map(digit => kanjiNumbers[parseInt(digit)]).join('');
 }
