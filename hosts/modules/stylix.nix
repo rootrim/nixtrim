@@ -2,7 +2,7 @@
 {
   stylix = {
     enable = true;
-    base16Scheme = ../../dots/themes/biscuit.yaml;
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/everforest-dark-hard.yaml";
 
     fonts = {
       serif = {

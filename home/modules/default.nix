@@ -20,5 +20,6 @@
     ./dunst.nix
     ./dark-shell.nix
     ./wezterm.nix
+    ./kitty.nix
   ];
 }
