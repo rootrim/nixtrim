@@ -2,8 +2,7 @@
 {
   stylix = {
     enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
-    #image = ../../dots/walls/dekimashita.png;
+    base16Scheme = ../../dots/themes/biscuit.yaml;
 
     fonts = {
       serif = {
@@ -22,8 +21,8 @@
       };
 
       emoji = {
-        package = pkgs.twemoji-color-font;
-        name = "Twemoji Color Emoji";
+        package = pkgs.noto-fonts-emoji;
+        name = "Noto Color Emoji";
       };
     };
 
