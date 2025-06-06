@@ -25,7 +25,20 @@ function CenterSection() {
   return <box className="center" />
 }
 function EndSection() {
-  return <box className="end" />
+  return (
+    <box
+      className="end"
+      valign={Gtk.Align.END}
+      halign={Gtk.Align.CENTER}
+      spacing={4}
+      vertical={true}>
+      <button
+        onClicked={() => print("hello")}
+        halign={Gtk.Align.CENTER}>
+        <label label={time()} />
+      </button>
+    </box>
+  )
 }
 
 export default function Bar(gdkmonitor: Gdk.Monitor) {
