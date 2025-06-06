@@ -39,7 +39,6 @@ in
     wget
     curl
     lazygit
-    kitty
     tmux
     onefetch
     imagemagick
