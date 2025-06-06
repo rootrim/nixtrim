@@ -17,7 +17,7 @@ $base0E: #d3869b; // purple
 $base0F: #d65d0e; // brown
 
 window.Bar {
-  background: transparent;
+  background: $base00;
   color: $base05;
   font-weight: bold;
 
