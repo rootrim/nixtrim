@@ -1,31 +1,31 @@
-import { Gtk } from "astal/gtk3"
+import { bind } from "astal"
 import HyprlandService from "gi://AstalHyprland"
 
-const hyprland = HyprlandService.get_default()
 
 export default function Workspaces() {
-  return <box
-    className='workspace'
-    vertical={true}
-    spacing={4}>
-    {Array.from({ length: 5 }).map((_, i) =>
-      <button
-        className='button'
-        cursor='pointer'
-        halign={Gtk.Align.CENTER}
-        onClick={() => hyprland.message(`dispatch workspace ${i + 1}`)}
-        setup={(self) => {
-          self.hook(hyprland, 'event', () => {
-            self.toggleClassName('active', hyprland.get_focused_workspace().get_id() === i + 1)
-          })
-        }}>
-        <label label={`${numToKanji(i)}`} />
-      </button>
+
+  const hyprland = HyprlandService.get_default()
+
+  return <box className="Workspaces" vertical={true} spacing={4}>
+    {bind(hyprland, "workspaces").as(wss => wss
+      .filter(ws => !(ws.id >= -99 && ws.id <= -2)) // filter out special workspaces
+      .sort((a, b) => a.id - b.id)
+      .map(ws => (
+        <button
+          className={bind(hyprland, "focusedWorkspace").as(fw =>
+            ws === fw ? "focused" : "")}
+          onClicked={() => ws.focus()}>
+          {numToKanji(ws.id - 1)}
+        </button>
+      ))
     )}
   </box>
 }
 
 function numToKanji(num: number): string {
-  const kanjiNumbers = ["一", "二", "三", "四", "五"];
-  return num.toString().split('').map(digit => kanjiNumbers[parseInt(digit)]).join('');
+  const kanjiNumbers = ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十"];
+  if (num < 0 || num >= kanjiNumbers.length) {
+    return "?"; // Handle out of range
+  }
+  return kanjiNumbers[num];
 }

@@ -40,7 +40,7 @@ window.Bar {
       background-color: $base03;
     }
 
-    &.active {
+    &.focused {
       background-color: $base0D;
       color: $base00;
       font-weight: bold;
