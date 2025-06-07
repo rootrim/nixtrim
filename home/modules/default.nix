@@ -21,5 +21,6 @@
     ./dark-shell.nix
     ./wezterm.nix
     ./kitty.nix
+    ./gtk.nix
   ];
 }
