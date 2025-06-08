@@ -39,6 +39,7 @@
       ];
     };
     blueman.enable = true;
+    upower.enable = true;
   };
 
 }

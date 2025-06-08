@@ -16,30 +16,18 @@ $base0D: #83a598; // blue
 $base0E: #d3869b; // purple
 $base0F: #d65d0e; // brown
 
-window.Bar {
+.Bar {
+  font-family: "CaskaydiaCoveNerdFont", monospace;
+  font-size: 14px;
   background: $base00;
   color: $base05;
   font-weight: bold;
-
-  >centerbox {
-    background: $base01;
-    border-radius: 10px;
-    margin: 8px;
-    padding: 4px;
-
-    >EndSection {
-      >BatteryLevel {
-        color: $base0B;
-        font-weight: bold;
-      }
-    }
-
-  }
+  min-width: 50px;
 
   button {
     background-color: $base01;
     color: $base05;
-    border-radius: 6px;
+    border-radius: 10px;
     margin: 4px;
     padding: 6px 10px;
     border: none;
@@ -55,4 +43,29 @@ window.Bar {
       box-shadow: 0 0 0 2px $base05;
     }
   }
+}
+
+.Battery {
+  background: $base01;
+  color: $base05;
+  border-radius: 6px;
+  padding: 4px;
+  font-weight: bold;
+
+  >BatteryLevel {
+    color: $base0B;
+    background: $base01;
+    font-weight: bold;
+    padding: 2px 4px;
+    border-radius: 4px;
+
+    &.low {
+      color: $base08; // red
+    }
+  }
+}
+
+.corner {
+  background-color: $base00;
+  font-size: 5rem;
 }

@@ -1,6 +1,7 @@
 import { App, Astal, Gtk, Gdk } from "astal/gtk3"
 import Workspaces from "./Workspaces"
 import { AudioSlider, BatteryLevel, SysTray, TimeStatus } from "./SystemIndicators"
+import { CornerTopright, CornerBottomright } from "./ScreenCorners"
 
 
 function Divider() {
@@ -33,8 +34,8 @@ function EndSection() {
       halign={Gtk.Align.CENTER}
       spacing={4}
       vertical={true}>
-      <BatteryLevel />
       <AudioSlider />
+      <BatteryLevel />
       <SysTray />
       <TimeStatus />
     </box>
@@ -44,23 +45,25 @@ function EndSection() {
 export default function Bar(gdkmonitor: Gdk.Monitor) {
   const { TOP, BOTTOM, RIGHT } = Astal.WindowAnchor
 
-  return <window
-    className="Bar"
-    gdkmonitor={gdkmonitor}
-    exclusivity={Astal.Exclusivity.EXCLUSIVE}
-    layer={Astal.Layer.TOP}
-    anchor={TOP | RIGHT | BOTTOM}
-    application={App}>
+  return (
+    <window
+      className="Bar"
+      gdkmonitor={gdkmonitor}
+      exclusivity={Astal.Exclusivity.EXCLUSIVE}
+      layer={Astal.Layer.TOP}
+      anchor={TOP | RIGHT | BOTTOM}
+      application={App}>
 
-    <box className="bar">
-      <centerbox
-        className="sections"
-        vertical={true}>
+      <box className="bar">
+        <centerbox
+          className="sections"
+          vertical={true}>
 
-        <StartSection />
-        <CenterSection />
-        <EndSection />
-      </centerbox>
-    </box>
-  </window>
+          <StartSection />
+          <CenterSection />
+          <EndSection />
+        </centerbox>
+      </box>
+    </window>
+  )
 }

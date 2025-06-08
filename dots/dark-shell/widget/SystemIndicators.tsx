@@ -17,11 +17,12 @@ export function SysTray() {
     className="SysTray"
     valign={Gtk.Align.END}
     halign={Gtk.Align.CENTER}
+    spacing={4}
     vertical={true}>
     {bind(tray, "items").as(items => items.map(item => (
       <menubutton
         tooltipMarkup={bind(item, "tooltipMarkup")}
-        usePopover={false}
+        usePopover={true}
         actionGroup={bind(item, "actionGroup").as(ag => ["dbusmenu", ag])}
         menuModel={bind(item, "menuModel")}>
         <icon gicon={bind(item, "gicon")} />
@@ -35,7 +36,7 @@ export function AudioSlider() {
 
   return <box
     className="AudioSlider"
-    css="min-height: 100px"
+    css="min-height: 200px"
     valign={Gtk.Align.END}
     halign={Gtk.Align.CENTER}
     vertical={true}>
@@ -54,11 +55,12 @@ export function BatteryLevel() {
 
   return <box className="Battery"
     visible={bind(bat, "isPresent")}
+    vertical={true}
     valign={Gtk.Align.END}
     halign={Gtk.Align.CENTER}>
     <icon icon={bind(bat, "batteryIconName")} />
     <label label={bind(bat, "percentage").as(p =>
-      `${Math.floor(p * 100)} %`
+      `${Math.floor(p * 100)}`
     )} />
   </box>
 }
