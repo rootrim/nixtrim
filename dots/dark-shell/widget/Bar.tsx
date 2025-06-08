@@ -1,12 +1,6 @@
 import { App, Astal, Gtk, Gdk } from "astal/gtk3"
 import Workspaces from "./Workspaces"
-import { AudioSlider, BatteryLevel, SysTray, TimeStatus, Wifi } from "./SystemIndicators"
-import { CornerTopright, CornerBottomright } from "./ScreenCorners"
-
-
-function Divider() {
-  return (<box className="divider" />)
-}
+import { AudioSlider, BatteryLevel, CpuUsage, RamUsage, SysTray, TimeStatus, Wifi } from "./SystemIndicators"
 
 function StartSection() {
   return (
@@ -35,6 +29,8 @@ function EndSection() {
       spacing={4}
       vertical={true}>
       <AudioSlider />
+      <CpuUsage />
+      <RamUsage />
       <Wifi />
       <BatteryLevel />
       <SysTray />

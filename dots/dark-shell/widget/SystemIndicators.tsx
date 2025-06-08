@@ -96,3 +96,31 @@ export function Wifi() {
     ))}
   </box>
 }
+
+export function RamUsage() {
+  const ram = Variable("").poll(1000, `bash -c "free | awk '/Mem:/ {printf \\"%d\\", $3/$2 * 100}'"`)
+  return (
+    <box
+      className="RamUsage"
+      valign={Gtk.Align.END}
+      halign={Gtk.Align.CENTER}
+      vertical={true}>
+      <icon icon="memory" />
+      <label label={ram()} />
+    </box>
+  )
+}
+
+export function CpuUsage() {
+  const cpu = Variable("").poll(1000, `bash -c "top -bn1 | grep 'Cpu(s)' | awk '{print int($2 + $4)}'"`)
+  return (
+    <box
+      className="CpuUsage"
+      valign={Gtk.Align.END}
+      halign={Gtk.Align.CENTER}
+      vertical={true}>
+      <icon icon="ayatana-indicator-keyboard-Am" />
+      <label label={cpu()} />
+    </box>
+  )
+}
