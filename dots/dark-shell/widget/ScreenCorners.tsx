@@ -1,4 +1,4 @@
-import { Astal, Gtk } from "astal/gtk3";
+import { Astal, Gtk, Gdk } from "astal/gtk3";
 
 export const RoundedCorner = (place: String, props: Object) => (
   <drawingarea
@@ -41,7 +41,7 @@ export const RoundedCorner = (place: String, props: Object) => (
   />
 );
 
-export const CornerTopleft = (gdkmonitor: Number) => (
+export const CornerTopleft = (gdkmonitor: Gdk.Monitor) => (
   <window
     className="w-corner"
     namespace="corner-t-l"
@@ -54,7 +54,7 @@ export const CornerTopleft = (gdkmonitor: Number) => (
   />
 );
 
-export const CornerTopright = (gdkmonitor: Number) => (
+export const CornerTopright = (gdkmonitor: Gdk.Monitor) => (
   <window
     className="w-corner"
     namespace="corner-t-r"
@@ -67,7 +67,7 @@ export const CornerTopright = (gdkmonitor: Number) => (
   />
 );
 
-export const CornerBottomleft = (gdkmonitor: Number) => (
+export const CornerBottomleft = (gdkmonitor: Gdk.Monitor) => (
   <window
     className="w-corner"
     name={`cornerbl${gdkmonitor}`}
@@ -79,7 +79,7 @@ export const CornerBottomleft = (gdkmonitor: Number) => (
   />
 );
 
-export const CornerBottomright = (gdkmonitor: Number) => (
+export const CornerBottomright = (gdkmonitor: Gdk.Monitor) => (
   <window
     className="w-corner"
     name={`cornerbr${gdkmonitor}`}

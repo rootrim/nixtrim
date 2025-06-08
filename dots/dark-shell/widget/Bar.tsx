@@ -1,6 +1,6 @@
 import { App, Astal, Gtk, Gdk } from "astal/gtk3"
 import Workspaces from "./Workspaces"
-import { AudioSlider, BatteryLevel, SysTray, TimeStatus } from "./SystemIndicators"
+import { AudioSlider, BatteryLevel, SysTray, TimeStatus, Wifi } from "./SystemIndicators"
 import { CornerTopright, CornerBottomright } from "./ScreenCorners"
 
 
@@ -35,6 +35,7 @@ function EndSection() {
       spacing={4}
       vertical={true}>
       <AudioSlider />
+      <Wifi />
       <BatteryLevel />
       <SysTray />
       <TimeStatus />

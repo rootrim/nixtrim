@@ -18,10 +18,11 @@ $base0F: #bd6f3e;
 .Bar {
   font-family: "CaskaydiaCoveNerdFont", monospace;
   font-size: 14px;
-  background: $base00;
+  background-color: $base00;
   color: $base05;
   font-weight: bold;
   min-width: 50px;
+  padding: 6px;
 
   button {
     background-color: $base01;
@@ -39,28 +40,64 @@ $base0F: #bd6f3e;
       background-color: $base0D;
       color: $base00;
       font-weight: bold;
-      box-shadow: 0 0 0 2px $base05;
+      box-shadow: 0 0 0 2px $base06;
     }
   }
 }
 
 .Battery {
-  background: $base01;
+  background-color: $base01;
   color: $base05;
-  border-radius: 6px;
+  border-radius: 10px;
   padding: 4px;
   font-weight: bold;
+  min-width: 25px;
 
-  >BatteryLevel {
+  BatteryLevel {
     color: $base0B;
-    background: $base01;
+    background-color: $base01;
     font-weight: bold;
     padding: 2px 4px;
-    border-radius: 4px;
+    border-radius: 10px;
 
     &.low {
       color: $base08;
     }
+  }
+}
+
+.Wifi {
+  background-color: $base01;
+  border-radius: 10px;
+  min-width: 35px;
+  min-height: 35px;
+}
+
+.AudioSlider {
+  background-color: $base01;
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  min-height: 200px;
+
+  slider {
+    min-height: 10px;
+    min-width: 10px;
+
+    trough {
+      background-color: $base02;
+      border-radius: 5px;
+    }
+
+    slider {
+      background-color: $base0D;
+      border-radius: 5px;
+    }
+  }
+
+  icon {
+    margin-bottom: 10px;
+    color: $base05;
   }
 }
 

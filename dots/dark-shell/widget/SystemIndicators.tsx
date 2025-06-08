@@ -1,8 +1,5 @@
-import { App } from "astal/gtk3"
-import { Variable, GLib, bind } from "astal"
-import { Astal, Gtk, Gdk } from "astal/gtk3"
-import Hyprland from "gi://AstalHyprland"
-import Mpris from "gi://AstalMpris"
+import { Variable, bind } from "astal"
+import { Gtk } from "astal/gtk3"
 import Battery from "gi://AstalBattery"
 import Wp from "gi://AstalWp"
 import Network from "gi://AstalNetwork"
@@ -17,7 +14,6 @@ export function SysTray() {
     className="SysTray"
     valign={Gtk.Align.END}
     halign={Gtk.Align.CENTER}
-    spacing={4}
     vertical={true}>
     {bind(tray, "items").as(items => items.map(item => (
       <menubutton
@@ -36,11 +32,11 @@ export function AudioSlider() {
 
   return <box
     className="AudioSlider"
-    css="min-height: 200px"
     valign={Gtk.Align.END}
     halign={Gtk.Align.CENTER}
     vertical={true}>
     <icon icon={bind(speaker, "volumeIcon")} />
+    <label label={bind(speaker, "volume").as(v => `${Math.floor(v * 100)}`)} />
     <slider
       vertical={true}
       vexpand
@@ -79,4 +75,24 @@ export function TimeStatus() {
       <label label={time()} />
     </button>
   )
+}
+
+
+export function Wifi() {
+  const network = Network.get_default()
+  const wifi = bind(network, "wifi")
+
+  return <box
+    visible={wifi.as(Boolean)}
+    vertical={true}
+    valign={Gtk.Align.END}
+    halign={Gtk.Align.CENTER}>
+    {wifi.as(wifi => wifi && (
+      <icon
+        tooltipText={bind(wifi, "ssid").as(String)}
+        className="Wifi"
+        icon={bind(wifi, "iconName")}
+      />
+    ))}
+  </box>
 }
