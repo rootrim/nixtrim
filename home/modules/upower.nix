@@ -1,0 +1,5 @@
+{
+  service.upower = {
+    enable = true;
+  };
+}

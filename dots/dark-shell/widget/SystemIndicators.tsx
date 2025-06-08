@@ -52,31 +52,28 @@ export function AudioSlider() {
 export function BatteryLevel() {
   const bat = Battery.get_default()
 
-  return (
-    <box
-      className="Battery"
-      visible={bind(bat, "isPresent")}
-      valign={Gtk.Align.END}
-      halign={Gtk.Align.CENTER}
-      vertical={true}>
-      <icon icon={bind(bat, "batteryIconName")} />
-      <label label={bind(bat, "percentage").as(p =>
-        `${Math.floor(p * 100)} %`
-      )} />
-    </box>
-  )
+  return <box className="Battery"
+    visible={bind(bat, "isPresent")}
+    valign={Gtk.Align.END}
+    halign={Gtk.Align.CENTER}>
+    <icon icon={bind(bat, "batteryIconName")} />
+    <label label={bind(bat, "percentage").as(p =>
+      `${Math.floor(p * 100)} %`
+    )} />
+  </box>
 }
 
 
 export function TimeStatus() {
 
+  const bat = Battery.get_default()
   const time = Variable("").poll(1000, "date '+%H%n%M'")
   return (
     <button
       className="Time"
       valign={Gtk.Align.END}
       halign={Gtk.Align.CENTER}
-      onClicked={() => print("hello")}>
+      onClicked={() => print(bat.batteryIconName)}>
       <label label={time()} />
     </button>
   )

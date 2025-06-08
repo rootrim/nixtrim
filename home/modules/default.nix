@@ -22,5 +22,6 @@
     ./wezterm.nix
     ./kitty.nix
     ./gtk.nix
+    ./upower.nix
   ];
 }
