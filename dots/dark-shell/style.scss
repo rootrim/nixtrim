@@ -26,10 +26,18 @@ window.Bar {
     border-radius: 10px;
     margin: 8px;
     padding: 4px;
+
+    >EndSection {
+      >BatteryLevel {
+        color: $base0B;
+        font-weight: bold;
+      }
+    }
+
   }
 
   button {
-    background-color: $base02;
+    background-color: $base01;
     color: $base05;
     border-radius: 6px;
     margin: 4px;
