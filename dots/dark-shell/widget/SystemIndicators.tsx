@@ -39,6 +39,7 @@ export function AudioSlider() {
     <label label={bind(speaker, "volume").as(v => `${Math.floor(v * 100)}`)} />
     <slider
       vertical={true}
+      inverted={true}
       vexpand
       onDragged={({ value }) => speaker.volume = value}
       value={bind(speaker, "volume")}
