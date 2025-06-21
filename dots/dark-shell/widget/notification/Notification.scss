@@ -1,16 +1,36 @@
 @use "sass:string";
 
+$base00: #292828;
+$base01: #32302f;
+$base02: #504945;
+$base03: #665c54;
+$base04: #bdae93;
+$base05: #ddc7a1;
+$base06: #ebdbb2;
+$base07: #fbf1c7;
+$base08: #ea6962;
+$base09: #e78a4e;
+$base0A: #d8a657;
+$base0B: #a9b665;
+$base0C: #89b482;
+$base0D: #7daea3;
+$base0E: #d3869b;
+$base0F: #bd6f3e;
+
 @function gtkalpha($c, $a) {
   @return string.unquote("alpha(#{$c},#{$a})");
 }
 
-// https://gitlab.gnome.org/GNOME/gtk/-/blob/gtk-3-24/gtk/theme/Adwaita/_colors-public.scss
-$fg-color: #{"@theme_fg_color"};
-$bg-color: #{"@theme_bg_color"};
-$error: red;
+$fg-color: $base05;
+$bg-color: gtkalpha($base01, 0.85);
+$error: $base08;
+$info: $base0D;
+$warn: $base09;
+$success: $base0B;
 
 window.NotificationPopups {
   all: unset;
+  font-family: "CaskaydiaCoveNerdFont", monospace;
 }
 
 eventbox.Notification {
@@ -23,29 +43,62 @@ eventbox.Notification {
     margin-bottom: 1rem;
   }
 
-  // eventboxes can not take margins so we style its inner box instead
   >box {
     min-width: 400px;
     border-radius: 13px;
     background-color: $bg-color;
-    margin: .5rem 1rem .5rem 1rem;
+    margin: .5rem 1rem;
     box-shadow: 2px 3px 8px 0 gtkalpha(black, .4);
     border: 1pt solid gtkalpha($fg-color, .03);
+    font-family: "CaskaydiaCoveNerdFont", monospace;
+    transition: background-color 0.2s ease;
   }
 
   &.critical>box {
     border: 1pt solid gtkalpha($error, .4);
 
-    .header {
+    .header .app-name {
+      color: gtkalpha($error, .8);
+    }
 
-      .app-name {
-        color: gtkalpha($error, .8);
+    .header .app-icon {
+      color: gtkalpha($error, .6);
+    }
+  }
 
-      }
+  &.info>box {
+    border: 1pt solid gtkalpha($info, .4);
 
-      .app-icon {
-        color: gtkalpha($error, .6);
-      }
+    .header .app-name {
+      color: gtkalpha($info, .8);
+    }
+
+    .header .app-icon {
+      color: gtkalpha($info, .6);
+    }
+  }
+
+  &.warning>box {
+    border: 1pt solid gtkalpha($warn, .4);
+
+    .header .app-name {
+      color: gtkalpha($warn, .8);
+    }
+
+    .header .app-icon {
+      color: gtkalpha($warn, .6);
+    }
+  }
+
+  &.success>box {
+    border: 1pt solid gtkalpha($success, .4);
+
+    .header .app-name {
+      color: gtkalpha($success, .8);
+    }
+
+    .header .app-icon {
+      color: gtkalpha($success, .6);
     }
   }
 
@@ -74,6 +127,13 @@ eventbox.Notification {
       padding: .2rem;
       min-width: 0;
       min-height: 0;
+      background: transparent;
+      border: none;
+      color: gtkalpha($fg-color, 0.6);
+
+      &:hover {
+        color: $base07;
+      }
     }
   }
 
@@ -112,6 +172,18 @@ eventbox.Notification {
 
     button {
       margin: 0 .3rem;
+      padding: .3rem .6rem;
+      border-radius: 5px;
+      background-color: gtkalpha($base03, .3);
+      border: 1px solid gtkalpha($fg-color, .1);
+      color: $fg-color;
+      font-weight: 500;
+      transition: all 0.15s ease-in-out;
+
+      &:hover {
+        background-color: gtkalpha($fg-color, 0.1);
+        color: $base07;
+      }
 
       &:first-child {
         margin-left: 0;
