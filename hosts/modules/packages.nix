@@ -6,6 +6,7 @@
     home-manager
     monocraft
     wirelesstools
+    libnotify
   ];
 
   programs.zsh = {

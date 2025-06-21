@@ -84,6 +84,7 @@ in
     rmpc
     superTuxKart
     qbittorrent
+    qgroundcontrol
   ];
 
   home = {
