@@ -1,4 +1,5 @@
 import { Variable, bind } from "astal"
+import { GLib } from "astal"
 import { Gtk } from "astal/gtk3"
 import Battery from "gi://AstalBattery"
 import Wp from "gi://AstalWp"
