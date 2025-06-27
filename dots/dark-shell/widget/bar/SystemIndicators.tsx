@@ -66,7 +66,9 @@ export function BatteryLevel() {
 export function TimeStatus() {
 
   const bat = Battery.get_default()
-  const time = Variable("").poll(1000, "date '+%H%n%M'")
+  const time = (time: number, format = "+%H%n%M") => GLib.DateTime
+    .new_from_unix_local(time)
+    .format(format)!
   return (
     <button
       className="Time"

@@ -10,7 +10,7 @@ export const RoundedCorner = (place: String, props: Object) => (
       const r = 2;
       widget.set_size_request(r, r);
     }}
-    onDraw={(widget, cr) => {
+    onDraw={((widget, cr) => {
       const r = 10;
 
       widget.set_size_request(r, r);
@@ -37,7 +37,7 @@ export const RoundedCorner = (place: String, props: Object) => (
       cr.closePath();
       cr.clip();
       Gtk.render_background(widget.get_style_context(), cr, 0, 0, r, r);
-    }}
+    }) as any}
   />
 );
 

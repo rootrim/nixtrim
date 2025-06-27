@@ -6,6 +6,7 @@
     "target": "ES2022",
     "module": "ES2022",
     "moduleResolution": "Bundler",
+    "noImplicitAny": false,
     // "checkJs": true,
     // "allowJs": true,
     "jsx": "react-jsx",
