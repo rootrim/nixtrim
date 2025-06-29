@@ -1,5 +1,5 @@
 {
-  description = "ZA-WARUDO: A nerds managing system";
+  description = "Lunar Chimera: Zenith Designs";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -24,6 +24,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     ags.url = "github:aylur/ags";
+    quickshell = {
+      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     yazi.url = "github:sxyazi/yazi";
