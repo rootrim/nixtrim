@@ -9,7 +9,6 @@ let
   zen-browser = inputs.zen-browser.packages."${system}".default;
   yazi = inputs.yazi.packages.${system}.default;
   sherlock = inputs.sherlock.packages.${system}.default;
-  nixvim = inputs.nixvim.packages.${system}.default;
   astal = inputs.astal.packages.${system}.default;
 in
 {
@@ -22,7 +21,6 @@ in
     zen-browser
     yazi
     sherlock
-    nixvim
     astal
     quickshell
     neofetch

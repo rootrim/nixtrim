@@ -15,10 +15,6 @@
       url = "github:Skxxtz/sherlock";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixvim = {
-      url = "github:rootrim/nvix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     astal = {
       url = "github:aylur/astal";
       inputs.nixpkgs.follows = "nixpkgs";
