@@ -17,7 +17,6 @@
     ./ncmpcpp.nix
     ./mpd.nix
     ./dunst.nix
-    ./dark-shell.nix
     ./wezterm.nix
     ./kitty.nix
     ./gtk.nix
