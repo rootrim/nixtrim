@@ -11,7 +11,6 @@ let
   sherlock = inputs.sherlock.packages.${system}.default;
   nixvim = inputs.nixvim.packages.${system}.default;
   astal = inputs.astal.packages.${system}.default;
-  quickshell = inputs.quickshell.packages.${system}.default;
 in
 {
 
@@ -26,7 +25,6 @@ in
     nixvim
     astal
     quickshell
-    nodejs_23
     neofetch
     git
     neovim

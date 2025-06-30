@@ -18,8 +18,8 @@ let
     "q" = "exit";
 
     "rebuild" = "sudo nixos-rebuild switch --flake ~/.config/nixtrim#zenith";
+    "reflake" = "nix flake update --flake ~/.config/nixtrim#zenith";
 
-    "lspwd" = "pwd;eza";
     "konodioda" = "onefetch -i def.jpg --nerd-fonts";
   };
 in
@@ -38,7 +38,7 @@ in
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     historySubstringSearch.enable = true;
-    initExtra = ''
+    initContent = ''
       SHELL=${pkgs.zsh}/bin/zsh
       zstyle ':completion:*' menu select
       bindkey "^[[1;5C" forward-word
@@ -46,17 +46,5 @@ in
       unsetopt BEEP
       eval "$(zoxide init --cmd cd zsh)"
     '';
-  };
-
-  config.programs.bash = {
-    shellAliases = aliases // config.shellAliases;
-    enable = true;
-    initExtra = "SHELL=${pkgs.bash}";
-  };
-  options.programs.zsh.antidote = {
-    enabled = true;
-    plugins = [
-      "Aloxaf/fzf-tab"
-    ];
   };
 }
