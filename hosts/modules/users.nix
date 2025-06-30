@@ -2,7 +2,7 @@
 {
   users.groups.docker = { };
   users.users.rootrim = {
-    shell = pkgs.zsh;
+    shell = pkgs.fish;
     isNormalUser = true;
     description = "rootrim";
     extraGroups = [

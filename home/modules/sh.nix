@@ -47,4 +47,13 @@ in
       eval "$(zoxide init --cmd cd zsh)"
     '';
   };
+
+  config.programs.fish = {
+    enable = true;
+    shellAliases = aliases // config.shellAliases;
+    shellInit = ''
+      ${pkgs.starship}/bin/starship init fish | source
+      ${pkgs.zoxide}/bin/zoxide init fish --cmd cd | source
+    '';
+  };
 }
