@@ -121,7 +121,7 @@
     in
     {
       bash.initExtra = ''eval "$(${init} bash)"'';
-      zsh.initExtra = ''eval "$(${init} zsh)"'';
+      zsh.initContent = ''eval "$(${init} zsh)"'';
       nushell = {
         extraEnv = "mkdir ${dir} ; ${init} nu | save -f ${dir}/init.nu";
         extraConfig = "use ${dir}/init.nu";
