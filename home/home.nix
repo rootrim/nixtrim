@@ -83,6 +83,7 @@ in
     superTuxKart
     qbittorrent
     qgroundcontrol
+    bat
   ];
 
   home = {

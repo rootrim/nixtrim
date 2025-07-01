@@ -2,6 +2,6 @@
   programs.zoxide = {
     enable = true;
     enableZshIntegration = false;
-    enableFishIntegration = true;
+    enableFishIntegration = false;
   };
 }
