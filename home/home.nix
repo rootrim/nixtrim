@@ -9,7 +9,6 @@ let
   zen-browser = inputs.zen-browser.packages."${system}".default;
   yazi = inputs.yazi.packages.${system}.default;
   sherlock = inputs.sherlock.packages.${system}.default;
-  astal = inputs.astal.packages.${system}.default;
 in
 {
 
@@ -21,7 +20,6 @@ in
     zen-browser
     yazi
     sherlock
-    astal
     quickshell
     neofetch
     git
@@ -90,6 +88,7 @@ in
     username = "rootrim";
     homeDirectory = "/home/rootrim";
     sessionVariables = {
+      HYPRSHOT_DIR = "$HOME/Pictures/Screenshots";
       GTK_IM_MODULE = "fcitx";
       QT_IM_MODULE = "fcitx";
       SDL_IM_MODULE = "fcitx";
