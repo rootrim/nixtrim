@@ -40,7 +40,6 @@ in
     historySubstringSearch.enable = true;
     initContent = ''
       eval "$(${pkgs.starship}/bin/starship init zsh)"
-      SHELL=${pkgs.zsh}/bin/zsh
       zstyle ':completion:*' menu select
       bindkey "^[[1;5C" forward-word
       bindkey "^[[1;5D" backward-word
