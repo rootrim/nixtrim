@@ -1,0 +1,38 @@
+(defvar time-format "%H%n%M")
+(defvar timezone "Asia/Istanbul")
+
+
+(
+  defwidget greeter [?text name]
+  (
+    box
+    :orientation "vertical"
+    :halign "center"
+    :valign "bottom"
+    text
+    (
+      button
+      :onclick "echo 'Hello, ${name}'"
+      "Greet"
+    )
+  )
+)
+
+(
+  defwindow bar
+  :monitor 0
+  :geometry (geometry :x "0%"
+                      :y "0%"
+                      :width "2.5%"
+                      :height "100%"
+                      :anchor "right center")
+  :stacking "fg"
+  :exclusive true
+  :focusable false
+  :namespace "example-bar"
+  (
+    greeter
+    :text formattime(EWW_TIME, time-format, timezone)
+    :name "rootrim"
+  )
+)
