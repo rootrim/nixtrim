@@ -1,26 +1,26 @@
 {
   imports = [
+    ./bluetooth.nix
     ./bootloader.nix
+    ./certs.nix
+    ./fcitx.nix
     ./fonts.nix
     ./garbaceCollector.nix
+    ./hyprland.nix
+    ./locale.nix
+    ./mpd.nix
+    ./networking.nix
+    ./nix-ld.nix
+    ./nixsettings.nix
     ./nvidia.nix
     ./packages.nix
-    ./services.nix
-    ./users.nix
-    ./nixsettings.nix
-    ./locale.nix
-    ./networking.nix
-    ./sound.nix
-    ./uwsm.nix
-    ./hyprland.nix
     ./polkit.nix
+    ./services.nix
+    ./sound.nix
     ./steam.nix
-    ./virtualisation.nix
     ./stylix.nix
-    ./nix-ld.nix
-    ./fcitx.nix
-    ./mpd.nix
-    ./certs.nix
-    ./bluetooth.nix
+    ./users.nix
+    ./uwsm.nix
+    ./virtualisation.nix
   ];
 }

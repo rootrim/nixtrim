@@ -1,24 +1,25 @@
 {
   imports = [
+    ./dunst.nix
+    ./eww.nix
+    ./ghostty.nix
     ./git.nix
+    ./gtk.nix
+    ./hypridle.nix
     ./hyprland.nix
-    ./waybar.nix
+    ./hyprlock.nix
+    ./kitty.nix
+    ./mpd.nix
+    ./ncmpcpp.nix
+    ./qt.nix
     ./rofi.nix
     ./sh.nix
-    ./starship.nix
-    ./qt.nix
-    ./tmux.nix
-    ./hypridle.nix
-    ./hyprlock.nix
-    ./zoxide.nix
-    ./stylix.nix
-    ./ghostty.nix
     ./sherlock.nix
-    ./ncmpcpp.nix
-    ./mpd.nix
-    ./dunst.nix
+    ./starship.nix
+    ./stylix.nix
+    ./tmux.nix
+    ./waybar.nix
     ./wezterm.nix
-    ./kitty.nix
-    ./gtk.nix
+    ./zoxide.nix
   ];
 }
