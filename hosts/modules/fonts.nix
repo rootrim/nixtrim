@@ -5,5 +5,6 @@
     noto-fonts
     noto-fonts-cjk-sans
     nerd-fonts.caskaydia-cove
+    monocraft
   ];
 }

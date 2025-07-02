@@ -82,6 +82,7 @@ in
     qbittorrent
     qgroundcontrol
     bat
+    ianny
   ];
 
   home = {
