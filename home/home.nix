@@ -94,6 +94,7 @@ in
       QT_IM_MODULE = "fcitx";
       SDL_IM_MODULE = "fcitx";
       XMODIFIERS = "@im=fcitx";
+      INPUT_METHOD = "fcitx";
     };
     stateVersion = "24.05";
   };

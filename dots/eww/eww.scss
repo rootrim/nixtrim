@@ -2,18 +2,65 @@
   font-family: "CaskaydiaCoveNerdFont", monospace;
 }
 
-body {
-  font-family: "CaskaydiaCoveNerdFont", monospace;
-}
-
 .button {
-  margin-bottom: 4px;
+  margin-top: 0px;
+  margin-left: 4px;
+  margin-right: 4px;
 }
 
 .workspace-button {
-  margin-top: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  margin-right: 4px;
+  margin-left: 4px;
 }
 
 .workspace-button-focused {
+  border-width: 2px;
   border-color: #DDC7A1;
+  margin-right: 4px;
+  margin-left: 4px;
+}
+
+.metric {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  background-color: #3B3834;
+  margin-left: 4px;
+  margin-right: 4px;
+  border-radius: 10px;
+}
+
+.systray {
+  background-color: #3B3834;
+  margin-left: 4px;
+  margin-right: 4px;
+  border-radius: 10px;
+  padding: 4px;
+}
+
+.bottom-right-corner {
+  background-color: #292828;
+  padding-top: 400px;
+  padding-bottom: 400px;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  border-radius: 0%;
+  box-shadow: 2px 0px 1px 0px #292828;
+}
+
+.corner {
+  background-color: transparent;
+  padding: 30px;
+  border-radius: 100%;
+
+  &.left {
+    box-shadow: -25px 30px 0px 0px #292828;
+
+  }
+
+  &.right {
+    box-shadow: 25px 30px 0px 0px #292828;
+  }
 }

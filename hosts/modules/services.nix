@@ -40,6 +40,7 @@
     };
     blueman.enable = true;
     upower.enable = true;
+    flatpak.enable = true;
   };
 
 }

@@ -28,6 +28,7 @@
   :namespace "bar"
   (centerbox
     :orientation "vertical"
+
     (box
      (workspace-widget
       :halign "middle"
@@ -41,11 +42,12 @@
     (box
       :orientation "vertical"
       :valign "end"
-      :space-evenly true
-      :spaceing 4
+      :space-evenly false
+      :spacing 4
 
       (systray
-       :orientation "vertical")
+        :class "systray"
+        :orientation "vertical")
 
       (metric
         :icon ' '
@@ -55,8 +57,10 @@
         :icon ' '
         :value "${round(EWW_RAM.used_mem_perc, 0)}")
 
-      (button-widget
-        :text {formattime(EWW_TIME, "%H%n%M%n%S")}))))
+      (button
+        :class "button"
+        {formattime(EWW_TIME, "%H%n%M%n%S")}))))
+
 
 (defwidget workspace-widget [?halign ?valign ?class]
  (box
@@ -64,24 +68,17 @@
   :halign {halign ?: "center"}
   :valign {valign ?: "center"}
   :class {class ?: "workspace-widget"}
+  :spacing 4
   (for workspace in workspaces
-      (button-widget
-       :command "hyprctl dispatch workspace ${workspace.id}"
-       :text {workspace.name}
-       :class { workspace.focused ? "workspace-button-focused" : "workspace-button"}))))
+      (button
+       :onclick "hyprctl dispatch workspace ${workspace.id}"
+       :class { workspace.focused ? "workspace-button-focused" : "workspace-button"}
+       {workspace.name}))))
 
 
 
 
-(defwidget button-widget [text ?command ?halign ?valign ?class]
-  (button
-    :halign {halign ?: "center"}
-    :valign {valign ?: "center"}
-    :class {class ?: "button"}
-    :onclick "${command}"
-    text))
-
-(defwidget metric [icon value]
+(defwidget metric [?icon value]
   (box
     :class "metric"
     :orientation "v"
@@ -89,4 +86,32 @@
     "${value}"))
 
 
+(defwindow bottom-right-corner
+  :stacking "fg"
+  :monitor 0
+  :geometry (geometry
+              :x "348"
+              :y "-0px"
+              :anchor "bottom right")
+  (box :class "bottom-right-corner"))
+
+(defwindow top-right-corner
+ :exclusive true
+  :monitor 0
+  :geometry (geometry
+              :x "-16px"
+                :y "0px"
+              :anchor "top right")
+  (box :class "top-right-corner"))
+
+
+(defwindow corner-right
+
+  :stacking "fg"
+  :monitor 0
+  :geometry (geometry
+              :x "348"
+              :y "-0px"
+              :anchor "bottom right")
+  (box :class "corner right"))
 
