@@ -1,3 +1,5 @@
 {
-  imports = [ "../../dots/quickshell/" ];
+  imports = [
+    ../../dots/quickshell
+  ];
 }
