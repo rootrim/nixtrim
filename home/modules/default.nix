@@ -21,5 +21,6 @@
     ./waybar.nix
     ./wezterm.nix
     ./zoxide.nix
+    ./quickshell.nix
   ];
 }
