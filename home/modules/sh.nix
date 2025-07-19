@@ -18,7 +18,7 @@ let
     "q" = "exit";
 
     "rebuild" = "sudo nixos-rebuild switch --flake ~/.config/nixtrim#zenith";
-    "reflake" = "nix flake update --flake ~/.config/nixtrim#zenith";
+    "reflake" = "nix flake update --flake ~/.config/nixtrim";
 
     "konodioda" = "onefetch -i def.jpg --nerd-fonts";
   };

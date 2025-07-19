@@ -25,13 +25,14 @@ in
     git
     neovim
     gcc
-    python3
+    python3Full
     rustc
     cargo
     rust-analyzer
     rustfmt
     clippy
     gnumake
+    dotnet-sdk_9
     wget
     curl
     lazygit
@@ -83,6 +84,8 @@ in
     qgroundcontrol
     bat
     ianny
+    blender
+    pixelorama
   ];
 
   home = {
