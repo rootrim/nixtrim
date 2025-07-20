@@ -85,7 +85,7 @@ in
     ianny
     blender
     pixelorama
-    jj
+    jujutsu
   ];
 
   home = {
