@@ -22,5 +22,6 @@
     ./wezterm.nix
     ./zoxide.nix
     ./quickshell.nix
+    ./jujutsu.nix
   ];
 }
