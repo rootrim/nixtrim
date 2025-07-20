@@ -29,8 +29,8 @@ in
     imagemagick # screenshot
   ];
 
-  xdg.configFile."quickshell/manifest.conf".text = lib.generators.toKeyValue { } {
-    shell = "./shell";
-    greeter = "./shell/greeter.qml";
-  };
+  #xdg.configFile."quickshell/manifest.conf".text = lib.generators.toKeyValue { } {
+  #  shell = "./shell";
+  #  greeter = "./shell/greeter.qml";
+  #};
 }

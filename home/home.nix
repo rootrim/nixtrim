@@ -20,7 +20,6 @@ in
     zen-browser
     yazi
     sherlock
-    quickshell
     neofetch
     git
     neovim
@@ -86,6 +85,7 @@ in
     ianny
     blender
     pixelorama
+    jj
   ];
 
   home = {
