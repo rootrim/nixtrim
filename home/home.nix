@@ -97,6 +97,7 @@ in
       SDL_IM_MODULE = "fcitx";
       XMODIFIERS = "@im=fcitx";
       INPUT_METHOD = "fcitx";
+      EDITOR = "nix run github:rootrim/nvix";
     };
     stateVersion = "24.05";
   };
