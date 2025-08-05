@@ -19,6 +19,7 @@
       url = "github:Skxxtz/sherlock";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    aegis.url = "github:rootrim/aegis";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     yazi.url = "github:sxyazi/yazi";
   };

@@ -22,7 +22,6 @@ in
     sherlock
     neofetch
     git
-    neovim
     gcc
     python3Full
     rustc
@@ -85,6 +84,8 @@ in
     ianny
     blender
     pixelorama
+    osu-lazer-bin
+    nvim-pkg
   ];
 
   home = {
@@ -97,7 +98,7 @@ in
       SDL_IM_MODULE = "fcitx";
       XMODIFIERS = "@im=fcitx";
       INPUT_METHOD = "fcitx";
-      EDITOR = "nix run github:rootrim/nvix";
+      EDITOR = "nvim";
     };
     stateVersion = "24.05";
   };
