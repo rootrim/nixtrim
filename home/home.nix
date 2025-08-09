@@ -86,6 +86,11 @@ in
     pixelorama
     osu-lazer-bin
     nvim-pkg
+    lutgen
+    qt5.qtquickcontrols2
+    qt5.qtlocation
+    qt5.qtpositioning
+    qt5.qtmultimedia
   ];
 
   home = {

@@ -21,7 +21,6 @@
     ./waybar.nix
     ./wezterm.nix
     ./zoxide.nix
-    ./quickshell.nix
     ./jujutsu.nix
     ./mako.nix
   ];

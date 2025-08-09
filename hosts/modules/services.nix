@@ -5,6 +5,7 @@
     openssh.enable = true;
     hypridle.enable = true;
     dbus.enable = true;
+    geoclue2.enable = true;
     xserver = {
       enable = false;
       videoDrivers = [ "nvidia" ];
