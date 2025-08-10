@@ -89,7 +89,6 @@ in
     lutgen
     qt5.qtquickcontrols2
     qt5.qtlocation
-    qt5.qtpositioning
     qt5.qtmultimedia
   ];
 
