@@ -8,9 +8,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprland = {
-      url = "github:hyprwm/Hyprland";
-    };
+    hyprland = { url = "github:hyprwm/Hyprland"; };
     sherlock = {
       url = "github:Skxxtz/sherlock";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -20,24 +18,16 @@
     yazi.url = "github:sxyazi/yazi";
   };
 
-  outputs =
-    {
-      nixpkgs,
-      home-manager,
-      ...
-    }@inputs:
+  outputs = { nixpkgs, home-manager, ... }@inputs:
     let
       hostname = "zenith";
       username = "rootrim";
       system = "x86_64-linux";
-    in
-    {
+    in {
 
       nixosConfigurations = {
         "${hostname}" = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs username;
-          };
+          specialArgs = { inherit inputs username; };
           modules = [
             ./hosts/${hostname}/configuration.nix
             inputs.home-manager.nixosModules.home-manager

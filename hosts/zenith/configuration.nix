@@ -1,10 +1,5 @@
-{...}:
-{
-  imports =
-    [
-      ./hardware-configuration.nix
-      ../modules/default.nix
-    ];
+{ ... }: {
+  imports = [ ./hardware-configuration.nix ../modules/default.nix ];
 
   networking.hostName = "zenith";
   console.keyMap = "trq";
