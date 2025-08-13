@@ -1,4 +1,8 @@
-{ pkgs, ... }: {
+{ pkgs, inputs, ... }:
+let
+  system = "x86_64-linux";
+  quickshell = inputs.quickshell.packages."${system}".default;
+in {
   home.packages = with pkgs; [
     qt6.qtimageformats
     qt6.qt5compat
