@@ -7,11 +7,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1754999565,
-        "narHash": "sha256-BKtORTCAwQAIK9mw1na+7MLwKUEH8aTCJ5NtvmCb1Us=",
+        "lastModified": 1755075561,
+        "narHash": "sha256-WSlaXVhzBLOl9jaWjl7Yr0HAZnAIe3vqCpiNa3v7PZo=",
         "owner": "rootrim",
         "repo": "aegis",
-        "rev": "11275f63a642f8fd55415de1f9a6e83d801fd828",
+        "rev": "ced98efd5b2a32903fe67dc2ff1571a820d64a2e",
         "type": "github"
       },
       "original": {

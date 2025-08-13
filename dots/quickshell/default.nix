@@ -9,5 +9,5 @@
     imagemagick
   ];
 
-  xdg.configFile."quickshell/shell".source = "./shell";
+  xdg.configFile."quickshell".source = ./shell;
 }
