@@ -23,5 +23,6 @@
     ./zoxide.nix
     ./jujutsu.nix
     ./mako.nix
+    ./quickshell.nix
   ];
 }
