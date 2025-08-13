@@ -1,1 +1,1 @@
-{ imports = [ ../../dots/quickshell ]; }
+{ imports = [ ../../dots/quickshell/default.nix ]; }
