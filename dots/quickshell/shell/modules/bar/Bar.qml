@@ -44,26 +44,7 @@ Scope {
         ColumnLayout {
           anchors.fill: parent
 
-          Repeater {
-            model: Hyprland.workspaces.values
-            delegate: Rectangle {
-              required property var modelData
-              Layout.alignment: Qt.AlignCenter
-              Layout.preferredWidth: 40
-              Layout.preferredHeight: 40
-              color: Globals.base01
-              visible: modelData.id > 0
-
-              Text {
-                anchors.centerIn: parent
-                font.family: Globals.fontFamily
-                font.pointSize: Globals.fontSize
-                font.bold: true
-                text: parent.modelData.name
-                color: Globals.base07
-              }
-            }
-          }
+          Workspaces {}
 
           Item {
             Layout.fillHeight: true
@@ -71,8 +52,11 @@ Scope {
           Rectangle {
             Layout.alignment: Qt.AlignCenter
             Layout.preferredWidth: 40
-            Layout.preferredHeight: 100
+            Layout.preferredHeight: 80
             color: Globals.base01
+            radius: Globals.defaultRadius
+            border.color: Globals.base02
+            border.width: 2
 
             Text {
               anchors.centerIn: parent
