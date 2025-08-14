@@ -8,10 +8,6 @@ Repeater {
   model: Hyprland.workspaces.values
   delegate: RoundButton {
     id: root
-    function toKanji(id) {
-      const kanji = ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十"];
-      return kanji[id - 1] || id.toString();
-    }
     required property var modelData
     Layout.alignment: Qt.AlignCenter
     Layout.preferredWidth: 40
@@ -20,7 +16,7 @@ Repeater {
     onClicked: modelData.activate()
 
     contentItem: Text {
-      text: root.toKanji(root.modelData.id)
+      text: Funcs.toKanji(root.modelData.id)
       font {
         bold: true
         pointSize: Globals.fontSize

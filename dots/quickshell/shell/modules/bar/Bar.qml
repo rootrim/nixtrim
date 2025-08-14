@@ -1,16 +1,24 @@
 pragma ComponentBehavior: Bound
 import qs
 import Quickshell
-import Quickshell.Hyprland
 import QtQuick
 import QtQuick.Layouts
 
 Scope {
   id: root
 
-  SystemClock {
-    id: clock
-    precision: SystemClock.Seconds
+  Rectangle {
+    width: 400
+    height: 400
+
+    Component.onCompleted: {
+      // for (const workspace of Hyprland.workspaces.values) {
+      //   for (const toplevel of workspace.toplevels.values) {
+      //     console.log(workspace.id, toplevel.title, toplevel.activated);
+      //   }
+      // }
+      console.log(Funcs.getActiveToplevel());
+    }
   }
 
   Variants {
@@ -18,9 +26,10 @@ Scope {
 
     delegate: Component {
       PanelWindow {
+        id: bar
         required property var modelData
         screen: modelData
-        color: Globals.base00
+        color: "transparent"
 
         anchors {
           top: true
@@ -28,34 +37,22 @@ Scope {
           bottom: true
         }
 
-        implicitWidth: 45
+        implicitWidth: 48
 
         ColumnLayout {
           anchors.fill: parent
 
           Workspaces {}
 
-          Item {
-            Layout.fillHeight: true
-          }
-          Rectangle {
-            Layout.alignment: Qt.AlignCenter
-            Layout.preferredWidth: 40
-            Layout.preferredHeight: 80
-            color: Globals.base01
-            radius: Globals.defaultRadius
-            border.color: Globals.base02
-            border.width: 2
+          WindowTitle {}
 
-            Text {
-              anchors.centerIn: parent
-              font.family: Globals.fontFamily
-              font.pointSize: Globals.fontSize
-              font.bold: true
-              color: Globals.base07
-              text: Qt.formatDateTime(clock.date, "hh\nmm\nss")
-            }
+          Spacer {}
+
+          Tray {
+            panel: parent
           }
+
+          Clock {}
         }
       }
     }
