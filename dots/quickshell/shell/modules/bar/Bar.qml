@@ -8,17 +8,6 @@ import QtQuick.Layouts
 Scope {
   id: root
 
-  Rectangle {
-    width: 400
-    height: 400
-
-    Component.onCompleted: {
-      for (const workspace of Hyprland.workspaces.values) {
-        console.log(workspace.id);
-      }
-    }
-  }
-
   SystemClock {
     id: clock
     precision: SystemClock.Seconds
