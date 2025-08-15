@@ -1,20 +1,13 @@
-{
-  pkgs,
-  inputs,
-  ...
-}:
+{ pkgs, inputs, ... }:
 
 let
   system = "x86_64-linux";
   zen-browser = inputs.zen-browser.packages."${system}".default;
   yazi = inputs.yazi.packages.${system}.default;
   sherlock = inputs.sherlock.packages.${system}.default;
-in
-{
+in {
 
-  imports = [
-    ./modules/default.nix
-  ];
+  imports = [ ./modules/default.nix ];
 
   home.packages = with pkgs; [
     zen-browser
@@ -87,6 +80,7 @@ in
     osu-lazer-bin
     nvim-pkg
     lutgen
+    cava
     qt5.qtquickcontrols2
     qt5.qtlocation
     qt5.qtmultimedia
