@@ -1,12 +1,15 @@
 { pkgs, config, lib, ... }:
 let
   aliases = {
-    "tree" = "eza --tree";
     "nv" = "nvim";
 
-    "ll" =
-      "eza -la --sort name --group-directories-first --no-permissions --no-filesize --no-user --no-time";
-    "l" = "ls";
+    "ls" = "eza";
+    "la" = "eza -a";
+    "ll" = "eza -l";
+    "lla" = "eza -la";
+    "tree" = "eza --tree";
+    "treea" = "eza -a --tree";
+    "treela" = "eza -la --tree";
 
     ":q" = "exit";
     "q" = "exit";
