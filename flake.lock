@@ -7,11 +7,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1754915756,
-        "narHash": "sha256-2SGQhBRnqH4uWYH9d+Txr+Xvqtsz+PJ+E9mhB1mCtck=",
+        "lastModified": 1755117410,
+        "narHash": "sha256-0L2B9qljBBCqPQPMZKjchfY5gIyATWnf4oZTq5iF+to=",
         "owner": "rootrim",
         "repo": "aegis",
-        "rev": "2d07af21a4dcf450cb691d1a51d3c783ec398158",
+        "rev": "70e79af52b009532a935877f92931c4a02b13688",
         "type": "github"
       },
       "original": {
@@ -940,12 +940,33 @@
         "type": "github"
       }
     },
+    "quickshell": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1753595452,
+        "narHash": "sha256-vqkSDvh7hWhPvNjMjEDV4KbSCv2jyl2Arh73ZXe274k=",
+        "ref": "refs/heads/master",
+        "rev": "a5431dd02dc23d9ef1680e67777fed00fe5f7cda",
+        "revCount": 665,
+        "type": "git",
+        "url": "https://git.outfoxxed.me/outfoxxed/quickshell"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://git.outfoxxed.me/outfoxxed/quickshell"
+      }
+    },
     "root": {
       "inputs": {
         "aegis": "aegis",
         "home-manager": "home-manager",
         "hyprland": "hyprland",
         "nixpkgs": "nixpkgs_4",
+        "quickshell": "quickshell",
         "sherlock": "sherlock",
         "stylix": "stylix",
         "yazi": "yazi",

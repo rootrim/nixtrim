@@ -1,18 +1,15 @@
-{
-  pkgs,
-  config,
-  lib,
-  ...
-}:
+{ pkgs, config, lib, ... }:
 let
   aliases = {
-    "tree" = "eza --tree";
     "nv" = "nvim";
-    "nvx" = "nix run github:rootrim/nvix";
 
-    "ll" =
-      "eza -la --sort name --group-directories-first --no-permissions --no-filesize --no-user --no-time";
-    "l" = "ls";
+    "ls" = "eza";
+    "la" = "eza -a";
+    "ll" = "eza -l";
+    "lla" = "eza -la";
+    "tree" = "eza --tree";
+    "treea" = "eza -a --tree";
+    "treela" = "eza -la --tree";
 
     ":q" = "exit";
     "q" = "exit";
@@ -20,12 +17,10 @@ let
     "rebuild" = "sudo nixos-rebuild switch --flake ~/.config/nixtrim#zenith";
     "reflake" = "nix flake update --flake ~/.config/nixtrim";
 
-    "konodioda" = "onefetch -i def.jpg --nerd-fonts";
+    "konodioda" = "onefetch -i cover.* --nerd-fonts";
   };
-in
-{
-  options.shellAliases =
-    with lib;
+in {
+  options.shellAliases = with lib;
     mkOption {
       type = types.attrsOf types.str;
       default = { };

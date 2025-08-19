@@ -1,7 +1,6 @@
 {
   imports = [
     ./dunst.nix
-    ./eww.nix
     ./ghostty.nix
     ./git.nix
     ./gtk.nix
@@ -23,5 +22,6 @@
     ./zoxide.nix
     ./jujutsu.nix
     ./mako.nix
+    ./quickshell.nix
   ];
 }
