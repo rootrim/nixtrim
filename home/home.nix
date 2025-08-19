@@ -13,6 +13,8 @@ in {
     zen-browser
     yazi
     sherlock
+    udisks
+    alsa-utils
     neofetch
     git
     gcc
