@@ -13,7 +13,6 @@
     ./qt.nix
     ./rofi.nix
     ./sh.nix
-    ./sherlock.nix
     ./starship.nix
     ./stylix.nix
     ./tmux.nix
@@ -23,5 +22,6 @@
     ./jujutsu.nix
     ./mako.nix
     ./quickshell.nix
+    ./fuzzel.nix
   ];
 }

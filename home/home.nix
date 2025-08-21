@@ -1,10 +1,8 @@
 { pkgs, inputs, ... }:
 
 let
-  system = "x86_64-linux";
-  zen-browser = inputs.zen-browser.packages."${system}".default;
-  yazi = inputs.yazi.packages.${system}.default;
-  sherlock = inputs.sherlock.packages.${system}.default;
+  zen-browser = inputs.zen-browser.packages."${pkgs.system}".default;
+  yazi = inputs.yazi.packages.${pkgs.system}.default;
 in {
 
   imports = [ ./modules/default.nix ];
@@ -12,7 +10,6 @@ in {
   home.packages = with pkgs; [
     zen-browser
     yazi
-    sherlock
     udisks
     alsa-utils
     neofetch
