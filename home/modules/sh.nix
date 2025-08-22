@@ -48,6 +48,7 @@ in {
     shellInit = ''
       ${pkgs.starship}/bin/starship init fish | source
       ${pkgs.zoxide}/bin/zoxide init fish --cmd cd | source
+      set fish_greeting ""
     '';
   };
 }
