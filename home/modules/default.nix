@@ -1,7 +1,6 @@
 {
   imports = [
     ./dunst.nix
-    ./ghostty.nix
     ./git.nix
     ./gtk.nix
     ./hypridle.nix

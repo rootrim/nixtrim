@@ -4,7 +4,7 @@
 
     settings = {
       main = {
-        terminal = "${pkgs.ghostty}/bin/ghostty";
+        terminal = "${pkgs.kitty}/bin/kitty";
         layer = "overlay";
       };
     };
