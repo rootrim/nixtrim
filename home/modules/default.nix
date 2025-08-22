@@ -23,5 +23,6 @@
     ./mako.nix
     ./quickshell.nix
     ./fuzzel.nix
+    ./fastfetch.nix
   ];
 }
