@@ -1,4 +1,4 @@
-{ config, lib, modulesPath, ... }:
+{ config, lib, modulesPath, pkgs, ... }:
 
 {
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
@@ -7,6 +7,7 @@
     [ "xhci_pci" "thunderbolt" "nvme" "usb_storage" "usbhid" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
