@@ -5,7 +5,7 @@
     ./certs.nix
     ./fcitx.nix
     ./fonts.nix
-    ./garbaceCollector.nix
+    ./nh.nix
     ./hyprland.nix
     ./locale.nix
     ./mpd.nix
