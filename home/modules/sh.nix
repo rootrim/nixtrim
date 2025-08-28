@@ -14,8 +14,9 @@ let
     ":q" = "exit";
     "q" = "exit";
 
-    "rebuild" = "sudo nixos-rebuild switch --flake ~/.config/nixtrim#zenith";
-    "reflake" = "nix flake update --flake ~/.config/nixtrim";
+    "rebuild" = "nh os switch";
+
+    "ff" = "fastfetch";
 
     "konodioda" = "onefetch -i cover.* --nerd-fonts";
   };
