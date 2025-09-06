@@ -1,7 +1,12 @@
 {
-  networking.networkmanager = {
-    enable = true;
-    wifi.powersave = true;
+  networking = {
+    nameservers = [ "9.9.9.9" "8.8.8.8" "1.1.1.1" ];
+
+    networkmanager = {
+      enable = true;
+      wifi.powersave = true;
+      #dns = "none";
+    };
   };
 
   # Configure network proxy if necessary
