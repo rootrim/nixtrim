@@ -23,5 +23,6 @@
     ./quickshell.nix
     ./fuzzel.nix
     ./fastfetch.nix
+    ./mangohud.nix
   ];
 }
