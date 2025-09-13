@@ -8,7 +8,6 @@
     ./nh.nix
     ./hyprland.nix
     ./locale.nix
-    ./mpd.nix
     ./networking.nix
     ./nix-ld.nix
     ./nixsettings.nix

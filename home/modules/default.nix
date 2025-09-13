@@ -7,7 +7,6 @@
     ./hyprland.nix
     ./hyprlock.nix
     ./kitty.nix
-    ./mpd.nix
     ./ncmpcpp.nix
     ./qt.nix
     ./rofi.nix
