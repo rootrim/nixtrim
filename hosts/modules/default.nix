@@ -21,5 +21,6 @@
     ./users.nix
     ./uwsm.nix
     ./virtualisation.nix
+    ./firewall.nix
   ];
 }
