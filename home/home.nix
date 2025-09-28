@@ -83,6 +83,8 @@ in {
     qt5.qtquickcontrols2
     qt5.qtlocation
     qt5.qtmultimedia
+    file
+    radare2
   ];
 
   home = {

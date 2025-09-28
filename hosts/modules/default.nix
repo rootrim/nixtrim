@@ -22,5 +22,6 @@
     ./uwsm.nix
     ./virtualisation.nix
     ./firewall.nix
+    ./ghidra.nix
   ];
 }
