@@ -1,20 +1,14 @@
-{
-  pkgs,
-  inputs,
-  ...
-}:
-{
+{ pkgs, inputs, ... }: {
   nixpkgs.config.allowUnfree = true;
-  
-  nixpkgs.overlays = [
-    inputs.aegis.overlays.default
-  ];
+
+  nixpkgs.overlays = [ inputs.aegis.overlays.default ];
 
   environment.systemPackages = with pkgs; [
     home-manager
     monocraft
     wirelesstools
     libnotify
+    nasm
   ];
 
   programs.zsh.enable = true;
