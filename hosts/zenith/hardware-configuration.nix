@@ -4,10 +4,10 @@
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
   boot.initrd.availableKernelModules =
-    [ "xhci_pci" "nvme" "usb_storage" "usbhid" "sd_mod" ];
+    [ "xhci_pci" "thunderbolt" "nvme" "usb_storage" "usbhid" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ ];
-  boot.blacklistedKernelModules = [ "iwlwifi" ];
+  boot.kernelModules = [ "kvm-intel" ];
+  boot.blacklistedKernelModules = [ "bluetooth" "iwlwifi" ];
   boot.kernelParams =
     [ "quiet" "loglevel=0" "rd.systemd.show_status=0" "noapic" "nosplash" ];
   boot.kernelPackages = pkgs.linuxPackages_latest;

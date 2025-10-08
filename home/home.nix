@@ -85,6 +85,8 @@ in {
     qt5.qtmultimedia
     file
     radare2
+    ltrace
+    strace
   ];
 
   home = {
