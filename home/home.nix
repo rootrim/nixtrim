@@ -6,7 +6,6 @@ let
 in {
 
   imports = [ ./modules/default.nix ];
-  nixpkgs.config.permittedInsecurePackages = [ "ventoy" ];
 
   home.packages = with pkgs; [
     zen-browser
@@ -88,7 +87,7 @@ in {
     radare2
     ltrace
     strace
-    ventoy
+    fabric-ai
   ];
 
   home = {
