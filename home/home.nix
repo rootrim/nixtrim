@@ -88,6 +88,7 @@ in {
     ltrace
     strace
     fabric-ai
+    mpv
   ];
 
   home = {
