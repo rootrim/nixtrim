@@ -73,7 +73,6 @@ in {
     qbittorrent
     qgroundcontrol
     bat
-    ianny
     blender
     pixelorama
     osu-lazer-bin
@@ -89,6 +88,7 @@ in {
     strace
     fabric-ai
     mpv
+    hyprshade
   ];
 
   home = {
