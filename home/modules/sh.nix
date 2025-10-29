@@ -50,6 +50,7 @@ in {
       ${pkgs.starship}/bin/starship init fish | source
       ${pkgs.zoxide}/bin/zoxide init fish --cmd cd | source
       set fish_greeting ""
+      set -g fish_key_bindings fish_vi_key_bindings
     '';
   };
 }
