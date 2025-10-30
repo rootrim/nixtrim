@@ -1,15 +1,10 @@
-{
-  inputs,
-  pkgs,
-  ...
-}:
-let
-  configs = ../../dots/hypr;
-in
-{
+{ inputs, pkgs, ... }:
+let configs = ./hypr;
+in {
   wayland.windowManager.hyprland = {
     enable = true;
-    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    package =
+      inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     xwayland.enable = true;
     systemd.enable = true;
     extraConfig = ''

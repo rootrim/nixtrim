@@ -35,7 +35,6 @@ in {
     syntaxHighlighting.enable = true;
     historySubstringSearch.enable = true;
     initContent = ''
-      eval "$(${pkgs.starship}/bin/starship init zsh)"
       zstyle ':completion:*' menu select
       bindkey "^[[1;5C" forward-word
       bindkey "^[[1;5D" backward-word
@@ -47,7 +46,6 @@ in {
     enable = true;
     shellAliases = aliases // config.shellAliases;
     shellInit = ''
-      ${pkgs.starship}/bin/starship init fish | source
       ${pkgs.zoxide}/bin/zoxide init fish --cmd cd | source
       set fish_greeting ""
       set -g fish_key_bindings fish_vi_key_bindings
