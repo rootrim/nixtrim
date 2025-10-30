@@ -15,7 +15,6 @@
     };
     aegis.url = "github:rootrim/aegis";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
-    yazi.url = "github:sxyazi/yazi";
   };
 
   outputs = { nixpkgs, home-manager, ... }@inputs:
