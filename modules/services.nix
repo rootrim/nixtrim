@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   services = {
     printing.enable = true;
     openssh.enable = true;
@@ -25,19 +24,15 @@
         package = pkgs.ly;
       };
     };
-    gnome.gnome-keyring = {
-      enable = true;
-    };
+    gnome.gnome-keyring = { enable = true; };
     zapret = {
-      enable = true;
+      enable = false;
       params = [
         "--dpi-desync=fake,disorder2"
         "--dpi-desync-ttl=1"
         "--dpi-desync-autottl=2"
       ];
-      whitelist = [
-        "discord.com"
-      ];
+      whitelist = [ "discord.com" ];
     };
     blueman.enable = true;
     upower.enable = true;
