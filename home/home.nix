@@ -11,7 +11,7 @@ in {
     alsa-utils
     git
     gcc
-    python3Full
+    python3
     cargo
     gnumake
     wget
