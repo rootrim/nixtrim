@@ -16,7 +16,6 @@ in {
     gnumake
     wget
     curl
-    lazygit
     tmux
     onefetch
     imagemagick
