@@ -1,6 +1,4 @@
-{config, pkgs, ...}:
-{
-  environment.systemPackages = [ pkgs.cudatoolkit ];
+{ config, ... }: {
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
@@ -14,11 +12,11 @@
 
     prime = {
       offload = {
-			  enable = true;
-			  enableOffloadCmd = true;
-		  };
-		  intelBusId = "PCI:0:2:0";
-		  nvidiaBusId = "PCI:01:0:0";
+        enable = true;
+        enableOffloadCmd = true;
+      };
+      intelBusId = "PCI:0:2:0";
+      nvidiaBusId = "PCI:01:0:0";
     };
   };
 }
