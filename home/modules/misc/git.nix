@@ -12,4 +12,5 @@
     };
   };
 
+  programs.gh = { enable = true; };
 }
