@@ -54,11 +54,9 @@ in {
     mpc
     fritzing
     rmpc
-    superTuxKart
     qbittorrent
     qgroundcontrol
     bat
-    blender
     pixelorama
     osu-lazer-bin
     nvim-pkg
