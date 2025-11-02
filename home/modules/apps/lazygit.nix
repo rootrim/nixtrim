@@ -1,1 +1,1 @@
-{ programs.lazygit = { enabled = true; }; }
+{ programs.lazygit = { enable = true; }; }
