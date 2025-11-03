@@ -37,12 +37,10 @@ in {
     eza
     zoxide
     cmatrix
-    lutris
     hyprshot
     feh
     lazydocker
     gimp
-    vesktop
     aircrack-ng
     wifite2
     brightnessctl
