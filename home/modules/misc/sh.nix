@@ -22,18 +22,13 @@ let
     "dl-yt-musiclist" = "yt-dlp -x --audio-format mp3 --yes-playlist";
   };
 in {
-  #options.shellAliases = with lib;
-  #  mkOption {
-  #    type = types.attrsOf types.str;
-  #    default = { };
-  #  };
-
   programs.fish = {
     enable = true;
     shellAliases = aliases;
     shellAbbrs = { };
     shellInit = ''
       set -g fish_key_bindings fish_vi_key_bindings
+      set -g fish_greeting ""
     '';
   };
 }
