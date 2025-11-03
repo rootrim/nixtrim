@@ -1,4 +1,3 @@
-{ pkgs, config, lib, ... }:
 let
   aliases = {
     "nv" = "nvim";
@@ -19,35 +18,21 @@ let
     "ff" = "fastfetch";
 
     "konodioda" = "onefetch -i cover.* --nerd-fonts";
+
+    "dl-yt-musiclist" = "yt-dlp -x --audio-format mp3 --yes-playlist";
   };
 in {
-  options.shellAliases = with lib;
-    mkOption {
-      type = types.attrsOf types.str;
-      default = { };
-    };
+  #options.shellAliases = with lib;
+  #  mkOption {
+  #    type = types.attrsOf types.str;
+  #    default = { };
+  #  };
 
-  config.programs.zsh = {
-    shellAliases = aliases // config.shellAliases;
+  programs.fish = {
     enable = true;
-    enableCompletion = true;
-    autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
-    historySubstringSearch.enable = true;
-    initContent = ''
-      zstyle ':completion:*' menu select
-      bindkey "^[[1;5C" forward-word
-      bindkey "^[[1;5D" backward-word
-      eval "$(zoxide init --cmd cd zsh)"
-    '';
-  };
-
-  config.programs.fish = {
-    enable = true;
-    shellAliases = aliases // config.shellAliases;
+    shellAliases = aliases;
+    shellAbbrs = { };
     shellInit = ''
-      ${pkgs.zoxide}/bin/zoxide init fish --cmd cd | source
-      set fish_greeting ""
       set -g fish_key_bindings fish_vi_key_bindings
     '';
   };
