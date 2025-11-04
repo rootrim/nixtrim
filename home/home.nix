@@ -70,6 +70,7 @@ in {
     fabric-ai
     mpv
     hyprshade
+    tealdeer
   ];
 
   home = {
