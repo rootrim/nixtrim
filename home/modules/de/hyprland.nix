@@ -19,7 +19,6 @@ in {
       source=$configs/decoration.conf
       source=$configs/animations.conf
       source=$configs/layouts.conf
-      source=$configs/plugins.conf
       source=$configs/devices.conf
       source=$configs/binds.conf
       source=$configs/windowrules.conf
