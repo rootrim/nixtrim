@@ -21,7 +21,7 @@
     let
       hostname = "zenith";
       username = "rootrim";
-      system = "x86_64-linux";
+      arch = "x86_64-linux";
     in {
 
       nixosConfigurations = {
@@ -44,7 +44,7 @@
 
       homeConfigurations = {
         nixtrim = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.${system};
+          pkgs = nixpkgs.legacyPackages.${arch};
           home.directory = "/home/${username}";
           user = "${username}";
           configuration = import ./home/home.nix;

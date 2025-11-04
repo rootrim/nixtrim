@@ -1,6 +1,8 @@
 { pkgs, inputs, ... }:
 
-let zen-browser = inputs.zen-browser.packages."${pkgs.system}".default;
+let
+  zen-browser =
+    inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default;
 in {
 
   imports = [ ./modules/default.nix ];
