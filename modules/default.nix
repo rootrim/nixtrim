@@ -18,7 +18,6 @@
     ./steam.nix
     ./stylix.nix
     ./users.nix
-    ./uwsm.nix
     ./virtualisation.nix
     ./firewall.nix
     ./ghidra.nix

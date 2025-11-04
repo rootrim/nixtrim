@@ -5,14 +5,6 @@
     hypridle.enable = true;
     dbus.enable = true;
     geoclue2.enable = true;
-    xserver = {
-      enable = false;
-      videoDrivers = [ "nvidia" ];
-      xkb = {
-        layout = "tr";
-        variant = "";
-      };
-    };
     libinput.enable = true;
     udev.packages = [
       #pkgs.platformio-core
