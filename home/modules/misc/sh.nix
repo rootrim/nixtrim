@@ -10,9 +10,6 @@ let
     "treea" = "eza -a --tree";
     "treela" = "eza -la --tree";
 
-    ":q" = "exit";
-    "q" = "exit";
-
     "rebuild" = "nh os switch";
 
     "ff" = "fastfetch";
