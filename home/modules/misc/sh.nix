@@ -17,6 +17,8 @@ let
     "konodioda" = "onefetch -i cover.* --nerd-fonts";
 
     "dl-yt-musiclist" = "yt-dlp -x --audio-format mp3 --yes-playlist";
+
+    "weather" = "curl wttr.in";
   };
 
   abbrs = { "shut" = "shutdown now"; };
