@@ -3,7 +3,7 @@
     ./dunst.nix
     ./fuzzel.nix
     ./hypridle.nix
-    ./hyprlock.nix
+    ./hyprlock/hyprlock.nix
     ./mako.nix
     ./rofi.nix
   ];
