@@ -73,6 +73,12 @@ in {
     mpv
     hyprshade
     tealdeer
+    dust
+    rm-improved
+    mtr
+    ouch
+    please
+    cbonsai
   ];
 
   home = {
