@@ -1,7 +1,7 @@
 let
-  bg = "./bg.png";
-  layer1 = "./layer1.png";
-  layer2 = "./layer2.png";
+  bg = "~/.config/nixtrim/home/modules/de/services/hyprlock/bg.png";
+  layer1 = "~/.config/nixtrim/home/modules/de/services/hyprlock/layer1.png";
+  layer2 = "~/.config/nixtrim/home/modules/de/services/hyprlock/layer2.png";
 
   background = "rgb(282828)";
   foreground = "rgb(ebdbb2)";
