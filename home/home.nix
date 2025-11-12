@@ -77,7 +77,6 @@ in {
     rm-improved
     mtr
     ouch
-    please
     cbonsai
   ];
 
