@@ -78,6 +78,8 @@ in {
     mtr
     ouch
     cbonsai
+    zig
+    element
   ];
 
   home = {

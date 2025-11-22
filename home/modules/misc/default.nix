@@ -8,5 +8,6 @@
     ./sh.nix
     ./starship.nix
     ./stylix.nix
+    ./bacon.nix
   ];
 }
