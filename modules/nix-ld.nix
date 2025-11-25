@@ -10,6 +10,8 @@
       zlib
       alsa-lib
       libxkbcommon
+      SDL2
+      SDL2_image
     ];
   };
 }
