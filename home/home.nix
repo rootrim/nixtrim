@@ -80,6 +80,8 @@ in {
     cbonsai
     zig
     element
+    lsfg-vk
+    lsfg-vk-ui
   ];
 
   home = {
