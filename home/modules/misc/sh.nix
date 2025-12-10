@@ -13,6 +13,7 @@ let
     "rebuild" = "nh os switch";
 
     "ff" = "fastfetch";
+    "lg" = "lazygit";
 
     "konodioda" = "onefetch -i cover.* --nerd-fonts";
 
