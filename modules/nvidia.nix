@@ -5,7 +5,7 @@
   };
   hardware.nvidia = {
     modesetting.enable = true;
-    open = true;
+    open = false;
 
     powerManagement.enable = false;
     powerManagement.finegrained = true;
@@ -22,4 +22,6 @@
       nvidiaBusId = "PCI:01:0:0";
     };
   };
+  services.xserver.videoDrivers = [ "modesetting" "nvidia" ];
 }
+
