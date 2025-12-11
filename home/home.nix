@@ -82,6 +82,7 @@ in {
     element
     lsfg-vk
     lsfg-vk-ui
+    tor-browser
   ];
 
   home = {
