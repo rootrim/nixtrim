@@ -17,12 +17,14 @@ let
 
     "konodioda" = "onefetch -i cover.* --nerd-fonts";
 
-    "dl-yt-musiclist" = "yt-dlp -x --audio-format mp3 --yes-playlist";
-
     "weather" = "curl wttr.in";
   };
 
-  abbrs = { "shut" = "shutdown now"; };
+  abbrs = {
+    "shut" = "shutdown now";
+
+    "dl-yt-musiclist" = "yt-dlp -x --audio-format mp3 --yes-playlist";
+  };
 in {
   programs.fish = {
     enable = true;
