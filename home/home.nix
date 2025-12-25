@@ -83,6 +83,14 @@ in {
     lsfg-vk
     lsfg-vk-ui
     tor-browser
+    arduino-ide
+    duf
+    jq
+    yq
+    nmap
+    sd
+    xxh
+    xxd
   ];
 
   home = {
