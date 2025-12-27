@@ -57,6 +57,8 @@ Scope {
             panel: parent
           }
 
+          Battery {}
+
           Clock {}
 
           Item {}
