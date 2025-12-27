@@ -18,7 +18,6 @@ in {
     gnumake
     wget
     curl
-    tmux
     onefetch
     imagemagick
     fzf
@@ -34,7 +33,6 @@ in {
     playerctl
     yt-dlp
     hyprpicker
-    btop
     nitch
     eza
     zoxide
