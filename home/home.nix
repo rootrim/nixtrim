@@ -89,6 +89,7 @@ in {
     sd
     xxh
     xxd
+    carl
   ];
 
   home = {
