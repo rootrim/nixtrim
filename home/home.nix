@@ -91,6 +91,7 @@ in {
     xxd
     carl
     impala
+    wiremix
   ];
 
   home = {
