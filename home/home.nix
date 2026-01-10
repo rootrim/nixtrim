@@ -90,6 +90,7 @@ in {
     xxh
     xxd
     carl
+    impala
   ];
 
   home = {
