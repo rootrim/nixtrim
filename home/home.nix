@@ -90,6 +90,7 @@ in {
     xxh
     xxd
     carl
+    wiremix
   ];
 
   home = {
