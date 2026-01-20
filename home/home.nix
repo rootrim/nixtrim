@@ -91,6 +91,7 @@ in {
     xxd
     carl
     wiremix
+    pavucontrol
   ];
 
   home = {
