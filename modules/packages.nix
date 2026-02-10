@@ -5,10 +5,10 @@
 
   environment.systemPackages = with pkgs; [
     home-manager
-    monocraft
     wirelesstools
     libnotify
     nasm
+    xorg.xinit
   ];
 
   programs.fish.enable = true;

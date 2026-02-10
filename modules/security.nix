@@ -1,7 +1,7 @@
 {
   security = {
     doas = {
-      enable = true;
+      enable = false;
       extraRules = [{
         users = [ "rootrim" ];
         keepEnv = true;
