@@ -22,6 +22,6 @@
     ./firewall.nix
     ./ghidra.nix
     ./security.nix
-    ./dwm
+    ./dwm.nix
   ];
 }

@@ -6,5 +6,6 @@
     ./hyprlock/hyprlock.nix
     ./mako.nix
     ./rofi.nix
+    ./picom.nix
   ];
 }

@@ -8,13 +8,26 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprland = { url = "github:hyprwm/Hyprland"; };
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     quickshell = {
       url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    aegis.url = "github:rootrim/aegis";
-    zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    aegis = {
+      url = "github:rootrim/aegis";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    dwm = {
+      url = "github:rootrim/dwm";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { nixpkgs, home-manager, ... }@inputs:

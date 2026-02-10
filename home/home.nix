@@ -92,6 +92,8 @@ in {
     carl
     wiremix
     pavucontrol
+    flameshot
+    xclip
   ];
 
   home = {
