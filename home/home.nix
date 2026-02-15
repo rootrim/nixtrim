@@ -106,6 +106,7 @@ in {
       XMODIFIERS = "@im=fcitx";
       INPUT_METHOD = "fcitx";
       EDITOR = "nvim";
+      ZIG_GLOBAL_CACHE_DIR = "$HOME/.cache/zig";
     };
     stateVersion = "24.05";
   };
