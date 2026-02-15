@@ -7,6 +7,7 @@
     shadow = true;
     shadowOffsets = [ 4 4 ];
     shadowOpacity = 0.7;
+    shadowExclude = [ "class_g = 'dwm'" ];
 
     fade = true;
     fadeDelta = 3;
