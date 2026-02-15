@@ -93,6 +93,7 @@ in {
     pavucontrol
     flameshot
     xclip
+    glow
   ];
 
   home = {
