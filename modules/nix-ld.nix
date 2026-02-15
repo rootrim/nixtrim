@@ -3,9 +3,9 @@
     enable = true;
     libraries = with pkgs; [
       libGL
-      xorg.libXxf86vm
-      xorg.libXext
-      xorg.libX11
+      libXxf86vm
+      libXext
+      libX11
       glib
       zlib
       alsa-lib
