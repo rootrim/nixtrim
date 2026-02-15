@@ -56,7 +56,6 @@ in {
     qgroundcontrol
     bat
     pixelorama
-    osu-lazer-bin
     nvim-pkg
     lutgen
     cava
