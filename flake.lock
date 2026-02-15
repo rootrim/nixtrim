@@ -130,11 +130,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1771153268,
-        "narHash": "sha256-+6AJ4j5isMFD4o+aowtk7EQOP+EtMaUHL9fC0VBV4sE=",
+        "lastModified": 1771160210,
+        "narHash": "sha256-Py7bnYkTfmpxvqchf/A1xzjPK0w7ogGiHkr2k5N2qyA=",
         "owner": "rootrim",
         "repo": "dwm",
-        "rev": "ec641b05397ce51a7203581acf46d7bafe73f2cb",
+        "rev": "384318cb08b0d1a2df7482a26e25319de9f8aaa9",
         "type": "github"
       },
       "original": {
