@@ -17,4 +17,9 @@
     enable = true;
     enableSSHSupport = true;
   };
+
+  programs.xppen = {
+    enable = true;
+    package = pkgs.xppen_3;
+  };
 }

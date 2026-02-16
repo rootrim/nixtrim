@@ -94,6 +94,7 @@ in {
     flameshot
     xclip
     glow
+    krita
   ];
 
   home = {
