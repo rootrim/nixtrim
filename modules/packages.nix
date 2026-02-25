@@ -19,7 +19,12 @@
   };
 
   programs.xppen = {
-    enable = true;
+    enable = false;
     package = pkgs.xppen_3;
+  };
+
+  hardware.opentabletdriver = {
+    enable = true;
+    daemon.enable = true;
   };
 }
