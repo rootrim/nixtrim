@@ -95,6 +95,8 @@ in {
     xclip
     glow
     krita
+    helvum
+    easyeffects
   ];
 
   home = {
@@ -110,7 +112,7 @@ in {
       EDITOR = "nvim";
       ZIG_GLOBAL_CACHE_DIR = "$HOME/.cache/zig";
     };
-    stateVersion = "24.05";
+    stateVersion = "25.11";
   };
 
   programs.home-manager.enable = true;
