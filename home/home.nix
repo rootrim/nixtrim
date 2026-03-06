@@ -3,12 +3,15 @@
 let
   zen-browser =
     inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default;
+  fjordlauncher =
+    inputs.fjordlauncher.packages.${pkgs.stdenv.hostPlatform.system}.fjordlauncher;
 in {
 
   imports = [ ./modules/default.nix ];
 
   home.packages = with pkgs; [
     zen-browser
+    fjordlauncher
     udisks
     alsa-utils
     git
@@ -97,6 +100,7 @@ in {
     krita
     helvum
     easyeffects
+    kdePackages.kdenlive
   ];
 
   home = {
