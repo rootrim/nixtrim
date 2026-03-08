@@ -10,5 +10,6 @@
     ./stylix.nix
     ./bacon.nix
     ./btop.nix
+    ./fsel.nix
   ];
 }

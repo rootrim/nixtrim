@@ -35,7 +35,6 @@ in {
     unzip
     swww
     rofimoji
-    cliphist
     libreoffice-fresh
     playerctl
     yt-dlp
