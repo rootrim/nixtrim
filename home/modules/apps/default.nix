@@ -6,5 +6,6 @@
     ./zoxide.nix
     ./lazygit.nix
     ./zellij.nix
+    ./foot.nix
   ];
 }

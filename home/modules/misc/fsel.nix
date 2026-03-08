@@ -1,5 +1,5 @@
 {
-  home.file.".config/fsel/config.toml".source =
+  home.file.".config/fsel/config.toml".text =
     #toml
     ''
       # Colors
