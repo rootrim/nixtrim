@@ -21,12 +21,20 @@
       url = "github:rootrim/dwm";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    cclip = {
+      url = "github:rootrim/cclip";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    fsel = {
+      url = "github:Mjoyufull/fsel";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     fjordlauncher = {
-      url = "github:unmojang/FjordLauncher";
+      url = "github:hero-persson/FjordLauncherUnlocked";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

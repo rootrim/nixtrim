@@ -4,7 +4,9 @@ let
   zen-browser =
     inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default;
   fjordlauncher =
-    inputs.fjordlauncher.packages.${pkgs.stdenv.hostPlatform.system}.fjordlauncher;
+    inputs.fjordlauncher.packages.${pkgs.stdenv.hostPlatform.system}.default;
+  cclip = inputs.cclip.packages.${pkgs.stdenv.hostPlatform.system}.default;
+  fsel = inputs.fsel.packages.${pkgs.stdenv.hostPlatform.system}.default;
 in {
 
   imports = [ ./modules/default.nix ];
@@ -12,6 +14,8 @@ in {
   home.packages = with pkgs; [
     zen-browser
     fjordlauncher
+    cclip
+    fsel
     udisks
     alsa-utils
     git
