@@ -11,5 +11,7 @@
     ./bacon.nix
     ./btop.nix
     ./fsel.nix
+    ./delta.nix
+    ./nix-your-shell.nix
   ];
 }
