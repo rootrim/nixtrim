@@ -7,7 +7,7 @@
     modesetting.enable = true;
     # Nvidia f you
     # Fix the open-source on the lastest kernel
-    open = false;
+    open = true;
 
     powerManagement.enable = true;
     powerManagement.finegrained = true;
