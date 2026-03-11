@@ -39,11 +39,10 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, stylix, ... }@inputs:
+  outputs = inputs@{ nixpkgs, home-manager, stylix, ... }:
     let
       hostname = "zenith";
       username = "rootrim";
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
     in {
 
       nixosConfigurations = {
@@ -61,14 +60,6 @@
             }
           ];
 
-        };
-      };
-
-      homeConfigurations = {
-        nixtrim = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          extraSpecialArgs = { inherit inputs username; };
-          modules = [ ./home/home.nix ];
         };
       };
     };
