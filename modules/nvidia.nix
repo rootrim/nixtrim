@@ -1,4 +1,4 @@
-{ config, ... }: {
+{
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
@@ -13,7 +13,6 @@
     powerManagement.finegrained = true;
 
     nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.latest;
 
     prime = {
       offload = {
