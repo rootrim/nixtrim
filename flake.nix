@@ -39,11 +39,11 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, ... }@inputs:
+  outputs = { nixpkgs, home-manager, stylix, ... }@inputs:
     let
       hostname = "zenith";
       username = "rootrim";
-      arch = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
     in {
 
       nixosConfigurations = {
@@ -51,8 +51,8 @@
           specialArgs = { inherit inputs username; };
           modules = [
             ./hosts/${hostname}/configuration.nix
-            inputs.home-manager.nixosModules.home-manager
-            inputs.stylix.nixosModules.stylix
+            stylix.nixosModules.stylix
+            home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
@@ -66,10 +66,9 @@
 
       homeConfigurations = {
         nixtrim = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.${arch};
-          home.directory = "/home/${username}";
-          user = "${username}";
-          configuration = import ./home/home.nix;
+          inherit pkgs;
+          extraSpecialArgs = { inherit inputs username; };
+          modules = [ ./home/home.nix ];
         };
       };
     };

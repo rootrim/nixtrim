@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, username, ... }:
 
 let
   zen-browser =
@@ -109,7 +109,7 @@ in {
   ];
 
   home = {
-    username = "rootrim";
+    inherit username;
     homeDirectory = "/home/rootrim";
     sessionVariables = {
       HYPRSHOT_DIR = "$HOME/Pictures/Screenshots";
