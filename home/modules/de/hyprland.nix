@@ -1,27 +1,24 @@
-{ inputs, pkgs, ... }:
 let configs = ./hypr;
 in {
   wayland.windowManager.hyprland = {
     enable = true;
-    package =
-      inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    package = null;
+    portalPackage = null;
     xwayland.enable = true;
     systemd.enable = true;
     extraConfig = ''
-      $configs = ${configs}
       monitor=eDP-1,1920x1080@120.00200,0x0,1
-      monitor=HDMI-2,1920x1080@60.00200,0x0,1
-      source=$configs/mocha.conf
-      source=$configs/gruvbox.conf
-      source=$configs/startup.conf
-      source=$configs/debug.conf
-      source=$configs/general.conf
-      source=$configs/decoration.conf
-      source=$configs/animations.conf
-      source=$configs/layouts.conf
-      source=$configs/devices.conf
-      source=$configs/binds.conf
-      source=$configs/windowrules.conf
+      source=${configs}/mocha.conf
+      source=${configs}/gruvbox.conf
+      source=${configs}/startup.conf
+      source=${configs}/debug.conf
+      source=${configs}/general.conf
+      source=${configs}/decoration.conf
+      source=${configs}/animations.conf
+      source=${configs}/layouts.conf
+      source=${configs}/devices.conf
+      source=${configs}/binds.conf
+      source=${configs}/windowrules.conf
     '';
   };
 }
