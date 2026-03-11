@@ -5,7 +5,9 @@
   };
   hardware.nvidia = {
     modesetting.enable = true;
-    open = true;
+    # Nvidia f you
+    # Fix the open-source on the lastest kernel
+    open = false;
 
     powerManagement.enable = true;
     powerManagement.finegrained = true;
