@@ -37,14 +37,14 @@
       url = "github:hero-persson/FjordLauncherUnlocked";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-cachyos-kernel = { url = "github:xddxdd/nix-cachyos-kernel/release"; };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, stylix, ... }:
+  outputs = inputs@{ nixpkgs, home-manager, stylix, nix-cachyos-kernel, ... }:
     let
       hostname = "zenith";
       username = "rootrim";
     in {
-
       nixosConfigurations = {
         "${hostname}" = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs username; };
@@ -57,9 +57,9 @@
               home-manager.useUserPackages = true;
               home-manager.users.${username} = import ./home/home.nix;
               home-manager.extraSpecialArgs = { inherit inputs username; };
+              nixpkgs.overlays = [ nix-cachyos-kernel.overlays.pinned ];
             }
           ];
-
         };
       };
     };
