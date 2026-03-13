@@ -4,38 +4,44 @@ import QtQuick.Layouts
 import Quickshell.Io
 
 Rectangle {
+  id: batteryBox
   Layout.alignment: Qt.AlignCenter
   Layout.preferredWidth: 40
   Layout.preferredHeight: 40
-  color: Globals.base01
+  color: level <= 20 ? Globals.base08 : Globals.base01
   radius: Globals.defaultRadius
-  border.color: Globals.base03
+  border.color: charging ? Globals.base0B : level <= 20 ? Globals.base08 : Globals.base03
   border.width: 2
 
+  property int level: 0
+  property bool charging: false
+
+  Process {
+    id: batteryProcess
+    command: ["sh", "-c", "echo $(cat /sys/class/power_supply/BAT1/capacity):$(cat /sys/class/power_supply/BAT1/status)"]
+    running: true
+    stdout: StdioCollector {
+      onStreamFinished: {
+        const parts = this.text.trim().split(":");
+        batteryBox.level = parseInt(parts[0]) || 0;
+        batteryBox.charging = parts[1] === "Charging" || parts[1] === "Full";
+      }
+    }
+  }
+
+  Timer {
+    interval: 5000
+    running: true
+    repeat: true
+    onTriggered: batteryProcess.running = true
+  }
+
   Text {
-    id: battery
     anchors.centerIn: parent
     font.family: Globals.fontFamily
     font.pointSize: Globals.fontSize
     font.bold: true
-    color: Globals.base07
-
-    Process {
-      id: batteryProcess
-
-      command: ["cat", "/sys/class/power_supply/BAT1/capacity"]
-      running: true
-
-      stdout: StdioCollector {
-        onStreamFinished: battery.text = this.text.trim()
-      }
-    }
-
-    Timer {
-      interval: 1000
-      running: true
-      repeat: true
-      onTriggered: batteryProcess.running = true
-    }
+    color: parent.charging ? Globals.base0B : parent.level <= 20 ? Globals.base08 : Globals.base07
+    text: parent.level.toString()
   }
 }
