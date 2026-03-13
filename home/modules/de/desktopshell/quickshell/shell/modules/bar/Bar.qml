@@ -57,6 +57,10 @@ Scope {
             panel: parent
           }
 
+          Net {}
+
+          Volume {}
+
           Battery {}
 
           Clock {}

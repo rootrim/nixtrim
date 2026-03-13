@@ -1,3 +1,4 @@
+//@ pragma UseQApplication
 import qs.modules.bar
 import Quickshell
 

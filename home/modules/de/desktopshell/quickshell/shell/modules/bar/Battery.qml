@@ -13,7 +13,7 @@ Rectangle {
   border.color: charging ? Globals.base0B : level <= 20 ? Globals.base08 : Globals.base03
   border.width: 2
 
-  property int level: 0
+  property int level: 100
   property bool charging: false
 
   Process {
