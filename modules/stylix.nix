@@ -16,8 +16,8 @@
       };
 
       monospace = {
-        package = pkgs.nerd-fonts.caskaydia-cove;
-        name = "CaskaydiaCoveNerdFont";
+        package = pkgs.maple-mono.NF;
+        name = "Maple Mono NF";
       };
 
       emoji = {

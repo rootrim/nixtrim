@@ -22,7 +22,7 @@ let
   color14 = "rgb(8ec07c)";
   color15 = "rgb(fbf1c7)";
 
-  font = "Caskaydia Cove Nerd Font Mono";
+  font = "Maple Mono NF";
 
 in {
   programs.hyprlock = {

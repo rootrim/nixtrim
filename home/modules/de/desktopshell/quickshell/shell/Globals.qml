@@ -3,7 +3,7 @@ import QtQuick
 
 QtObject {
   property int defaultRadius: 10
-  property string fontFamily: "CaskaydiaCove Nerd Font"
+  property string fontFamily: "Maple Mono NF"
   property int fontSize: 13
   property color base00: "#292828"
   property color base01: "#32302f"
