@@ -90,7 +90,7 @@ in {
           "windowsOut,       1, 1,    smooth, slide"
           "fade,             1, 3,    smooth"
           "workspaces,       1, 3,    swift,  slidefadevert 15%"
-          "specialWorkspace, 1, 4,    smooth, slidevert"
+          "specialWorkspace, 1, 3,    smooth, slidevert"
         ];
       };
 
@@ -141,7 +141,7 @@ in {
       "$mainMod" = "SUPER";
       "$subMod" = "ALT";
       "$terminal" = "kitty";
-      "$fsel" = "$terminal --title launcher -e fsel -d";
+      "$fsel" = "kitten quick-access-terminal fsel -d";
       "$menu" = "$fsel";
       "$clipboard" = "$fsel --cclip";
 

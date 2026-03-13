@@ -1,10 +1,5 @@
-{
-  pkgs,
-  lib,
-  config,
-  ...
-}: let
-  #lock = "${pkgs.systemd}/bin/loginctl lock-session";
+{ pkgs, lib, config, ... }:
+let
   lock = "hyprlock -q";
 
   brillo = lib.getExe pkgs.brillo;
@@ -23,9 +18,7 @@ in {
           on-timeout = "${brillo} -O; ${brillo} -u 500000 -S 10";
           on-resume = "${brillo} -I -u 250000";
         }
-        {
-          inherit timeout;
-        }
+        { inherit timeout; }
         {
           timeout = timeout + 10;
           on-timeout = lock;
@@ -34,5 +27,6 @@ in {
     };
   };
 
-  systemd.user.services.hypridle.Unit.After = lib.mkForce "graphical-session.target";
+  systemd.user.services.hypridle.Unit.After =
+    lib.mkForce "graphical-session.target";
 }
