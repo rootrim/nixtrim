@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    flake-parts.url = "github:hercules-ci/flake-parts";
     stylix.url = "github:danth/stylix/release-25.11";
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
@@ -41,34 +42,43 @@
   };
 
   outputs = inputs @ {
-    nixpkgs,
+    flake-parts,
     home-manager,
-    stylix,
     nix-cachyos-kernel,
+    nixpkgs,
+    stylix,
     ...
   }: let
     hostname = "zenith";
     username = "rootrim";
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
-  in {
-    nixosConfigurations = {
-      "${hostname}" = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs username;};
-        modules = [
-          ./hosts/${hostname}/configuration.nix
-          stylix.nixosModules.stylix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.${username} = import ./home/home.nix;
-            home-manager.extraSpecialArgs = {inherit inputs username;};
-            nixpkgs.overlays = [nix-cachyos-kernel.overlays.pinned];
-          }
-        ];
+  in
+    flake-parts.lib.mkFlake {inherit inputs;} {
+      flake = {
+        nixosConfigurations = {
+          "${hostname}" = nixpkgs.lib.nixosSystem {
+            specialArgs = {inherit inputs username;};
+            modules = [
+              ./hosts/${hostname}/configuration.nix
+              stylix.nixosModules.stylix
+              home-manager.nixosModules.home-manager
+              {
+                home-manager.useGlobalPkgs = true;
+                home-manager.useUserPackages = true;
+                home-manager.users.${username} = import ./home/home.nix;
+                home-manager.extraSpecialArgs = {inherit inputs username;};
+                nixpkgs.overlays = [nix-cachyos-kernel.overlays.pinned];
+              }
+            ];
+          };
+        };
+        formatter.${system} = pkgs.alejandra;
       };
+      systems = [
+        # systems for which you want to build the `perSystem` attributes
+        "x86_64-linux"
+        # ...
+      ];
     };
-    formatter.${system} = pkgs.alejandra;
-  };
 }
