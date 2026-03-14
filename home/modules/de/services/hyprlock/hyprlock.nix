@@ -23,7 +23,6 @@ let
   color15 = "rgb(fbf1c7)";
 
   font = "Maple Mono NF";
-
 in {
   programs.hyprlock = {
     enable = true;
@@ -51,32 +50,34 @@ in {
         }
       ];
 
-      input-field = [{
-        monitor = "";
+      input-field = [
+        {
+          monitor = "";
 
-        zindex = 2;
+          zindex = 2;
 
-        size = "300, 50";
-        valign = "center";
-        halign = "center";
-        position = "0, -300";
+          size = "300, 50";
+          valign = "center";
+          halign = "center";
+          position = "0, -300";
 
-        outline_thickness = 3;
+          outline_thickness = 3;
 
-        font_color = foreground;
-        outer_color = color14;
-        inner_color = background;
-        check_color = color14;
-        fail_color = color1;
-        capslock_color = color4;
+          font_color = foreground;
+          outer_color = color14;
+          inner_color = background;
+          check_color = color14;
+          fail_color = color1;
+          capslock_color = color4;
 
-        fade_on_empty = true;
-        placeholder_text = "Enter Password";
-        fail_text = "Wrong Password";
+          fade_on_empty = true;
+          placeholder_text = "Enter Password";
+          fail_text = "Wrong Password";
 
-        dots_spacing = 0.2;
-        dots_center = true;
-      }];
+          dots_spacing = 0.2;
+          dots_center = true;
+        }
+      ];
 
       label = [
         {

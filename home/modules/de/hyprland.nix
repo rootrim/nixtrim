@@ -1,5 +1,4 @@
-{ lib, ... }:
-let
+{lib, ...}: let
   c = {
     background = "rgb(282828)";
     backgroundAlpha = "282828";
@@ -80,8 +79,7 @@ in {
       animations = {
         enabled = true;
 
-        bezier =
-          [ "smooth, 0.45, 0,     0.55, 1" "swift,  0.77, 0,     0.18, 1" ];
+        bezier = ["smooth, 0.45, 0,     0.55, 1" "swift,  0.77, 0,     0.18, 1"];
 
         animation = [
           "windows,          1, 1.3,  smooth, slide"
@@ -231,7 +229,7 @@ in {
         ", K, resizeactive, 0 -10"
         ", J, resizeactive, 0 10"
       ];
-      bind = [ ", catchall, submap, reset" ];
+      bind = [", catchall, submap, reset"];
     };
   };
 }

@@ -9,11 +9,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1766242017,
-        "narHash": "sha256-y4QebzEAbHaQB8hWDFROdTw6/TUal+7Epg14DCxA5W8=",
+        "lastModified": 1773513534,
+        "narHash": "sha256-Ur8u4CIKNXY552Z3W8KHWzAPfmRxR4mf/zpuX2SoLvg=",
         "owner": "rootrim",
         "repo": "aegis",
-        "rev": "16a53a49f4366d41e979fd893866fb0a8372201e",
+        "rev": "149ee6c0e75414c6039e9ae2303de6ebbc65a84f",
         "type": "github"
       },
       "original": {
@@ -1442,11 +1442,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1773225617,
-        "narHash": "sha256-IT0n3jJgf4M7U0EuZJ2XJwXBmSJVVK3auqWDGeHGMzY=",
+        "lastModified": 1773496078,
+        "narHash": "sha256-AAMjxIVrWJnn3STN38WOTcB3wtneHB0Rh+yGuek6anI=",
         "owner": "0xc000022070",
         "repo": "zen-browser-flake",
-        "rev": "413a22ab7acf848ed4e20c3f47ea96ccd4788518",
+        "rev": "d296c2b39ec0b6528278d0bae2ead86d4749734c",
         "type": "github"
       },
       "original": {

@@ -1,15 +1,17 @@
-{ pkgs, inputs, username, ... }:
-
-let
+{
+  pkgs,
+  inputs,
+  username,
+  ...
+}: let
   zen-browser =
-    inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default;
+    inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".twilight;
   fjordlauncher =
     inputs.fjordlauncher.packages.${pkgs.stdenv.hostPlatform.system}.default;
   cclip = inputs.cclip.packages.${pkgs.stdenv.hostPlatform.system}.default;
   fsel = inputs.fsel.packages.${pkgs.stdenv.hostPlatform.system}.default;
 in {
-
-  imports = [ ./modules/default.nix ];
+  imports = [./modules/default.nix];
 
   home.packages = with pkgs; [
     aircrack-ng

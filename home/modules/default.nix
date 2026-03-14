@@ -1,1 +1,1 @@
-{ imports = [ ./misc/default.nix ./de/default.nix ./apps/default.nix ]; }
+{imports = [./misc/default.nix ./de/default.nix ./apps/default.nix];}

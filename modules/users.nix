@@ -1,6 +1,5 @@
-{ pkgs, ... }:
-{
-  users.groups.docker = { };
+{pkgs, ...}: {
+  users.groups.docker = {};
   users.users.rootrim = {
     shell = pkgs.fish;
     isNormalUser = true;

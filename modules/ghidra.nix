@@ -1,1 +1,1 @@
-{ programs.ghidra.enable = true; }
+{programs.ghidra.enable = true;}

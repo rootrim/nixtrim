@@ -1,7 +1,8 @@
 {
   programs.fastfetch = {
     enable = true;
-    settings = builtins.fromJSON
+    settings =
+      builtins.fromJSON
       # json
       ''
         {

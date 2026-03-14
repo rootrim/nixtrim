@@ -1,5 +1,9 @@
-{ pkgs, lib, config, ... }:
-let
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}: let
   lock = "hyprlock -q";
 
   brillo = lib.getExe pkgs.brillo;
@@ -18,7 +22,7 @@ in {
           on-timeout = "${brillo} -O; ${brillo} -u 500000 -S 10";
           on-resume = "${brillo} -I -u 250000";
         }
-        { inherit timeout; }
+        {inherit timeout;}
         {
           timeout = timeout + 10;
           on-timeout = lock;

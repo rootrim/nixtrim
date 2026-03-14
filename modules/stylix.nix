@@ -1,8 +1,7 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   stylix = {
     enable = true;
-    base16Scheme =
-      "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-medium.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-medium.yaml";
 
     fonts = {
       serif = {

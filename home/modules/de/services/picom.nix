@@ -5,13 +5,13 @@
     vSync = true;
 
     shadow = true;
-    shadowOffsets = [ 4 4 ];
+    shadowOffsets = [4 4];
     shadowOpacity = 0.7;
-    shadowExclude = [ "class_g = 'dwm'" ];
+    shadowExclude = ["class_g = 'dwm'"];
 
     fade = true;
     fadeDelta = 3;
-    fadeSteps = [ 3.0e-2 3.0e-2 ];
+    fadeSteps = [3.0e-2 3.0e-2];
 
     inactiveOpacity = 0.9;
 
@@ -19,7 +19,7 @@
       shadow-radius = 1
       corner-radius = 0
 
-      blur: 
+      blur:
       {
         method = "dual_kawase";
         size = 10;

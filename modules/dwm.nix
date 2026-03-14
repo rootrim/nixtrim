@@ -1,5 +1,9 @@
-{ pkgs, inputs, ... }:
-let dwm = inputs.dwm.packages."${pkgs.stdenv.hostPlatform.system}".default;
+{
+  pkgs,
+  inputs,
+  ...
+}: let
+  dwm = inputs.dwm.packages."${pkgs.stdenv.hostPlatform.system}".default;
 in {
   services.xserver = {
     enable = true;

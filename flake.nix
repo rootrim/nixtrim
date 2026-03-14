@@ -8,7 +8,7 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprland = { url = "github:hyprwm/Hyprland"; };
+    hyprland = {url = "github:hyprwm/Hyprland";};
     quickshell = {
       url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -37,30 +37,38 @@
       url = "github:hero-persson/FjordLauncherUnlocked";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-cachyos-kernel = { url = "github:xddxdd/nix-cachyos-kernel/release"; };
+    nix-cachyos-kernel = {url = "github:xddxdd/nix-cachyos-kernel/release";};
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, stylix, nix-cachyos-kernel, ... }:
-    let
-      hostname = "zenith";
-      username = "rootrim";
-    in {
-      nixosConfigurations = {
-        "${hostname}" = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs username; };
-          modules = [
-            ./hosts/${hostname}/configuration.nix
-            stylix.nixosModules.stylix
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.${username} = import ./home/home.nix;
-              home-manager.extraSpecialArgs = { inherit inputs username; };
-              nixpkgs.overlays = [ nix-cachyos-kernel.overlays.pinned ];
-            }
-          ];
-        };
+  outputs = inputs @ {
+    nixpkgs,
+    home-manager,
+    stylix,
+    nix-cachyos-kernel,
+    ...
+  }: let
+    hostname = "zenith";
+    username = "rootrim";
+    system = "x86_64-linux";
+    pkgs = nixpkgs.legacyPackages.${system};
+  in {
+    nixosConfigurations = {
+      "${hostname}" = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs username;};
+        modules = [
+          ./hosts/${hostname}/configuration.nix
+          stylix.nixosModules.stylix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.${username} = import ./home/home.nix;
+            home-manager.extraSpecialArgs = {inherit inputs username;};
+            nixpkgs.overlays = [nix-cachyos-kernel.overlays.pinned];
+          }
+        ];
       };
     };
+    formatter.${system} = pkgs.alejandra;
+  };
 }

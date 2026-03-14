@@ -4,7 +4,8 @@
     enableBashIntegration = true;
     enableFishIntegration = true;
     enableTransience = true;
-    settings = builtins.fromTOML
+    settings =
+      builtins.fromTOML
       # toml
       ''
         "$schema" = 'https://starship.rs/config-schema.json'
