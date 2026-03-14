@@ -228,8 +228,8 @@ in {
         ", L, resizeactive, -10 0"
         ", K, resizeactive, 0 -10"
         ", J, resizeactive, 0 10"
+        ", catchall, submap, reset"
       ];
-      bind = [", catchall, submap, reset"];
     };
   };
 }
