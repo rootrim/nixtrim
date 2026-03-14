@@ -35,7 +35,7 @@ in {
     settings = {
       monitor = "eDP-1,1920x1080@120.00200,0x0,1";
 
-      # ── General ─────────────────────────────────────────────────────────
+      # General
       general = {
         gaps_in = 10;
         gaps_out = 40;
@@ -52,7 +52,7 @@ in {
         disable_hyprland_logo = true;
       };
 
-      # ── Decoration ──────────────────────────────────────────────────────
+      # Decoration
       decoration = {
         rounding = 10;
         active_opacity = 0.9;
@@ -76,14 +76,12 @@ in {
         };
       };
 
-      # ── Animations ──────────────────────────────────────────────────────
+      # Animations
       animations = {
         enabled = true;
 
-        bezier = [
-          "smooth, 0.45, 0,     0.55, 1" # simetrik ease, fade/border için
-          "swift,  0.77, 0,     0.18, 1" # hızlı başlar, workspace için
-        ];
+        bezier =
+          [ "smooth, 0.45, 0,     0.55, 1" "swift,  0.77, 0,     0.18, 1" ];
 
         animation = [
           "windows,          1, 1.3,  smooth, slide"
@@ -94,7 +92,7 @@ in {
         ];
       };
 
-      # ── Layouts ─────────────────────────────────────────────────────────
+      # Layouts
       dwindle = {
         pseudotile = true;
         preserve_split = true;
@@ -102,7 +100,7 @@ in {
 
       master.new_status = "child";
 
-      # ── Input / Devices ─────────────────────────────────────────────────
+      # Input / Devices
       input = {
         kb_layout = "tr";
         kb_options = "caps:swapescape";
@@ -113,10 +111,10 @@ in {
 
       cursor.no_hardware_cursors = false;
 
-      # ── Debug ───────────────────────────────────────────────────────────
+      # Debug
       debug.disable_logs = false;
 
-      # ── Startup ─────────────────────────────────────────────────────────
+      # Startup
       exec-once = [
         "/usr/lib/polkit-kde-authentication-agent-1"
         "quickshell"
@@ -137,7 +135,7 @@ in {
         "__GLX_VENDOR_LIBRARY_NAME,nvidia"
       ];
 
-      # ── Binds ───────────────────────────────────────────────────────────
+      # Binds
       "$mainMod" = "SUPER";
       "$subMod" = "ALT";
       "$terminal" = "kitty";
@@ -217,7 +215,7 @@ in {
         "$mainMod, mouse:273, resizewindow"
       ];
 
-      # ── Window Rules ────────────────────────────────────────────────────
+      # Window Rules
       windowrule = [
         "float 1,        match:title ^launcher$"
         "size 800 600,   match:title ^launcher$"
