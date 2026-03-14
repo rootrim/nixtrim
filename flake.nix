@@ -42,6 +42,7 @@
   };
 
   outputs = inputs @ {
+    aegis,
     flake-parts,
     home-manager,
     nix-cachyos-kernel,
@@ -51,10 +52,10 @@
   }: let
     hostname = "zenith";
     username = "rootrim";
-    system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
   in
     flake-parts.lib.mkFlake {inherit inputs;} {
+      systems = ["x86_64-linux"];
+
       flake = {
         nixosConfigurations = {
           "${hostname}" = nixpkgs.lib.nixosSystem {
@@ -68,17 +69,14 @@
                 home-manager.useUserPackages = true;
                 home-manager.users.${username} = import ./home/home.nix;
                 home-manager.extraSpecialArgs = {inherit inputs username;};
-                nixpkgs.overlays = [nix-cachyos-kernel.overlays.pinned];
+                nixpkgs.overlays = [nix-cachyos-kernel.overlays.pinned aegis.overlays.default];
               }
             ];
           };
         };
-        formatter.${system} = pkgs.alejandra;
       };
-      systems = [
-        # systems for which you want to build the `perSystem` attributes
-        "x86_64-linux"
-        # ...
-      ];
+      perSystem = {pkgs, ...}: {
+        formatter = pkgs.alejandra;
+      };
     };
 }
