@@ -7,7 +7,7 @@
       cursor = "█"
 
       # App launcher
-      terminal_launcher = "kitty -e"
+      terminal_launcher = "kitty -1e"
 
       [app_launcher]
       filter_desktop = true              # Filter apps by desktop environment

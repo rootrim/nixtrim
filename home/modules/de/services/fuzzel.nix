@@ -3,7 +3,7 @@
     enable = true;
     settings = {
       main = {
-        terminal = "kitty -e";
+        terminal = "kitty -1e";
         width = 40;
         line-height = 28;
         show-actions = "yes";

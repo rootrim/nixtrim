@@ -138,7 +138,7 @@ in {
       # Binds
       "$mainMod" = "SUPER";
       "$subMod" = "ALT";
-      "$terminal" = "kitty";
+      "$terminal" = "kitty -1";
       "$fsel" = "kitten quick-access-terminal fsel -d";
       "$menu" = "$fsel";
       "$clipboard" = "$fsel --cclip";
