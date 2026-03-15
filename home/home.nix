@@ -4,10 +4,7 @@
   username,
   ...
 }: let
-  zen-browser =
-    inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".twilight;
-  fjordlauncher =
-    inputs.fjordlauncher.packages.${pkgs.stdenv.hostPlatform.system}.default;
+  fjordlauncher = inputs.fjordlauncher.packages.${pkgs.stdenv.hostPlatform.system}.default;
   cclip = inputs.cclip.packages.${pkgs.stdenv.hostPlatform.system}.default;
   fsel = inputs.fsel.packages.${pkgs.stdenv.hostPlatform.system}.default;
 in {
@@ -105,7 +102,6 @@ in {
     xxh
     yq
     yt-dlp
-    zen-browser
     zig
     zoxide
   ];
