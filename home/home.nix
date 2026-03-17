@@ -11,6 +11,7 @@ in {
   imports = [./modules/default.nix];
 
   home.packages = with pkgs; [
+    aegis
     aircrack-ng
     alsa-utils
     arduino-ide
@@ -69,7 +70,6 @@ in {
     nitch
     nix-output-monitor
     nmap
-    nvim-pkg
     onefetch
     ouch
     pavucontrol

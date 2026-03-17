@@ -17,6 +17,7 @@
     aegis = {
       url = "github:rootrim/aegis";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
     };
     dwm = {
       url = "github:rootrim/dwm";
