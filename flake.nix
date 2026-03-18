@@ -5,6 +5,10 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
     flake-parts.url = "github:hercules-ci/flake-parts";
     stylix.url = "github:danth/stylix/release-25.11";
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v1.0.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -46,6 +50,7 @@
     aegis,
     flake-parts,
     home-manager,
+    lanzaboote,
     nix-cachyos-kernel,
     nixpkgs,
     stylix,
@@ -62,6 +67,7 @@
           "${hostname}" = nixpkgs.lib.nixosSystem {
             specialArgs = {inherit inputs username;};
             modules = [
+              lanzaboote.nixosModules.lanzaboote
               ./hosts/${hostname}/configuration.nix
               stylix.nixosModules.stylix
               home-manager.nixosModules.home-manager

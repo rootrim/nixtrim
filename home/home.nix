@@ -86,6 +86,7 @@ in {
     rm-improved
     rmpc
     rofimoji
+    sbctl
     sd
     strace
     swww
