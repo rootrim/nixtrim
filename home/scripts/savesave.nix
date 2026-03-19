@@ -4,10 +4,10 @@
     runtimeInputs = with pkgs; [rm-improved];
     text = ''
       if [ "$1" = "save" ]; then
-        rip /home/rootrim/.cache/repo/"$2" &>/dev/null
+        rip /home/rootrim/.cache/repo/"$2" &>/dev/null|| true
         cp -r "$2" /home/rootrim/.cache/repo/
       elif [ "$1" = "revert" ]; then
-        rip "$2" &>/dev/null
+        rip "$2" &>/dev/null|| true
         cp -r /home/rootrim/.cache/repo/"$2" .
       fi
     '';
