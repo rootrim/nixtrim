@@ -1,6 +1,5 @@
 {
   inputs,
-  lib,
   pkgs,
   username,
   ...
@@ -8,7 +7,7 @@
   cclip = inputs.cclip.packages.${pkgs.stdenv.hostPlatform.system}.default;
   fjordlauncher = inputs.fjordlauncher.packages.${pkgs.stdenv.hostPlatform.system}.default;
   fsel = inputs.fsel.packages.${pkgs.stdenv.hostPlatform.system}.default;
-  scripts = lib.flatten (map (s: s.script) (import ./scripts/default.nix {inherit pkgs;}));
+  scripts = map (s: s.script) (import ./scripts/default.nix {inherit pkgs;});
 in {
   imports = [./modules/default.nix];
 

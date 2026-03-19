@@ -36,6 +36,6 @@ in {
       set -g fish_key_bindings fish_vi_key_bindings
       set -g fish_greeting ""
     '';
-    interactiveShellInit = lib.concatStrings (map (s: lib.concatStrings s.completion) scripts);
+    interactiveShellInit = lib.concatStrings (map (s: s.completion) scripts);
   };
 }
