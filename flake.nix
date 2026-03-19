@@ -60,6 +60,10 @@
     username = "rootrim";
   in
     flake-parts.lib.mkFlake {inherit inputs;} {
+      imports = [
+        ./devshells/default.nix
+      ];
+
       systems = ["x86_64-linux"];
 
       flake = {
