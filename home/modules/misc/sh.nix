@@ -29,7 +29,7 @@ in {
     };
     shellAbbrs = {
       "shut" = "shutdown now";
-
+      "dev" = "nix develop ~/.config/nixtrim#";
       "dl-yt-musiclist" = "yt-dlp -x --audio-format mp3 --yes-playlist";
     };
     shellInit = ''
