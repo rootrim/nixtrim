@@ -120,15 +120,6 @@ in {
         "hyprshade on vibrance"
       ];
 
-      env = [
-        "MOZ_ENABLE_WAYLAND,1"
-        "QT_QPA_PLATFORMTHEME,qt6ct"
-        "LIBVA_DRIVER_NAME,nvidia"
-        "XDG_SESSION_TYPE,wayland"
-        "GBM_BACKEND,nvidia-drm"
-        "__GLX_VENDOR_LIBRARY_NAME,nvidia"
-      ];
-
       # Binds
       "$mainMod" = "SUPER";
       "$subMod" = "ALT";
