@@ -93,7 +93,6 @@ in {
       sd
       strace
       tealdeer
-      tor-browser
       udisks
       unzip
       wget
