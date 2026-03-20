@@ -26,7 +26,7 @@
     };
     gnome.gnome-keyring = {enable = true;};
     zapret = {
-      enable = true;
+      enable = false;
       params = [
         "nfqws"
         "--dpi-desync=fake"
