@@ -12,7 +12,6 @@
     ./nixsettings.nix
     ./nvidia.nix
     ./packages.nix
-    ./polkit.nix
     ./services.nix
     ./sound.nix
     ./steam.nix

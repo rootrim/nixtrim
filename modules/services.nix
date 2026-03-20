@@ -30,5 +30,6 @@
     upower.enable = true;
     flatpak.enable = true;
     udisks2.enable = true;
+    NetworkManager-wait-online.enable = false;
   };
 }
