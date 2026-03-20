@@ -7,6 +7,7 @@
   cclip = inputs.cclip.packages.${pkgs.stdenv.hostPlatform.system}.default;
   fjordlauncher = inputs.fjordlauncher.packages.${pkgs.stdenv.hostPlatform.system}.default;
   fsel = inputs.fsel.packages.${pkgs.stdenv.hostPlatform.system}.default;
+  zen-browser = inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default;
   scripts = map (s: s.script) (import ./scripts/default.nix {inherit pkgs;});
 in {
   imports = [./modules/default.nix];
@@ -104,6 +105,7 @@ in {
       xxh
       yq
       yt-dlp
+      zen-browser
       zig
       zoxide
     ]
