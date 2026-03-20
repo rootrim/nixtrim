@@ -30,5 +30,7 @@
       name = "Bibata-Modern-Ice";
       size = 24;
     };
+
+    image = ../jelly.jpg;
   };
 }
