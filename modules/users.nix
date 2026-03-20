@@ -1,17 +1,14 @@
 {pkgs, ...}: {
-  users.groups.docker = {};
   users.users.rootrim = {
     shell = pkgs.fish;
     isNormalUser = true;
-    description = "rootrim";
+    description = "The Ultimate Life Form";
     extraGroups = [
       "networkmanager"
       "wheel"
-      "docker"
       "dialout"
-    ];
-    packages = with pkgs; [
-      lolcat
+      "input"
+      "video"
     ];
   };
 }

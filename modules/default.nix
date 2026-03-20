@@ -19,7 +19,6 @@
     ./users.nix
     ./virtualisation.nix
     ./firewall.nix
-    ./ghidra.nix
     ./dwm.nix
   ];
 }

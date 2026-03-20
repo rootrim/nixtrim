@@ -1,1 +1,0 @@
-{programs.ghidra.enable = true;}

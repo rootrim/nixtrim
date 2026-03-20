@@ -4,6 +4,5 @@
     noto-fonts
     noto-fonts-cjk-sans
     maple-mono.NF
-    monocraft
   ];
 }
