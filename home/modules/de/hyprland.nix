@@ -114,13 +114,9 @@ in {
 
       # Startup
       exec-once = [
-        "/usr/lib/polkit-kde-authentication-agent-1"
         "quickshell"
-        "hypridle"
-        "swww-daemon & swww restore"
-        ''
-          cclipd -s 2 -t "image/png" -t "image/*" -t "text/plain;charset=utf-8" -t "text/*" -t "*"''
-        "hyprctl setcursor Bibata-Modern-Ice 24"
+        "cclipd -s 2 -t 'image/png' -t 'image/*' -t 'text/plain;charset=utf-8' -t 'text/*' -t '*'"
+        # "hyprctl setcursor Bibata-Modern-Ice 24"
         "hyprshade on vibrance"
       ];
 

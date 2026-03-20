@@ -1,36 +1,32 @@
 {
   pkgs,
   lib,
-  config,
   ...
 }: let
-  lock = "hyprlock -q";
-
-  brillo = lib.getExe pkgs.brillo;
-
-  timeout = 300;
+  hyprlock = lib.getExe pkgs.hyprlock;
+  timeout = 900;
 in {
   services.hypridle = {
     enable = true;
 
     settings = {
-      general.lock_cmd = lib.getExe config.programs.hyprlock.package;
+      general = {
+        after_sleep_cmd = "hyprctl dispatch dpms on";
+        ignore_dbus_inhibit = false;
+        lock_cmd = hyprlock;
+      };
 
       listener = [
         {
-          timeout = timeout - 10;
-          on-timeout = "${brillo} -O; ${brillo} -u 500000 -S 10";
-          on-resume = "${brillo} -I -u 250000";
+          inherit timeout;
+          on-timeout = hyprlock;
         }
-        {inherit timeout;}
         {
-          timeout = timeout + 10;
-          on-timeout = lock;
+          timeout = timeout + 60;
+          on-timeout = "hyprctl dispatch dpms off";
+          on-resume = "hyprctl dispatch dpms on";
         }
       ];
     };
   };
-
-  systemd.user.services.hypridle.Unit.After =
-    lib.mkForce "graphical-session.target";
 }

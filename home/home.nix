@@ -91,7 +91,6 @@ in {
       sbctl
       sd
       strace
-      swww
       tealdeer
       tor-browser
       udisks
