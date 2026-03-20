@@ -26,13 +26,12 @@
     };
     gnome.gnome-keyring = {enable = true;};
     zapret = {
-      enable = false;
+      enable = true;
       params = [
-        "--dpi-desync=fake,disorder2"
-        "--dpi-desync-ttl=1"
-        "--dpi-desync-autottl=2"
+        "nfqws"
+        "--dpi-desync=fake"
+        "--dpi-desync-repeats=5"
       ];
-      whitelist = ["discord.com"];
     };
     blueman.enable = true;
     upower.enable = true;
