@@ -5,7 +5,7 @@
       wallpaper = [
         {
           monitor = "eDP-1";
-          path = "~/Downloads/wapp_gruvbox-dark.webp";
+          path = "./jelly.jpg";
         }
       ];
     };

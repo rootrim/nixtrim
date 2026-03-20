@@ -4,10 +4,10 @@
     ./fuzzel.nix
     ./hypridle.nix
     ./hyprlock/hyprlock.nix
+    ./hyprpaper/hyprpaper.nix
     ./mako.nix
     ./rofi.nix
     ./picom.nix
-    ./hyprpaper.nix
     ./polkit.nix
   ];
 }
