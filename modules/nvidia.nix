@@ -1,13 +1,21 @@
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
+  nvidiaPackage = config.hardware.nvidia.package;
+in {
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
+    extraPackages = with pkgs; [
+      intel-media-driver
+    ];
   };
   hardware.nvidia = {
     modesetting.enable = true;
-    # Nvidia f you
-    # Fix the open-source on the lastest kernel
-    open = true;
+    open = lib.mkOverride 990 (nvidiaPackage ? open && nvidiaPackage ? firmware);
 
     powerManagement.enable = true;
     powerManagement.finegrained = true;
@@ -23,5 +31,5 @@
       nvidiaBusId = "PCI:1:0:0";
     };
   };
-  services.xserver.videoDrivers = ["nvidia"];
+  services.xserver.videoDrivers = lib.mkDefault ["nvidia"];
 }
