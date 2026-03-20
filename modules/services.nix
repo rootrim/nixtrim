@@ -38,6 +38,6 @@
     upower.enable = true;
     flatpak.enable = true;
     udisks2.enable = true;
-    NetworkManager-wait-online.enable = false;
   };
+  systemd.services.NetworkManager-wait-online.enable = false;
 }
