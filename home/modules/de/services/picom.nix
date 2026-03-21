@@ -1,6 +1,6 @@
-{
+{osConfig, ...}: {
   services.picom = {
-    enable = true;
+    enable = osConfig.services.xserver.enable;
     backend = "glx";
     vSync = true;
 
