@@ -1,32 +1,10 @@
 {
   lib,
   pkgs,
+  config,
   ...
 }: let
-  c = {
-    background = "rgb(282828)";
-    backgroundAlpha = "282828";
-    foreground = "rgb(ebdbb2)";
-    foregroundAlpha = "ebdbb2";
-    color0 = "rgb(3c3836)";
-    color0Alpha = "3c3836";
-    color1 = "rgb(cc241d)";
-    color2 = "rgb(98971a)";
-    color3 = "rgb(d79921)";
-    color4 = "rgb(458588)";
-    color5 = "rgb(b16286)";
-    color6 = "rgb(689d6a)";
-    color7 = "rgb(a89984)";
-    color8 = "rgb(928374)";
-    color9 = "rgb(fb4934)";
-    color10 = "rgb(b8bb26)";
-    color11 = "rgb(fabd2f)";
-    color12 = "rgb(83a598)";
-    color13 = "rgb(d3869b)";
-    color14 = "rgb(8ec07c)";
-    color14Alpha = "8ec07c";
-    color15 = "rgb(fbf1c7)";
-  };
+  c = config.lib.stylix.colors;
 in {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -43,8 +21,8 @@ in {
         gaps_in = 10;
         gaps_out = 40;
         border_size = 3;
-        "col.active_border" = lib.mkForce c.color0;
-        "col.inactive_border" = lib.mkForce c.color0;
+        "col.active_border" = lib.mkForce "rgb(${c.base01})";
+        "col.inactive_border" = lib.mkForce "rgb(${c.base01})";
         allow_tearing = true;
         layout = "dwindle";
         snap.enabled = true;
