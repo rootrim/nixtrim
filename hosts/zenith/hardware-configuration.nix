@@ -11,6 +11,7 @@
   boot.initrd.kernelModules = [];
   boot.kernelModules = ["kvm-intel"];
   boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-bore-lto;
+  boot.kernelParams = ["loglevel=0" "quiet" "rd.systemd.show_status=false" "rd.udev.log_level=0" "udev.log_level=0"];
   boot.extraModulePackages = [];
 
   fileSystems."/" = {

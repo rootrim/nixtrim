@@ -7,7 +7,6 @@
     ./mako.nix
     ./rofi.nix
     ./picom.nix
-    ./polkit.nix
     ./hyprpaper.nix
   ];
 }

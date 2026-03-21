@@ -9,6 +9,7 @@
       "dialout"
       "input"
       "video"
+      "plugdev"
     ];
   };
 }

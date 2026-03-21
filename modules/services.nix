@@ -24,7 +24,6 @@
         };
       };
     };
-    gnome.gnome-keyring = {enable = true;};
     zapret = {
       enable = false;
       params = [

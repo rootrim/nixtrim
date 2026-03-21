@@ -123,6 +123,7 @@ in {
         # "hyprctl setcursor Bibata-Modern-Ice 24"
         "hyprshade on vibrance"
         "${lib.getExe pkgs.hyprpaper}"
+        "${lib.getExe pkgs.hyprpolkitagent}"
       ];
 
       # Binds
