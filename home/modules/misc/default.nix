@@ -14,5 +14,6 @@
     ./delta.nix
     ./nix-your-shell.nix
     ./television.nix
+    ./helix.nix
   ];
 }
