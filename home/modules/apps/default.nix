@@ -6,5 +6,6 @@
     ./zoxide.nix
     ./lazygit.nix
     ./zellij.nix
+    ./qutebrowser.nix
   ];
 }
