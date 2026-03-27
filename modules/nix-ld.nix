@@ -1,7 +1,9 @@
 {pkgs, ...}: {
   programs.nix-ld = {
-    enable = false;
+    enable = true;
     libraries = with pkgs; [
+      stdenv.cc.cc.lib
+      openssl
       libGL
       glib
       zlib
