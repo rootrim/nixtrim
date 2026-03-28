@@ -1,1 +1,0 @@
-{imports = [./quickshell/default.nix];}
