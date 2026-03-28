@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
     flake-parts.url = "github:hercules-ci/flake-parts";
+    import-tree.url = "github:vic/import-tree";
     stylix.url = "github:danth/stylix/release-25.11";
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v1.0.0";
@@ -46,48 +47,8 @@
     nix-cachyos-kernel = {url = "github:xddxdd/nix-cachyos-kernel/release";};
   };
 
-  outputs = inputs @ {
-    aegis,
-    flake-parts,
-    home-manager,
-    lanzaboote,
-    nix-cachyos-kernel,
-    nixpkgs,
-    stylix,
-    ...
-  }: let
-    hostname = "zenith";
-    username = "rootrim";
-  in
-    flake-parts.lib.mkFlake {inherit inputs;} {
-      imports = [
-        ./devshells/default.nix
-      ];
-
-      systems = ["x86_64-linux"];
-
-      flake = {
-        nixosConfigurations = {
-          "${hostname}" = nixpkgs.lib.nixosSystem {
-            specialArgs = {inherit inputs username;};
-            modules = [
-              lanzaboote.nixosModules.lanzaboote
-              ./hosts/${hostname}/configuration.nix
-              stylix.nixosModules.stylix
-              home-manager.nixosModules.home-manager
-              {
-                home-manager.useGlobalPkgs = true;
-                home-manager.useUserPackages = true;
-                home-manager.users.${username} = import ./home/home.nix;
-                home-manager.extraSpecialArgs = {inherit inputs username;};
-                nixpkgs.overlays = [nix-cachyos-kernel.overlays.pinned aegis.overlays.default];
-              }
-            ];
-          };
-        };
-      };
-      perSystem = {pkgs, ...}: {
-        formatter = pkgs.alejandra;
-      };
-    };
+  outputs = inputs:
+    inputs.flake-parts.lib.mkFlake
+    {inherit inputs;}
+    (inputs.import-tree ./modules);
 }
