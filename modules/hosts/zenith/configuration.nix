@@ -7,6 +7,8 @@
     imports = [
       inputs.lanzaboote.nixosModules.lanzaboote
       inputs.stylix.nixosModules.stylix
+      inputs.home-manager.nixosModules.home-manager
+      self.nixosModules.zenithHomeRootrim
       self.nixosModules.bluetooth
       self.nixosModules.boot
       self.nixosModules.dwm
