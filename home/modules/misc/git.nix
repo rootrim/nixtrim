@@ -3,7 +3,7 @@
     enable = true;
     settings = {
       user = {
-        name = "nixtrim";
+        name = "trim";
         email = "omuaz01@gmail.com";
       };
       init.defaultBranch = "main";
