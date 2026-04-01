@@ -9,7 +9,7 @@
 
     boot.initrd.availableKernelModules = ["xhci_pci" "thunderbolt" "nvme" "usb_storage" "usbhid" "sd_mod"];
     boot.initrd.kernelModules = [];
-    boot.kernelModules = ["kvm-intel"];
+    boot.kernelModules = ["kvm-intel" "ntsync"];
     boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-bore-lto;
     boot.kernelParams = ["loglevel=0" "quiet" "rd.systemd.show_status=false" "rd.udev.log_level=0" "udev.log_level=0"];
     boot.extraModulePackages = [];
