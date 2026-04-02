@@ -37,17 +37,17 @@
         background = [
           {
             monitor = "";
-            path = bg;
+            path = toString bg;
           }
           {
             monitor = "";
             zindex = 1;
-            path = layer1;
+            path = toString layer1;
           }
           {
             monitor = "";
             zindex = 2;
-            path = layer2;
+            path = toString layer2;
           }
         ];
 

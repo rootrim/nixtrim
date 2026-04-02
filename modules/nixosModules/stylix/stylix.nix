@@ -32,7 +32,7 @@
         size = 24;
       };
 
-      image = ../jelly.jpg;
+      image = ./jelly.jpg;
     };
   };
 }

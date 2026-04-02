@@ -4,7 +4,7 @@
   ...
 }: {
   flake.nixosModules.dwm = {
-    self',
+    config,
     pkgs,
     ...
   }: {
@@ -16,7 +16,7 @@
       xkb.options = "caps:swapescape";
 
       windowManager.dwm = {
-        enable = self'.services.xserver.enable;
+        enable = config.services.xserver.enable;
         package = self.packages.${pkgs.stdenv.hostPlatform.system}.dwamdelius;
       };
     };

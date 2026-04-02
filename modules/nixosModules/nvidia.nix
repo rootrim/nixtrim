@@ -1,11 +1,11 @@
 {
   flake.nixosModules.nvidia = {
-    self',
+    config,
     lib,
     pkgs,
     ...
   }: let
-    nvidiaPackage = self'.hardware.nvidia.package;
+    nvidiaPackage = config.hardware.nvidia.package;
   in {
     hardware.graphics = {
       enable = true;
