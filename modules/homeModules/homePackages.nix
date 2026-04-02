@@ -1,0 +1,104 @@
+{inputs, ...}: {
+  flake.homeModules.homePackages = {pkgs, ...}: let
+    cclip = inputs.cclip.packages.${pkgs.stdenv.hostPlatform.system}.default;
+    fjordlauncher = inputs.fjordlauncher.packages.${pkgs.stdenv.hostPlatform.system}.default;
+    fsel = inputs.fsel.packages.${pkgs.stdenv.hostPlatform.system}.default;
+    zen-browser = inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default;
+  in {
+    home.packages = with pkgs; [
+      aegis
+      aircrack-ng
+      alsa-utils
+      arduino-ide
+      bat
+      binutils
+      brightnessctl
+      cargo
+      carl
+      cava
+      cbonsai
+      cclip
+      cmatrix
+      curl
+      curl
+      delta
+      duf
+      dust
+      easyeffects
+      element
+      eza
+      fabric-ai
+      fd
+      feh
+      file
+      fjordlauncher
+      flameshot
+      fritzing
+      fsel
+      fzf
+      gcc
+      gdb
+      gimp
+      git
+      glow
+      gnumake
+      godot
+      helvum
+      heroic
+      hyprpicker
+      hyprshade
+      hyprshot
+      imagemagick
+      jq
+      kdePackages.kdenlive
+      kicad
+      krita
+      lazydocker
+      libreoffice-fresh
+      lsfg-vk
+      lsfg-vk-ui
+      ltrace
+      lutgen
+      mpc
+      mpv
+      mtr
+      nitch
+      nix-output-monitor
+      nmap
+      onefetch
+      ouch
+      pavucontrol
+      pixelorama
+      playerctl
+      python3
+      qbittorrent
+      qgroundcontrol
+      qt5.qtlocation
+      qt5.qtmultimedia
+      qt5.qtquickcontrols2
+      radare2
+      ripgrep
+      rm-improved
+      rmpc
+      rofimoji
+      sbctl
+      sd
+      strace
+      tealdeer
+      udisks
+      unzip
+      wget
+      wifite2
+      wiremix
+      wl-clipboard
+      xclip
+      xxd
+      xxh
+      yq
+      yt-dlp
+      zen-browser
+      zig
+      zoxide
+    ];
+  };
+}
