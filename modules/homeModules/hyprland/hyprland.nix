@@ -190,7 +190,7 @@
           "float 1,        match:title ^launcher$"
           "size 800 600,   match:title ^launcher$"
           "center 1,       match:title ^launcher$"
-          "workspace special:hyprspace, match:initial_class steam"
+          "workspace special:hyprspace silent, match:initial_class steam"
         ];
       };
 
