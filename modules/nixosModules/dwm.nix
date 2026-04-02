@@ -1,0 +1,28 @@
+{
+  self,
+  inputs,
+  ...
+}: {
+  flake.nixosModules.dwm = {
+    config,
+    pkgs,
+    ...
+  }: {
+    services.xserver = {
+      enable = false;
+      autoRepeatDelay = 200;
+      autoRepeatInterval = 35;
+      xkb.layout = "tr";
+      xkb.options = "caps:swapescape";
+
+      windowManager.dwm = {
+        enable = config.services.xserver.enable;
+        package = self.packages.${pkgs.stdenv.hostPlatform.system}.dwamdelius;
+      };
+    };
+  };
+
+  perSystem = {pkgs, ...}: {
+    packages.dwamdelius = inputs.dwm.packages.${pkgs.stdenv.hostPlatform.system}.default;
+  };
+}

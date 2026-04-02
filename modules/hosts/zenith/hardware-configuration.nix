@@ -1,0 +1,34 @@
+{
+  flake.nixosModules.zenithHardware = {
+    config,
+    modulesPath,
+    pkgs,
+    ...
+  }: {
+    imports = [(modulesPath + "/installer/scan/not-detected.nix")];
+
+    boot.initrd.availableKernelModules = ["xhci_pci" "thunderbolt" "nvme" "usb_storage" "usbhid" "sd_mod"];
+    boot.initrd.kernelModules = [];
+    boot.kernelModules = ["kvm-intel" "ntsync"];
+    boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-bore-lto;
+    boot.kernelParams = ["loglevel=0" "quiet" "rd.systemd.show_status=false" "rd.udev.log_level=0" "udev.log_level=0"];
+    boot.extraModulePackages = [];
+
+    fileSystems."/" = {
+      device = "/dev/disk/by-uuid/6c3bbd93-38f5-41f3-9299-5e33fa2ae0fc";
+      fsType = "ext4";
+    };
+
+    fileSystems."/boot" = {
+      device = "/dev/disk/by-uuid/51EC-29AE";
+      fsType = "vfat";
+      options = ["fmask=0077" "dmask=0077"];
+    };
+
+    swapDevices = [{device = "/dev/disk/by-uuid/f24426a1-94ff-4db8-bd28-31feccbb5f56";}];
+
+    nixpkgs.hostPlatform = "x86_64-linux";
+    hardware.cpu.intel.updateMicrocode =
+      config.hardware.enableRedistributableFirmware;
+  };
+}
