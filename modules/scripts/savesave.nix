@@ -5,11 +5,11 @@
       runtimeInputs = with pkgs; [rm-improved];
       text = ''
         if [ "$1" = "save" ]; then
-          rip $HOME/.cache/repo/"$2" &>/dev/null|| true
-          cp -r "$2" $HOME/.cache/repo/
+          rip "$HOME"/.cache/repo/"$2" &>/dev/null|| true
+          cp -r "$2" "$HOME"/.cache/repo/
         elif [ "$1" = "revert" ]; then
           rip "$2" &>/dev/null|| true
-          cp -r $HOME/.cache/repo/"$2" .
+          cp -r "$HOME"/.cache/repo/"$2" .
         fi
       '';
     };
