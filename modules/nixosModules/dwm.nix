@@ -17,7 +17,7 @@
 
       windowManager.dwm = {
         enable = self'.services.xserver.enable;
-        package = self.packages.${pkgs.stdenv.hostPlatform.system}.default;
+        package = self.packages.${pkgs.stdenv.hostPlatform.system}.dwamdelius;
       };
     };
   };

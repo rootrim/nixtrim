@@ -1,4 +1,8 @@
-{inputs, ...}: {
+{
+  inputs,
+  self,
+  ...
+}: {
   flake.homeModules.homePackages = {pkgs, ...}: let
     cclip = inputs.cclip.packages.${pkgs.stdenv.hostPlatform.system}.default;
     fjordlauncher = inputs.fjordlauncher.packages.${pkgs.stdenv.hostPlatform.system}.default;
@@ -83,6 +87,7 @@
       rofimoji
       sbctl
       sd
+      self.packages.${pkgs.stdenv.hostPlatform.system}.savesave
       strace
       tealdeer
       udisks
