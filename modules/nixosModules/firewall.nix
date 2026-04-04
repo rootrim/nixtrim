@@ -7,14 +7,8 @@
       allowedTCPPorts = [22];
     };
 
-    programs.proxychains = {
+    networking.nftables = {
       enable = true;
-      proxies.spoofdpi = {
-        enable = true;
-        type = "http";
-        host = "127.0.0.1";
-        port = 8080;
-      };
     };
   };
 }
