@@ -1,7 +1,8 @@
 {
   flake.nixosModules.zapret = {
     services.zapret = {
-      enable = true;
+      enable = false;
+      configureFirewall = false;
       params = [
         "--dpi-desync=fake"
         "--dpi-desync-ttl=5"
