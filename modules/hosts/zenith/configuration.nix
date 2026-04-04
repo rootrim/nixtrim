@@ -33,6 +33,7 @@
       self.nixosModules.usersRootrim
       self.nixosModules.virtualisation
       self.nixosModules.zenithHardware
+      self.nixosModules.ly
     ];
 
     networking.hostName = "zenith";
