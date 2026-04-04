@@ -1,6 +1,6 @@
 {
   flake.nixosModules.ly = {pkgs, ...}: {
-    displayManager = {
+    services.displayManager = {
       ly = {
         enable = true;
         package = pkgs.ly;
