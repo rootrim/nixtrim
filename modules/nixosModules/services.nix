@@ -9,14 +9,6 @@
       udev.packages = [
         pkgs.openocd
       ];
-      zapret = {
-        enable = false;
-        params = [
-          "nfqws"
-          "--dpi-desync=fake"
-          "--dpi-desync-repeats=5"
-        ];
-      };
       blueman.enable = true;
       upower.enable = true;
       flatpak.enable = true;
