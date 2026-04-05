@@ -1,7 +1,7 @@
 {
   flake.nixosModules.networking = {
     networking = {
-      nameservers = ["1.1.1.1" "9.9.9.9" "8.8.8.8"];
+      nameservers = ["1.1.1.1"];
 
       networkmanager = {
         enable = true;
