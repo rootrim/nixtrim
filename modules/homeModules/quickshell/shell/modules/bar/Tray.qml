@@ -34,7 +34,7 @@ Repeater {
       anchor.window: root.QsWindow.window
       menu: root.modelData.menu
       anchor.rect.x: root.x
-      anchor.rect.y: root.y - 400
+      anchor.rect.y: root.y
       anchor.rect.width: root.width
       anchor.rect.height: root.height
     }
