@@ -11,11 +11,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1775381343,
-        "narHash": "sha256-Wlh7Nz6hMIW8f+MibnxT+PH9lm6TPWzsK5KENzCQEmg=",
+        "lastModified": 1775487245,
+        "narHash": "sha256-EcT9xg0E6Ovf6Kb1FWxP63cedt8pIgJ9oFqNe/ayTQE=",
         "owner": "rootrim",
         "repo": "aegis",
-        "rev": "8c3a3a53d06f44831e5a10ee43503b31d4dc3978",
+        "rev": "a70beb48624980c0ecdcc792f34be40323107847",
         "type": "github"
       },
       "original": {
