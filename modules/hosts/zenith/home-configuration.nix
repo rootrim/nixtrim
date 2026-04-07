@@ -1,9 +1,14 @@
-{self, ...}: {
+{
+  self,
+  inputs,
+  ...
+}: {
   flake.nixosModules.zenithHomeRootrim = {
     home-manager.useGlobalPkgs = true;
     home-manager.useUserPackages = true;
     home-manager.users.rootrim = {
       imports = [
+        inputs.nix-index-database.homeModules.default
         self.homeModules.bacon
         self.homeModules.btop
         self.homeModules.delta
@@ -23,6 +28,7 @@
         self.homeModules.lazygit
         self.homeModules.mako
         self.homeModules.mangohud
+        self.homeModules.nix-index
         self.homeModules.nix-your-shell
         self.homeModules.picom
         self.homeModules.qt
