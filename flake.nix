@@ -36,10 +36,6 @@
       url = "github:Mjoyufull/fsel";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    fjordlauncher = {
-      url = "github:hero-persson/FjordLauncherUnlocked";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";

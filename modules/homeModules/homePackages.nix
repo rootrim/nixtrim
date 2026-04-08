@@ -5,7 +5,6 @@
 }: {
   flake.homeModules.homePackages = {pkgs, ...}: let
     cclip = inputs.cclip.packages.${pkgs.stdenv.hostPlatform.system}.default;
-    fjordlauncher = inputs.fjordlauncher.packages.${pkgs.stdenv.hostPlatform.system}.default;
     fsel = inputs.fsel.packages.${pkgs.stdenv.hostPlatform.system}.default;
     zen-browser = inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default;
   in {
@@ -13,7 +12,6 @@
       aegis
       aircrack-ng
       alsa-utils
-      arduino-ide
       bat
       binutils
       brightnessctl
@@ -35,7 +33,6 @@
       fd
       feh
       file
-      fjordlauncher
       flameshot
       fritzing
       fsel
