@@ -17,7 +17,6 @@
     hyprland = {url = "github:hyprwm/Hyprland";};
     aegis = {
       url = "github:rootrim/aegis";
-      inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
     };
     dwm = {
@@ -31,6 +30,7 @@
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
     };
     fsel = {
       url = "github:Mjoyufull/fsel";
@@ -40,7 +40,10 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-cachyos-kernel = {url = "github:xddxdd/nix-cachyos-kernel/release";};
+    nix-cachyos-kernel = {
+      url = "github:xddxdd/nix-cachyos-kernel/release";
+      inputs.flake-parts.follows = "flake-parts";
+    };
   };
 
   outputs = inputs:
