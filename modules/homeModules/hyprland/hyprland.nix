@@ -99,10 +99,8 @@
         exec-once = [
           "quickshell"
           "cclipd -s 2 -t 'image/png' -t 'image/*' -t 'text/plain;charset=utf-8' -t 'text/*' -t '*'"
-          # "hyprctl setcursor Bibata-Modern-Ice 24"
           "hyprshade on vibrance"
           "${lib.getExe pkgs.hyprpaper}"
-          "${lib.getExe pkgs.hyprpolkitagent}"
         ];
 
         # Binds
@@ -204,5 +202,6 @@
         ];
       };
     };
+    services.hyprpolkitagent.enable = true;
   };
 }
