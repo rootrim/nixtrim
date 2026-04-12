@@ -13,7 +13,6 @@
     home.packages = with pkgs;
       [
         aegis
-        alsa-utils
         bat
         binutils
         brightnessctl
