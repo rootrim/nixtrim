@@ -1,4 +1,4 @@
-{
+{inputs, ...}: {
   flake.nixosModules.nixSettings = {
     nix = {
       optimise.automatic = true;
@@ -20,6 +20,7 @@
           "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
         ];
       };
+      nixPath = ["nixpkgs=${inputs.nixpkgs}"];
     };
     home-manager.backupFileExtension = "backup";
   };
