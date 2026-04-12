@@ -67,7 +67,7 @@
         GBM_BACKEND = "nvidia-drm";
         __GLX_VENDOR_LIBRARY_NAME = "nvidia";
       };
-      stateVersion = "25.11";
+      stateVersion = "26.05";
     };
   };
 }

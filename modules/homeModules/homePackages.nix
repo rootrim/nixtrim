@@ -42,7 +42,6 @@
         glow
         gnumake
         godot
-        helvum
         heroic
         hyprpicker
         hyprshade
