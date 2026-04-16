@@ -5,7 +5,6 @@
     config,
     ...
   }: let
-    c = config.lib.stylix.colors;
   in {
     wayland.windowManager.hyprland = {
       enable = true;
@@ -22,8 +21,8 @@
           gaps_in = 10;
           gaps_out = 40;
           border_size = 3;
-          "col.active_border" = lib.mkForce "rgb(${c.base01})";
-          "col.inactive_border" = lib.mkForce "rgb(${c.base01})";
+          "col.active_border" = lib.mkForce "rgb(32302f)";
+          "col.inactive_border" = lib.mkForce "rgb(32302f)";
           allow_tearing = true;
           layout = "dwindle";
           snap.enabled = true;

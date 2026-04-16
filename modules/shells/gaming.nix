@@ -3,7 +3,7 @@
     devShells.gaming = pkgs.mkShell {
       name = "gaming";
       packages = with pkgs; [
-        wineWowPackages.stable
+        wineWow64Packages.stable
         winetricks
         vulkan-loader
         dxvk

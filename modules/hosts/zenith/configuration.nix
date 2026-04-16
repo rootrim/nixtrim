@@ -6,7 +6,6 @@
   flake.nixosModules.zenithConfiguration = {
     imports = [
       inputs.lanzaboote.nixosModules.lanzaboote
-      inputs.stylix.nixosModules.stylix
       inputs.home-manager.nixosModules.home-manager
       self.nixosModules.zenithHomeRootrim
       self.nixosModules.bluetooth
@@ -28,7 +27,6 @@
       self.nixosModules.services
       self.nixosModules.sound
       self.nixosModules.steam
-      self.nixosModules.stylix
       self.nixosModules.tabletDriver
       self.nixosModules.usersRootrim
       self.nixosModules.virtualisation

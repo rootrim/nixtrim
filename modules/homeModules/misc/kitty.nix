@@ -3,6 +3,7 @@
     programs.kitty = {
       enable = true;
       enableGitIntegration = true;
+      themeFile = "GruvboxMaterialDarkMedium";
       shellIntegration = {
         enableBashIntegration = true;
         enableFishIntegration = true;

@@ -37,7 +37,6 @@
         self.homeModules.rofi
         self.homeModules.rootrimHome
         self.homeModules.starship
-        self.homeModules.stylix
         self.homeModules.televison
         self.homeModules.yazi
         self.homeModules.zellij
