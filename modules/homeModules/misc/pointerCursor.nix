@@ -7,6 +7,7 @@
       name = "Bibata-Modern-Ice";
       hyprcursor.enable = true;
       gtk.enable = true;
+      x11.enable = true;
     };
   };
 }
