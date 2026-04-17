@@ -6,6 +6,9 @@
       enable = true;
       settings = {
         splash = false;
+        preload = [
+          (toString wall)
+        ];
         wallpaper = [
           {
             monitor = "eDP-1";
