@@ -1,7 +1,6 @@
 {
   flake.homeModules.hyprland = {
     lib,
-    pkgs,
     config,
     ...
   }: let
@@ -99,7 +98,6 @@
           "quickshell"
           "cclipd -s 2 -t 'image/png' -t 'image/*' -t 'text/plain;charset=utf-8' -t 'text/*' -t '*'"
           "hyprshade on vibrance"
-          "${lib.getExe pkgs.hyprpaper}"
         ];
 
         # Binds
