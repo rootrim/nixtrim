@@ -1,10 +1,5 @@
-{
+{self, ...}: {
   flake.homeModules.hyprland = {
-    lib,
-    config,
-    ...
-  }: let
-  in {
     wayland.windowManager.hyprland = {
       enable = true;
       package = null;
@@ -20,8 +15,8 @@
           gaps_in = 10;
           gaps_out = 40;
           border_size = 3;
-          "col.active_border" = lib.mkForce "rgb(32302f)";
-          "col.inactive_border" = lib.mkForce "rgb(32302f)";
+          "col.active_border" = "rgb(${self.themeNoHash.base01})";
+          "col.inactive_border" = "rgb(${self.themeNoHash.base01})";
           allow_tearing = true;
           layout = "dwindle";
           snap.enabled = true;
@@ -42,7 +37,7 @@
             enabled = true;
             range = 3;
             render_power = 3;
-            color = lib.mkForce "rgba(0,0,0,0.6)";
+            color = "rgba(0,0,0,0.6)";
             offset = "4 4";
             scale = 1.0;
           };
@@ -182,9 +177,9 @@
 
         # Window Rules
         windowrule = [
-          "float 1,        match:title ^launcher$"
-          "size 800 600,   match:title ^launcher$"
-          "center 1,       match:title ^launcher$"
+          "float 1, match:title ^launcher$"
+          "size 800 600, match:title ^launcher$"
+          "center 1, match:title ^launcher$"
           "workspace special:hyprspace silent, match:initial_class steam"
         ];
       };
