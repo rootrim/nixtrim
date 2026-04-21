@@ -6,13 +6,11 @@
       enable = true;
       settings = {
         splash = false;
-        preload = [
-          (toString wall)
-        ];
+        preload = ["${wall}"];
         wallpaper = [
           {
             monitor = "eDP-1";
-            path = toString wall;
+            path = "${wall}";
           }
         ];
       };
