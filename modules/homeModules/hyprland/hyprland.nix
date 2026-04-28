@@ -68,7 +68,7 @@
 
         # Layouts
         dwindle = {
-          pseudotile = true;
+          # pseudotile = true;
           preserve_split = true;
         };
 
