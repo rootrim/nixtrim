@@ -8,7 +8,10 @@
       systemd.enable = true;
 
       settings = {
-        monitor = "eDP-1,1920x1080@120.00200,0x0,1";
+        monitor = [
+          "eDP-1,1920x1080@120.00200,0x0,1"
+          # "HDMI,1920x1080@60.00000,1920x0,1"
+        ];
 
         # General
         general = {
