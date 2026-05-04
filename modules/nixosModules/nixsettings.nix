@@ -1,5 +1,5 @@
 {inputs, ...}: {
-  flake.nixosModules.nixSettings = {
+  flake.nixosModules.nixSettings = {pkgs, ...}: {
     nix = {
       optimise.automatic = true;
       settings = {
@@ -21,6 +21,7 @@
         ];
       };
       nixPath = ["nixpkgs=${inputs.nixpkgs}"];
+      package = pkgs.lixPackageSets.stable.lix;
     };
     home-manager.backupFileExtension = "backup";
   };
