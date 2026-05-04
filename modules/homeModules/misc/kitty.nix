@@ -17,6 +17,8 @@
         start_as_hidden = false;
         hide_on_focus_loss = false;
         background_opacity = 1;
+        column = 30;
+        edge = "left";
       };
     };
   };
