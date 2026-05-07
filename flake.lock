@@ -62,11 +62,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1775943307,
-        "narHash": "sha256-U1laXZvkzWX6GKkL5bDFJH91Red+ix937b/6Zy1zZNw=",
+        "lastModified": 1777998663,
+        "narHash": "sha256-UHoHinnB1byd62ISONjvY6IodWxslgRc2J6GhCpPpdY=",
         "owner": "rootrim",
         "repo": "cclip",
-        "rev": "c69b408840861f7d1c3417cd82dc08ad2ef6eec2",
+        "rev": "18a4aa4210f9db493087331f439ffb5a16ab2161",
         "type": "github"
       },
       "original": {

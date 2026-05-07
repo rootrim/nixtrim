@@ -7,7 +7,7 @@
         terminal = {
           "scroll to bottom on input" = "yes";
         };
-        font.path = "${pkgs.maple-mono.NF}/share/fonts/truetype/MapleMono/MapleMono-NF-Regular.ttf";
+        font.path = "${pkgs.maple-mono.NF}/share/fonts/truetype/MapleMono-NF-Regular.ttf";
         colors = {
           foreground = self.theme.base05;
           background = self.theme.base00;
