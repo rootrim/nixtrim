@@ -17,7 +17,6 @@
         self.homeModules.fsel
         self.homeModules.git
         self.homeModules.gtk
-        self.homeModules.havoc
         self.homeModules.helix
         self.homeModules.homePackages
         self.homeModules.hypridle
