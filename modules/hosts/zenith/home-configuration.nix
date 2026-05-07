@@ -31,7 +31,6 @@
         self.homeModules.mangohud
         self.homeModules.nix-index
         self.homeModules.nix-your-shell
-        self.homeModules.picom
         self.homeModules.pointerCursor
         self.homeModules.qt
         self.homeModules.quickshell

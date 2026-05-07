@@ -10,7 +10,6 @@
       self.nixosModules.zenithHomeRootrim
       self.nixosModules.bluetooth
       self.nixosModules.boot
-      self.nixosModules.dwm
       self.nixosModules.fcitx
       self.nixosModules.firewall
       self.nixosModules.fish

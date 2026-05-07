@@ -22,10 +22,6 @@
       url = "github:rootrim/aegis";
       inputs.flake-parts.follows = "flake-parts";
     };
-    dwm = {
-      url = "github:rootrim/dwm";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     cclip = {
       url = "github:rootrim/cclip";
       inputs.nixpkgs.follows = "nixpkgs";
