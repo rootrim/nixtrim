@@ -90,26 +90,6 @@
         "type": "github"
       }
     },
-    "dwm": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1771181231,
-        "narHash": "sha256-Zg3CVFE2ct2DL22W3d172ChqcRVQBLBKgUe6w0JuQj4=",
-        "owner": "rootrim",
-        "repo": "dwm",
-        "rev": "1785d3c2bc98c8ba22d2da43c61f07d376ee8c8b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "rootrim",
-        "repo": "dwm",
-        "type": "github"
-      }
-    },
     "fenix": {
       "inputs": {
         "nixpkgs": [
@@ -976,7 +956,6 @@
       "inputs": {
         "aegis": "aegis",
         "cclip": "cclip",
-        "dwm": "dwm",
         "flake-parts": "flake-parts_2",
         "fsel": "fsel",
         "home-manager": "home-manager",
