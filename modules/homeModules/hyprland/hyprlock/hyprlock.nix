@@ -1,27 +1,8 @@
-{
+{self, ...}: {
   flake.homeModules.hyprlock = let
     bg = ./bg.png;
     layer1 = ./layer1.png;
     layer2 = ./layer2.png;
-
-    background = "rgb(282828)";
-    foreground = "rgb(ebdbb2)";
-    color0 = "rgb(3c3836)";
-    color1 = "rgb(cc241d)";
-    color2 = "rgb(98971a)";
-    color3 = "rgb(d79921)";
-    color4 = "rgb(458588)";
-    color5 = "rgb(b16286)";
-    color6 = "rgb(689d6a)";
-    color7 = "rgb(a89984)";
-    color8 = "rgb(928374)";
-    color9 = "rgb(fb4934)";
-    color10 = "rgb(b8bb26)";
-    color11 = "rgb(fabd2f)";
-    color12 = "rgb(83a598)";
-    color13 = "rgb(d3869b)";
-    color14 = "rgb(8ec07c)";
-    color15 = "rgb(fbf1c7)";
 
     font = "Maple Mono NF";
   in {
@@ -37,17 +18,17 @@
         background = [
           {
             monitor = "";
-            path = toString bg;
+            path = "${bg}";
           }
           {
             monitor = "";
             zindex = 1;
-            path = toString layer1;
+            path = "${layer1}";
           }
           {
             monitor = "";
             zindex = 2;
-            path = toString layer2;
+            path = "${layer2}";
           }
         ];
 
@@ -64,12 +45,12 @@
 
             outline_thickness = 3;
 
-            font_color = foreground;
-            outer_color = color14;
-            inner_color = background;
-            check_color = color14;
-            fail_color = color1;
-            capslock_color = color4;
+            font_color = "rgb(${self.themeNoHash.base06})";
+            outer_color = "rgb(${self.themeNoHash.base0B})";
+            inner_color = "rgb(${self.themeNoHash.base00})";
+            check_color = "rgb(${self.themeNoHash.base0B})";
+            fail_color = "rgb(${self.themeNoHash.base08})";
+            capslock_color = "rgb(${self.themeNoHash.base0D})";
 
             fade_on_empty = true;
             placeholder_text = "Enter Password";
@@ -85,7 +66,7 @@
             monitor = "";
             zindex = 1;
             text = ''cmd[update:30000] echo "$(date +"%M")"'';
-            color = foreground;
+            color = "rgb(${self.themeNoHash.base06})";
             font_size = 170;
             font_family = font;
             position = "420, -55";
@@ -95,7 +76,7 @@
           {
             monitor = "";
             text = ''cmd[update:30000] echo "$(date +"%H")"'';
-            color = foreground;
+            color = "rgb(${self.themeNoHash.base06})";
             font_size = 170;
             font_family = font;
             position = "-220, 30";
