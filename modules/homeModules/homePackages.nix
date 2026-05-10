@@ -28,6 +28,7 @@
         dust
         easyeffects
         element
+        emacs
         eza
         fd
         feh
