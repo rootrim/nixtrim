@@ -45,7 +45,7 @@
     };
   };
 
-  flake.homeModules.rootrimHome = {
+  flake.homeModules.rootrimHome = {config, ...}: {
     home = {
       username = "rootrim";
       homeDirectory = "/home/rootrim";
@@ -65,6 +65,8 @@
         XDG_SESSION_TYPE = "wayland";
         GBM_BACKEND = "nvidia-drm";
         __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+        XKB_DEFAULT_LAYOUT = "tr";
+        XDG_CONFIG_HOME = "${config.home.homeDirectory}/.config";
       };
       stateVersion = "26.05";
     };
