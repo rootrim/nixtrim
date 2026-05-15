@@ -81,6 +81,8 @@
         input = {
           kb_layout = "tr";
           kb_options = "caps:swapescape";
+          repeat_rate = 35;
+          repeat_delay = 200;
           follow_mouse = 1;
           sensitivity = 0;
           touchpad.natural_scroll = false;
