@@ -9,6 +9,7 @@
     home-manager.users.rootrim = {
       imports = [
         inputs.nix-index-database.homeModules.default
+        inputs.zen-browser.homeModules.beta
         self.homeModules.bacon
         self.homeModules.btop
         self.homeModules.delta
@@ -33,13 +34,14 @@
         self.homeModules.pointerCursor
         self.homeModules.qt
         self.homeModules.quickshell
-        self.homeModules.qutebrowser
         self.homeModules.rofi
         self.homeModules.rootrimHome
         self.homeModules.starship
         self.homeModules.televison
         self.homeModules.yazi
+        self.homeModules.zathura
         self.homeModules.zellij
+        self.homeModules.zen-browser
         self.homeModules.zoxide
       ];
     };

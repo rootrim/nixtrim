@@ -7,7 +7,6 @@
     system = pkgs.stdenv.hostPlatform.system;
     cclip = inputs.cclip.packages.${system}.default;
     fsel = inputs.fsel.packages.${system}.default;
-    zen-browser = inputs.zen-browser.packages.${system}.default;
     selfPackages = self.packages.${system};
   in {
     home.packages = with pkgs;
@@ -86,7 +85,6 @@
         xxh
         yq
         yt-dlp
-        zen-browser
         zig
         zoxide
       ]
