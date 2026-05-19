@@ -1,0 +1,5 @@
+hl.on("hyprland.start", function()
+	hl.exec_cmd("quickshell")
+	hl.exec_cmd("cclipd -s 2 -t 'image/png' -t 'image/*' -t 'text/plain;charset=utf-8' -t 'text/*' -t '*'")
+	hl.exec_cmd("hyprshade on vibrance")
+end)
