@@ -1,6 +1,6 @@
 {
   flake.homeModules.fsel = {
-    home.file.".config/fsel/config.toml".text =
+    xdg.configFile."fsel/config.toml".text =
       #toml
       ''
         # Colors

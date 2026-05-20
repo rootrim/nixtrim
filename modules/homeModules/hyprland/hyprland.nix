@@ -28,13 +28,13 @@
     };
     services.hyprpolkitagent.enable = true;
 
-    home.file = {
-      ".config/hypr/animations.lua".source = ./luaconf/animations.lua;
-      ".config/hypr/binds.lua".source = ./luaconf/binds.lua;
-      ".config/hypr/decors.lua".source = ./luaconf/decors.lua;
-      ".config/hypr/rules.lua".source = ./luaconf/rules.lua;
-      ".config/hypr/settings.lua".source = ./luaconf/settings.lua;
-      ".config/hypr/autostart.lua".source = ./luaconf/autostart.lua;
+    xdg.configFile = {
+      "hypr/animations.lua".source = ./luaconf/animations.lua;
+      "hypr/binds.lua".source = ./luaconf/binds.lua;
+      "hypr/decors.lua".source = ./luaconf/decors.lua;
+      "hypr/rules.lua".source = ./luaconf/rules.lua;
+      "hypr/settings.lua".source = ./luaconf/settings.lua;
+      "hypr/autostart.lua".source = ./luaconf/autostart.lua;
     };
   };
 }
