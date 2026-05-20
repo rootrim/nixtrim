@@ -10,7 +10,10 @@
       imagemagick
     ];
 
-    xdg.configFile."quickshell".source = ./shell;
+    xdg.configFile."quickshell/modules".source = ./shell/modules;
+    xdg.configFile."quickshell/Funcs.qml".source = ./shell/Funcs.qml;
+    xdg.configFile."quickshell/ReloadPopup.qml".source = ./shell/ReloadPopup.qml;
+    xdg.configFile."quickshell/shell.qml".source = ./shell/shell.qml;
     xdg.configFile."quickshell/Globals.qml".text = ''
       pragma Singleton
       import QtQuick
