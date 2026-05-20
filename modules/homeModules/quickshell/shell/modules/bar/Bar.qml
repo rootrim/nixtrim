@@ -7,20 +7,6 @@ import QtQuick.Layouts
 Scope {
   id: root
 
-  // Rectangle {
-  //   width: 400
-  //   height: 400
-  //
-  //   Component.onCompleted: {
-  //     // for (const workspace of Hyprland.workspaces.values) {
-  //     //   for (const toplevel of workspace.toplevels.values) {
-  //     //     console.log(workspace.id, toplevel.title, toplevel.activated);
-  //     //   }
-  //     // }
-  //     console.log(Funcs.getActiveToplevel());
-  //   }
-  // }
-
   Variants {
     model: Quickshell.screens
 
@@ -39,13 +25,17 @@ Scope {
           bottom: true
         }
 
+        margins {
+          top: 40
+          right: 40
+          bottom: 40
+        }
+
         implicitWidth: 48
         ColumnLayout {
           anchors.fill: parent
 
           spacing: 5
-
-          Item {}
 
           Workspaces {}
 
@@ -64,8 +54,6 @@ Scope {
           Battery {}
 
           Clock {}
-
-          Item {}
         }
       }
     }
