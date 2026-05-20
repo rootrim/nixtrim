@@ -2,7 +2,7 @@ pragma Singleton
 import QtQuick
 
 QtObject {
-  property int defaultRadius: 10
+  property int defaultRadius: 0
   property string fontFamily: "Maple Mono NF"
   property int fontSize: 13
   property color base00: "#292828"
