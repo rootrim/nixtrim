@@ -16,9 +16,9 @@ Repeater {
     Layout.preferredWidth: 40
     Layout.preferredHeight: 40
 
-    color: Globals.base01
-    border.color: mouseArea.containsMouse ? Globals.base0D : Globals.base02
-    border.width: 2
+    color: Globals.base00
+    border.color: mouseArea.containsMouse ? Globals.base0D : Globals.base01
+    border.width: Globals.defaultBorderSize
     radius: Globals.defaultRadius
 
     Image {

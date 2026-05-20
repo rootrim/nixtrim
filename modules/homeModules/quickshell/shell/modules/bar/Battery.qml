@@ -8,10 +8,10 @@ Rectangle {
   Layout.alignment: Qt.AlignCenter
   Layout.preferredWidth: 40
   Layout.preferredHeight: 40
-  color: level <= 20 ? Globals.base08 : Globals.base01
+  color: level <= 20 ? Globals.base08 : Globals.base00
   radius: Globals.defaultRadius
-  border.color: charging ? Globals.base0B : level <= 20 ? Globals.base08 : Globals.base03
-  border.width: 2
+  border.color: charging ? Globals.base0B : level <= 20 ? Globals.base08 : Globals.base01
+  border.width: Globals.defaultBorderSize
 
   property int level: 100
   property bool charging: false

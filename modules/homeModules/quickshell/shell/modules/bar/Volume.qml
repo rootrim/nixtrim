@@ -8,10 +8,10 @@ Rectangle {
   Layout.alignment: Qt.AlignCenter
   Layout.preferredWidth: 40
   Layout.preferredHeight: 40
-  color: Globals.base01
+  color: Globals.base00
   radius: Globals.defaultRadius
-  border.color: Globals.base03
-  border.width: 2
+  border.color: Globals.base01
+  border.width: Globals.defaultBorderSize
 
   property PwNode sink: Pipewire.defaultAudioSink
   property real volume: sink?.audio ? Math.round(sink.audio.volume * 100) : 0

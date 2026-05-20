@@ -31,10 +31,10 @@ Repeater {
     background: Rectangle {
       implicitWidth: 40
       implicitHeight: 40
-      color: Globals.base01
+      color: Globals.base00
       opacity: enabled ? 1 : 0.3
-      border.color: root.modelData.focused ? Globals.base0D : root.modelData.urgent ? Globals.base08 : Globals.base02
-      border.width: root.modelData.focused ? 2 : 2
+      border.color: root.modelData.focused ? Globals.base0D : root.modelData.urgent ? Globals.base08 : Globals.base01
+      border.width: Globals.defaultBorderSize
       radius: Globals.defaultRadius
     }
   }

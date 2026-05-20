@@ -7,10 +7,10 @@ Rectangle {
   Layout.alignment: Qt.AlignCenter
   Layout.preferredWidth: 40
   Layout.preferredHeight: 80
-  color: Globals.base01
+  color: Globals.base00
   radius: Globals.defaultRadius
-  border.color: Globals.base03
-  border.width: 2
+  border.color: Globals.base01
+  border.width: Globals.defaultBorderSize
   property var clock: SystemClock {
     precision: SystemClock.Seconds
   }
