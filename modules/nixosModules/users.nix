@@ -5,12 +5,13 @@
       isNormalUser = true;
       description = "The Ultimate Life Form";
       extraGroups = [
-        "networkmanager"
-        "wheel"
         "dialout"
         "input"
-        "video"
+        "networkmanager"
         "plugdev"
+        "uucp"
+        "video"
+        "wheel"
       ];
     };
   };
