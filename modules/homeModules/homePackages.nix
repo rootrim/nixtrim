@@ -76,6 +76,7 @@
         strace
         tealdeer
         udisks
+        wf-recorder
         wget
         wifite2
         wiremix
