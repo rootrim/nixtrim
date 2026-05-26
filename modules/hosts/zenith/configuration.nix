@@ -5,17 +5,19 @@
 }: {
   flake.nixosModules.zenithConfiguration = {
     imports = [
-      inputs.lanzaboote.nixosModules.lanzaboote
       inputs.home-manager.nixosModules.home-manager
-      self.nixosModules.zenithHomeRootrim
+      inputs.lanzaboote.nixosModules.lanzaboote
+      inputs.mikuPlymouth.nixosModules.default
       self.nixosModules.bluetooth
       self.nixosModules.boot
+      self.nixosModules.dynamiku
       self.nixosModules.fcitx
       self.nixosModules.firewall
       self.nixosModules.fish
       self.nixosModules.fonts
       self.nixosModules.hyprland
       self.nixosModules.localization
+      self.nixosModules.ly
       self.nixosModules.networking
       self.nixosModules.nh
       self.nixosModules.nix-ld
@@ -29,9 +31,9 @@
       self.nixosModules.tabletDriver
       self.nixosModules.usersRootrim
       self.nixosModules.virtualisation
-      self.nixosModules.zenithHardware
       self.nixosModules.zapret
-      self.nixosModules.ly
+      self.nixosModules.zenithHardware
+      self.nixosModules.zenithHomeRootrim
     ];
 
     networking.hostName = "zenith";
