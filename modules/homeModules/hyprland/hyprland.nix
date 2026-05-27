@@ -35,6 +35,8 @@
 
     xdg.configFile = let
       zawarudo_shader = ./zawarudo.frag;
+      zawarudo_opus = ./zawarudo.opus;
+      tokiwaumekides_opus = ./tokiwaumekides.opus;
     in {
       "hypr/animations.lua".source = ./luaconf/animations.lua;
       "hypr/binds.lua".source = ./luaconf/binds.lua;
@@ -47,6 +49,8 @@
         ''
           local SHADER = "${zawarudo_shader}"
           local zawarudo = "${lib.getExe pkgs.wl-freeze}"
+          local pwplay = "${pkgs.pipewire}/bin/pw-play"
+
           hl.bind("SUPER + W", function()
             local window = hl.get_active_window()
             if window == nil then return end
@@ -54,9 +58,11 @@
 
             hl.config({ decoration = { screen_shader = SHADER } })
             os.execute(zawarudo .. " -p " .. pid .. " -s &")
+            os.execute(pwplay .. " ${zawarudo_opus} &")
             hl.timer(function()
               hl.config({ decoration = { screen_shader = "" } })
               os.execute(zawarudo .. " -p " .. pid .. " -s &")
+            os.execute(pwplay .. " ${tokiwaumekides_opus} &")
             end, { timeout = 9000, type = "oneshot" })
           end)
         '';
