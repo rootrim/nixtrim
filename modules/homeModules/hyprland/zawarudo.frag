@@ -1,0 +1,12 @@
+#version 300 es
+precision mediump float;
+in vec2 v_texcoord;
+layout(location = 0) out vec4 fragColor;
+uniform sampler2D tex;
+
+void main() {
+    vec4 color = texture(tex, v_texcoord);
+    float gray = dot(color.rgb, vec3(0.299, 0.587, 0.114));
+    vec3 desaturated = mix(color.rgb, vec3(gray), 0.85); // 0.0 = original color, 1.0 = full grayscale
+    fragColor = vec4(desaturated, color.a);
+}

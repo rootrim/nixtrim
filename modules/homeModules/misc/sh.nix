@@ -18,8 +18,6 @@
         "ff" = "fastfetch";
         "lg" = "lazygit";
 
-        "konodioda" = "onefetch -i cover.* --nerd-fonts";
-
         "weather" = "curl wttr.in";
       };
       shellAbbrs = {
