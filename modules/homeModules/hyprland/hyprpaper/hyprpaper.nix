@@ -1,6 +1,6 @@
 {
   flake.homeModules.hyprpaper = let
-    wall = ./jelly.jpg;
+    wall = ./groovyspacebox.png;
   in {
     services.hyprpaper = {
       enable = true;
