@@ -34,9 +34,9 @@
     services.hyprpolkitagent.enable = true;
 
     xdg.configFile = let
-      zawarudo_shader = ./zawarudo.frag;
-      zawarudo_opus = ./zawarudo.opus;
-      tokiwaumekides_opus = ./tokiwaumekides.opus;
+      zawarudo_shader = ./zawarudoFiles/zawarudo.frag;
+      zawarudo_opus = ./zawarudoFiles/zawarudo.opus;
+      tokiwaumekides_opus = ./zawarudoFiles/tokiwaumekides.opus;
     in {
       "hypr/animations.lua".source = ./luaconf/animations.lua;
       "hypr/binds.lua".source = ./luaconf/binds.lua;
@@ -71,8 +71,6 @@
               os.execute(pwplay .. " ${tokiwaumekides_opus} &")
               active = false
             end, { timeout = 9000, type = "oneshot" })
-
-
           end)
         '';
     };
