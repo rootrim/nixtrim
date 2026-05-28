@@ -50,20 +50,29 @@
           local SHADER = "${zawarudo_shader}"
           local zawarudo = "${lib.getExe pkgs.wl-freeze}"
           local pwplay = "${pkgs.pipewire}/bin/pw-play"
+          local active = false
 
           hl.bind("SUPER + W", function()
+            if active then return end
+
             local window = hl.get_active_window()
             if window == nil then return end
+
             local pid = window.pid
+            active = true
 
             hl.config({ decoration = { screen_shader = SHADER } })
             os.execute(zawarudo .. " -p " .. pid .. " -s &")
             os.execute(pwplay .. " ${zawarudo_opus} &")
+
             hl.timer(function()
               hl.config({ decoration = { screen_shader = "" } })
               os.execute(zawarudo .. " -p " .. pid .. " -s &")
-            os.execute(pwplay .. " ${tokiwaumekides_opus} &")
+              os.execute(pwplay .. " ${tokiwaumekides_opus} &")
+              active = false
             end, { timeout = 9000, type = "oneshot" })
+
+
           end)
         '';
     };
