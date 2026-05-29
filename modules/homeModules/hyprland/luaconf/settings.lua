@@ -3,7 +3,7 @@ hl.monitor({
 	mode = "1920x1080@120",
 	position = "0x0",
 	scale = 1,
-	vrr = 1,
+	-- vrr = 1,
 })
 
 hl.config({
@@ -22,7 +22,7 @@ hl.config({
 	},
 
 	misc = {
-		vrr = 1,
+		vrr = 3,
 	},
 
 	xwayland = {
@@ -30,7 +30,7 @@ hl.config({
 	},
 
 	render = {
-		direct_scanout = 1,
+		direct_scanout = 2,
 		cm_enabled = true,
 	},
 

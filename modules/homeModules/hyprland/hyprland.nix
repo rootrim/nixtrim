@@ -52,6 +52,15 @@
           local pwplay = "${pkgs.pipewire}/bin/pw-play"
           local active = false
 
+          local function reboot_monitor()
+            hl.timer(function()
+              hl.dispatch(hl.dsp.dpms({ action = "disable" }))
+              hl.timer(function()
+                hl.dispatch(hl.dsp.dpms({ action = "enable" }))
+              end, { timeout = 10, type = "oneshot" })
+            end, { timeout = 5, type = "oneshot" })
+          end
+
           hl.bind("SUPER + W", function()
             if active then return end
 
@@ -65,8 +74,11 @@
             os.execute(zawarudo .. " -p " .. pid .. " -s &")
             os.execute(pwplay .. " ${zawarudo_opus} &")
 
+            reboot_monitor()
+
             hl.timer(function()
               hl.config({ decoration = { screen_shader = "" } })
+              reboot_monitor()
               os.execute(zawarudo .. " -p " .. pid .. " -s &")
               os.execute(pwplay .. " ${tokiwaumekides_opus} &")
               active = false
