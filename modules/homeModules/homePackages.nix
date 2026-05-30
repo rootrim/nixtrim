@@ -7,6 +7,7 @@
     system = pkgs.stdenv.hostPlatform.system;
     cclip = inputs.cclip.packages.${system}.default;
     fsel = inputs.fsel.packages.${system}.default;
+    whoisgod = inputs.whoisgod.packages.${system}.default;
     selfPackages = self.packages.${system};
   in {
     home.packages = with pkgs;
@@ -78,6 +79,7 @@
         udisks
         wf-recorder
         wget
+        whoisgod
         wifite2
         wiremix
         wl-clipboard
