@@ -1,5 +1,5 @@
 .venv
 __pycache__
 *.pyc
-home/modules/de/desktopshell/quickshell/shell/.qmlls.ini
+.qmlls.ini
 .luarc.json
