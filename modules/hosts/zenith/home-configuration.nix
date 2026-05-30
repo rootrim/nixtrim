@@ -16,6 +16,7 @@
         self.homeModules.fastfetch
         self.homeModules.fish
         self.homeModules.fsel
+        self.homeModules.ghostty
         self.homeModules.git
         self.homeModules.gtk
         self.homeModules.helix
