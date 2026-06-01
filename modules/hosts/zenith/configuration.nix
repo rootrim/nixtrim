@@ -28,6 +28,7 @@
       self.nixosModules.services
       self.nixosModules.sound
       self.nixosModules.steam
+      self.nixosModules.sudo
       self.nixosModules.tabletDriver
       self.nixosModules.usersRootrim
       self.nixosModules.virtualisation
