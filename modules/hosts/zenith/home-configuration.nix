@@ -53,6 +53,7 @@
       username = "rootrim";
       homeDirectory = "/home/rootrim";
       sessionVariables = {
+        RELIGION = "islam";
         HYPRSHOT_DIR = "$HOME/Pictures/Screenshots";
         GTK_IM_MODULE = "fcitx";
         QT_IM_MODULE = "fcitx";
