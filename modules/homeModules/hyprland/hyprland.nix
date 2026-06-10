@@ -20,6 +20,7 @@
           require("decors")
           require("rules")
           require("settings")
+          require("dvd")
           require("zawarudo")
           hl.config({
             general = {
@@ -44,6 +45,7 @@
       "hypr/rules.lua".source = ./luaconf/rules.lua;
       "hypr/settings.lua".source = ./luaconf/settings.lua;
       "hypr/autostart.lua".source = ./luaconf/autostart.lua;
+      "hypr/dvd.lua".source = ./luaconf/dvd.lua;
       "hypr/zawarudo.lua".text =
         # lua
         ''
