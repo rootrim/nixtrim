@@ -11,7 +11,7 @@
     boot.initrd.kernelModules = [];
     boot.kernelModules = ["kvm-intel" "ntsync"];
     boot.kernelPackages = pkgs.linuxPackages_latest;
-    boot.kernelParams = [];
+    boot.kernelParams = ["libata.noacpi=1"];
     boot.extraModulePackages = [];
 
     fileSystems."/" = {
