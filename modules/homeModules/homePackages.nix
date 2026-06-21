@@ -22,6 +22,7 @@
         cbonsai
         cclip
         cmatrix
+        cool-retro-term
         curl
         delta
         duf
@@ -29,6 +30,7 @@
         easyeffects
         element
         emacs
+        espeak
         eza
         fd
         feh
@@ -52,6 +54,7 @@
         kdePackages.kdenlive
         kicad
         krita
+        lavat
         libreoffice-fresh
         lsfg-vk
         lsfg-vk-ui
