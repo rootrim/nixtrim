@@ -6,7 +6,6 @@
   flake.nixosModules.zenithConfiguration = {
     imports = [
       inputs.home-manager.nixosModules.home-manager
-      inputs.lanzaboote.nixosModules.lanzaboote
       inputs.mikuPlymouth.nixosModules.default
       self.nixosModules.bluetooth
       self.nixosModules.boot

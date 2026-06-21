@@ -3,12 +3,14 @@
     boot = {
       loader = {
         systemd-boot.enable = lib.mkForce false;
-        efi.canTouchEfiVariables = true;
-        timeout = 0;
-      };
-      lanzaboote = {
-        enable = true;
-        pkiBundle = "/var/lib/sbctl";
+        timeout = 5;
+        limine = {
+          enable = true;
+          enrollConfig = true;
+          efiSupport = true;
+          maxGenerations = 5;
+          secureBoot.enable = true;
+        };
       };
     };
   };
