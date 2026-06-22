@@ -1,17 +1,16 @@
 {
   flake.nixosModules.zenithHardware = {
-    config,
     modulesPath,
     pkgs,
     ...
   }: {
     imports = [(modulesPath + "/installer/scan/not-detected.nix")];
 
-    boot.initrd.availableKernelModules = ["xhci_pci" "thunderbolt" "nvme" "usb_storage" "usbhid" "sd_mod"];
+    boot.initrd.availableKernelModules = ["xhci_pci" "nvme" "usb_storage" "usbhid" "sd_mod"];
     boot.initrd.kernelModules = [];
     boot.kernelModules = ["kvm-intel" "ntsync"];
     boot.kernelPackages = pkgs.linuxPackages_latest;
-    boot.kernelParams = ["libata.noacpi=1"];
+    boot.kernelParams = [];
     boot.extraModulePackages = [];
 
     fileSystems."/" = {
@@ -28,7 +27,6 @@
     swapDevices = [{device = "/dev/disk/by-uuid/f24426a1-94ff-4db8-bd28-31feccbb5f56";}];
 
     nixpkgs.hostPlatform = "x86_64-linux";
-    hardware.cpu.intel.updateMicrocode =
-      config.hardware.enableRedistributableFirmware;
+    hardware.cpu.intel.updateMicrocode = true;
   };
 }
