@@ -19,7 +19,6 @@
           efiSupport = true;
           maxGenerations = 5;
           resolution = "1920x1080";
-          additionalFiles = {"efi/memtest86/memtest86.efi" = "${pkgs.memtest86-efi}/BOOTX64.efi";};
           secureBoot.enable = true;
           secureBoot.autoGenerateKeys = true;
           secureBoot.autoEnrollKeys.enable = true;
