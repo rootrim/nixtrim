@@ -34,6 +34,7 @@
         eza
         fd
         feh
+        ffmpeg
         file
         flameshot
         fsel
@@ -86,9 +87,7 @@
         wifite2
         wiremix
         wl-clipboard
-        xclip
         xxd
-        xxh
         yq
         yt-dlp
         zig
