@@ -8,6 +8,7 @@
     cclip = inputs.cclip.packages.${system}.default;
     fsel = inputs.fsel.packages.${system}.default;
     whoisgod = inputs.whoisgod.packages.${system}.default;
+    kanarenshu = inputs.kanarenshu.packages.${system}.default;
     selfPackages = self.packages.${system};
   in {
     home.packages = with pkgs;
@@ -52,6 +53,7 @@
         hyprshot
         imagemagick
         jq
+        kanarenshu
         kdePackages.kdenlive
         kicad
         krita

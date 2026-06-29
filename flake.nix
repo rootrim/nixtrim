@@ -35,6 +35,9 @@
       url = "github:rootrim/whoisgod";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    kanarenshu = {
+      url = "github:rootrim/kanarenshu";
+    };
   };
 
   outputs = inputs:
