@@ -1,9 +1,7 @@
 {
-  flake.nixosModules.dynamiku = {pkgs, ...}: {
+  flake.nixosModules.plymouth = {
     boot.plymouth = {
-      enable = true;
-      themePackages = [pkgs.mikuPlymouth];
-      theme = "MikuPlymouth";
+      enable = false;
     };
   };
 }

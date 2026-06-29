@@ -6,10 +6,8 @@
   flake.nixosModules.zenithConfiguration = {
     imports = [
       inputs.home-manager.nixosModules.home-manager
-      inputs.mikuPlymouth.nixosModules.default
       self.nixosModules.bluetooth
       self.nixosModules.boot
-      self.nixosModules.dynamiku
       self.nixosModules.fcitx
       self.nixosModules.firewall
       self.nixosModules.fish
@@ -23,6 +21,7 @@
       self.nixosModules.nixSettings
       self.nixosModules.nvidia
       self.nixosModules.packages
+      self.nixosModules.plymouth
       self.nixosModules.secrets
       self.nixosModules.services
       self.nixosModules.sound
