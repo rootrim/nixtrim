@@ -715,15 +715,15 @@
         "nixpkgs": "nixpkgs_5"
       },
       "locked": {
-        "lastModified": 1782729627,
+        "lastModified": 1782736949,
         "narHash": "sha256-0Jq5TmH3MlH7zRBZaBuvmkn6oRwRt5k4YIovQwCNaLA=",
-        "owner": "rootrim",
+        "owner": "nuixyz",
         "repo": "kanarenshu",
-        "rev": "a6d828dcdec434a2450b433dbba706e00ef062ce",
+        "rev": "4752b2cd4a60d2078a9462cfdbe5442f92a8a791",
         "type": "github"
       },
       "original": {
-        "owner": "rootrim",
+        "owner": "nuixyz",
         "repo": "kanarenshu",
         "type": "github"
       }

@@ -36,7 +36,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     kanarenshu = {
-      url = "github:rootrim/kanarenshu";
+      url = "github:nuixyz/kanarenshu";
     };
   };
 
