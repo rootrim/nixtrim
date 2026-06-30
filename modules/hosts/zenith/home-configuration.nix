@@ -37,10 +37,12 @@
         self.homeModules.quickshell
         self.homeModules.rofi
         self.homeModules.rootrimHome
+        self.homeModules.stairs
         self.homeModules.starship
         self.homeModules.televison
         self.homeModules.yazi
         self.homeModules.zathura
+        self.homeModules.zawarudo
         self.homeModules.zellij
         self.homeModules.zen-browser
         self.homeModules.zoxide

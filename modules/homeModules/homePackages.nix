@@ -65,6 +65,7 @@
         lutgen
         mpc
         mpv
+        mpvpaper
         mtr
         nitch
         nmap

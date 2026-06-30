@@ -1,9 +1,5 @@
 {self, ...}: {
   flake.homeModules.hyprland = {
-    lib,
-    pkgs,
-    ...
-  }: {
     wayland.windowManager.hyprland = {
       enable = true;
       package = null;
@@ -22,6 +18,7 @@
           require("settings")
           require("dvd")
           require("zawarudo")
+          require("stairs")
           hl.config({
             general = {
               col = {
@@ -34,11 +31,7 @@
     };
     services.hyprpolkitagent.enable = true;
 
-    xdg.configFile = let
-      zawarudo_shader = ./zawarudoFiles/zawarudo.frag;
-      zawarudo_opus = ./zawarudoFiles/zawarudo.opus;
-      tokiwaumekides_opus = ./zawarudoFiles/tokiwaumekides.opus;
-    in {
+    xdg.configFile = {
       "hypr/animations.lua".source = ./luaconf/animations.lua;
       "hypr/binds.lua".source = ./luaconf/binds.lua;
       "hypr/decors.lua".source = ./luaconf/decors.lua;
@@ -46,47 +39,6 @@
       "hypr/settings.lua".source = ./luaconf/settings.lua;
       "hypr/autostart.lua".source = ./luaconf/autostart.lua;
       "hypr/dvd.lua".source = ./luaconf/dvd.lua;
-      "hypr/zawarudo.lua".text =
-        # lua
-        ''
-          local SHADER = "${zawarudo_shader}"
-          local zawarudo = "${lib.getExe pkgs.wl-freeze}"
-          local pwplay = "${pkgs.pipewire}/bin/pw-play"
-          local active = false
-
-          local function reboot_monitor()
-            hl.timer(function()
-              hl.dispatch(hl.dsp.dpms({ action = "disable" }))
-              hl.timer(function()
-                hl.dispatch(hl.dsp.dpms({ action = "enable" }))
-              end, { timeout = 10, type = "oneshot" })
-            end, { timeout = 5, type = "oneshot" })
-          end
-
-          hl.bind("SUPER + W", function()
-            if active then return end
-
-            local window = hl.get_active_window()
-            if window == nil then return end
-
-            local pid = window.pid
-            active = true
-
-            hl.config({ decoration = { screen_shader = SHADER } })
-            os.execute(zawarudo .. " -p " .. pid .. " -s &")
-            os.execute(pwplay .. " ${zawarudo_opus} &")
-
-            reboot_monitor()
-
-            hl.timer(function()
-              hl.config({ decoration = { screen_shader = "" } })
-              reboot_monitor()
-              os.execute(zawarudo .. " -p " .. pid .. " -s &")
-              os.execute(pwplay .. " ${tokiwaumekides_opus} &")
-              active = false
-            end, { timeout = 9000, type = "oneshot" })
-          end)
-        '';
     };
   };
 }
