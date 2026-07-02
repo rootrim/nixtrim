@@ -23,21 +23,17 @@
         cbonsai
         cclip
         cmatrix
-        cool-retro-term
         curl
-        delta
         duf
         dust
         easyeffects
         element
-        emacs
         espeak
         eza
         fd
         feh
         ffmpeg
         file
-        flameshot
         fsel
         fzf
         gcc

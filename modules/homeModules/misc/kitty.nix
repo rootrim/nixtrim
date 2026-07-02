@@ -4,6 +4,7 @@
       enable = true;
       enableGitIntegration = true;
       themeFile = "GruvboxMaterialDarkMedium";
+      settings.enable_audio_bell = true;
       font = {
         size = 12;
         name = "Maple Mono NF";
