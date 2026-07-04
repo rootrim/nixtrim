@@ -1,41 +1,37 @@
 import qs
+import Quickshell
+import Quickshell.Hyprland
 import QtQuick
 import QtQuick.Layouts
-import QtQuick.Controls
-import Quickshell.Hyprland
 
-Repeater {
-  model: Hyprland.workspaces.values
-  delegate: RoundButton {
-    id: root
-    required property var modelData
-    Layout.alignment: Qt.AlignCenter
-    Layout.preferredWidth: 40
-    Layout.preferredHeight: 40
-    visible: modelData.id > 0
-    onClicked: modelData.activate()
+ColumnLayout {
+  id: root
+  spacing: 4
+  Layout.alignment: Qt.AlignCenter
 
-    contentItem: Text {
-      text: Funcs.toKanji(root.modelData.id)
-      font {
-        bold: true
-        pointSize: Globals.fontSize
-        family: Globals.fontFamily
-      }
-      opacity: enabled ? 1.0 : 0.3
-      color: Globals.base07
-      horizontalAlignment: Text.AlignHCenter
-      verticalAlignment: Text.AlignVCenter
-      elide: Text.ElideRight
+  Repeater {
+    model: ScriptModel {
+      values: Hyprland.workspaces.values.filter(ws => ws.id > 0)
     }
-    background: Rectangle {
-      implicitWidth: 40
-      implicitHeight: 40
-      color: Globals.base00
-      opacity: enabled ? 1 : 0.3
-      border.color: root.modelData.focused ? Globals.base0D : root.modelData.urgent ? Globals.base08 : Globals.base01
-      border.width: Globals.defaultBorderSize
-      radius: Globals.defaultRadius
+
+    Rectangle {
+      id: wsItem
+      required property HyprlandWorkspace modelData
+      Layout.alignment: Qt.AlignHCenter
+      implicitWidth: wsText.implicitHeight
+      implicitHeight: wsText.implicitHeight
+      color: modelData.focused ? Globals.base0D : "transparent"
+      border.width: 0
+
+      Text {
+        id: wsText
+        anchors.centerIn: parent
+        font.family: Globals.fontFamily
+        font.pointSize: Globals.fontSize + 2
+        color: wsItem.modelData.focused ? Globals.base00 : Globals.base07
+        // text: Funcs.toKanji(wsItem.modelData.id.toString())
+        text: Funcs.toKanji(wsItem.modelData.id)
+      }
     }
   }
 }

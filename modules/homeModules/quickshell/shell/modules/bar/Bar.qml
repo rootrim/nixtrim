@@ -5,56 +5,39 @@ import QtQuick
 import QtQuick.Layouts
 
 Scope {
-  id: root
-
   Variants {
     model: Quickshell.screens
 
-    LazyLoader {
-      id: barLoader
-      active: true
+    PanelWindow {
+      id: root
       required property var modelData
-      component: PanelWindow {
-        id: bar
-        screen: barLoader.modelData
-        color: "transparent"
+      screen: modelData
 
-        anchors {
-          top: true
-          right: true
-          bottom: true
+      anchors {
+        top: true
+        right: true
+        bottom: true
+      }
+
+      implicitWidth: 40
+      color: Globals.base00
+
+      ColumnLayout {
+        anchors.fill: parent
+        anchors.topMargin: 8
+        anchors.bottomMargin: 8
+
+        Workspaces {}
+
+        Item {
+          Layout.fillHeight: true
         }
 
-        margins {
-          top: 40
-          right: 40
-          bottom: 40
-        }
-
-        implicitWidth: 48
-        ColumnLayout {
-          anchors.fill: parent
-
-          spacing: 5
-
-          Workspaces {}
-
-          WindowTitle {}
-
-          Spacer {}
-
-          Tray {
-            panel: parent
-          }
-
-          Net {}
-
-          Volume {}
-
-          Battery {}
-
-          Clock {}
-        }
+        Tray {}
+        Network {}
+        Volume {}
+        Battery {}
+        Clock {}
       }
     }
   }

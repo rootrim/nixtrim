@@ -1,5 +1,7 @@
 .venv
 __pycache__
 *.pyc
+\#*\#
 .qmlls.ini
 .luarc.json
+Globals.qml

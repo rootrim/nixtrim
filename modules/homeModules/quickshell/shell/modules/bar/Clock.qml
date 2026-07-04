@@ -5,22 +5,23 @@ import Quickshell
 
 Rectangle {
   Layout.alignment: Qt.AlignCenter
-  Layout.preferredWidth: 40
-  Layout.preferredHeight: 80
-  color: Globals.base00
-  radius: Globals.defaultRadius
-  border.color: Globals.base01
-  border.width: Globals.defaultBorderSize
-  property var clock: SystemClock {
+  color: "transparent"
+  implicitWidth: clockText.implicitWidth
+  implicitHeight: clockText.implicitHeight
+
+  SystemClock {
+    id: clock
     precision: SystemClock.Seconds
   }
 
   Text {
+    id: clockText
     anchors.centerIn: parent
     font.family: Globals.fontFamily
     font.pointSize: Globals.fontSize
-    font.bold: true
+    font.bold: false
     color: Globals.base07
-    text: Qt.formatDateTime(parent.clock.date, "hh\nmm\nss")
+    horizontalAlignment: Text.AlignHCenter
+    text: Qt.formatDateTime(clock.date, "hh\nmm\nss")
   }
 }

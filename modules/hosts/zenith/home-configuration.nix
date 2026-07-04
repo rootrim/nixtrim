@@ -13,6 +13,7 @@
         self.homeModules.bacon
         self.homeModules.btop
         self.homeModules.delta
+        self.homeModules.emacs
         self.homeModules.fastfetch
         self.homeModules.fish
         self.homeModules.fsel
@@ -28,7 +29,6 @@
         self.homeModules.jujutsu
         self.homeModules.kitty
         self.homeModules.lazygit
-        self.homeModules.mako
         self.homeModules.mangohud
         self.homeModules.nix-index
         self.homeModules.nix-your-shell

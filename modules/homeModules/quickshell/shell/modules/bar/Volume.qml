@@ -1,47 +1,41 @@
 import qs
+import Quickshell.Services.Pipewire
 import QtQuick
 import QtQuick.Layouts
-import Quickshell.Services.Pipewire
 
 Rectangle {
-  id: volumeBox
+  id: root
+  color: "transparent"
   Layout.alignment: Qt.AlignCenter
-  Layout.preferredWidth: 40
-  Layout.preferredHeight: 40
-  color: Globals.base00
-  radius: Globals.defaultRadius
-  border.color: Globals.base01
-  border.width: Globals.defaultBorderSize
+  implicitWidth: Math.max(iconText.implicitWidth, volumeText.implicitWidth) + 4
+  implicitHeight: iconText.implicitHeight + volumeText.implicitHeight
 
   property PwNode sink: Pipewire.defaultAudioSink
-  property real volume: sink?.audio ? Math.round(sink.audio.volume * 100) : 0
-  property bool muted: sink?.audio ? sink.audio.muted : false
+  property int volume: sink?.audio ? Math.round(sink.audio.volume * 100) : 0
+  property bool muted: sink?.audio?.muted ?? false
 
   PwObjectTracker {
-    objects: [volumeBox.sink]
+    objects: [root.sink]
   }
 
-  Text {
+  ColumnLayout {
     anchors.centerIn: parent
-    font.family: Globals.fontFamily
-    font.pointSize: Globals.fontSize
-    font.bold: true
-    color: Globals.base07
-    text: parent.muted ? "XX" : parent.volume.toString()
-  }
-
-  MouseArea {
-    anchors.fill: parent
-    acceptedButtons: Qt.LeftButton
-    onClicked: {
-      if (volumeBox.sink?.audio && volumeBox.sink.ready)
-        volumeBox.sink.audio.muted = !volumeBox.sink.audio.muted;
+    spacing: 0
+    Text {
+      id: iconText
+      font.family: Globals.fontFamily
+      Layout.alignment: Qt.AlignHCenter
+      text: ""
+      font.pointSize: Globals.fontSize - 4
+      color: Globals.base0D
     }
-    onWheel: wheel => {
-      if (!volumeBox.sink?.audio || !volumeBox.sink.ready)
-        return;
-      const delta = wheel.angleDelta.y > 0 ? 0.05 : -0.05;
-      volumeBox.sink.audio.volume = Math.max(0, Math.min(1, volumeBox.sink.audio.volume + delta));
+    Text {
+      id: volumeText
+      font.family: Globals.fontFamily
+      Layout.alignment: Qt.AlignHCenter
+      text: root.muted ? "XX" : root.volume === 100 ? "00" : root.volume.toString()
+      font.pointSize: Globals.fontSize
+      color: Globals.base07
     }
   }
 }

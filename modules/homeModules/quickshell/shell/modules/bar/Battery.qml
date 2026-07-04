@@ -1,47 +1,37 @@
 import qs
+import Quickshell.Services.UPower
 import QtQuick
 import QtQuick.Layouts
-import Quickshell.Io
 
 Rectangle {
-  id: batteryBox
+  id: root
+  color: "transparent"
   Layout.alignment: Qt.AlignCenter
-  Layout.preferredWidth: 40
-  Layout.preferredHeight: 40
-  color: level <= 20 ? Globals.base08 : Globals.base00
-  radius: Globals.defaultRadius
-  border.color: charging ? Globals.base0B : level <= 20 ? Globals.base08 : Globals.base01
-  border.width: Globals.defaultBorderSize
+  implicitWidth: Math.max(iconText.implicitWidth, batteryText.implicitWidth) + 4
+  implicitHeight: iconText.implicitHeight + batteryText.implicitHeight
 
-  property int level: 100
-  property bool charging: false
+  property var device: UPower.displayDevice
+  property int level: Math.round(device.percentage * 100)
+  property bool charging: device.state === UPowerDeviceState.Charging
 
-  Process {
-    id: batteryProcess
-    command: ["sh", "-c", "echo $(cat /sys/class/power_supply/BAT1/capacity):$(cat /sys/class/power_supply/BAT1/status)"]
-    running: true
-    stdout: StdioCollector {
-      onStreamFinished: {
-        const parts = this.text.trim().split(":");
-        batteryBox.level = parseInt(parts[0]) || 0;
-        batteryBox.charging = parts[1] === "Charging" || parts[1] === "Full";
-      }
-    }
-  }
-
-  Timer {
-    interval: 5000
-    running: true
-    repeat: true
-    onTriggered: batteryProcess.running = true
-  }
-
-  Text {
+  ColumnLayout {
     anchors.centerIn: parent
-    font.family: Globals.fontFamily
-    font.pointSize: Globals.fontSize
-    font.bold: true
-    color: parent.charging ? Globals.base0B : parent.level <= 20 ? Globals.base08 : Globals.base07
-    text: parent.level.toString()
+    spacing: 0
+    Text {
+      id: iconText
+      Layout.alignment: Qt.AlignHCenter
+      text: ""
+      font.pointSize: Globals.fontSize - 4
+      color: Globals.base0D
+    }
+    Text {
+      id: batteryText
+      Layout.alignment: Qt.AlignHCenter
+      font.family: Globals.fontFamily
+      font.pointSize: Globals.fontSize
+      font.bold: false
+      color: root.level <= 20 && !root.charging ? Globals.base08 : Globals.base07
+      text: root.level === 100 ? "00" : root.level.toString()
+    }
   }
 }
