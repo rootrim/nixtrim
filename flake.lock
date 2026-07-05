@@ -805,6 +805,22 @@
         "type": "github"
       }
     },
+    "nixos-hardware": {
+      "locked": {
+        "lastModified": 1775318797,
+        "narHash": "sha256-3Lb2cCdRp7lhjwCgqM9bobe8B+2oVUV2Auqz7DLohRI=",
+        "owner": "2hexed",
+        "repo": "nixos-hardware",
+        "rev": "452bfd15cf976a5a6e93622893930fd1d1c3a8bd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "2hexed",
+        "ref": "lenovo-ideapad-15iah7",
+        "repo": "nixos-hardware",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1718714799,
@@ -1008,6 +1024,7 @@
         "import-tree": "import-tree",
         "kanarenshu": "kanarenshu",
         "nix-index-database": "nix-index-database",
+        "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_6",
         "whoisgod": "whoisgod",
         "zen-browser": "zen-browser"

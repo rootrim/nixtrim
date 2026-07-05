@@ -6,6 +6,7 @@
   flake.nixosModules.zenithConfiguration = {
     imports = [
       inputs.home-manager.nixosModules.home-manager
+      inputs.nixos-hardware.nixosModules.lenovo-ideapad-15iah7
       self.nixosModules.bluetooth
       self.nixosModules.boot
       self.nixosModules.fcitx
@@ -19,7 +20,6 @@
       self.nixosModules.nh
       self.nixosModules.nix-ld
       self.nixosModules.nixSettings
-      self.nixosModules.nvidia
       self.nixosModules.packages
       self.nixosModules.plymouth
       self.nixosModules.secrets

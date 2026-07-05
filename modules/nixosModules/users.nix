@@ -12,6 +12,7 @@
         "uucp"
         "video"
         "wheel"
+        "ideapad_laptop"
       ];
     };
   };

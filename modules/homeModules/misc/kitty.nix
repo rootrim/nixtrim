@@ -18,7 +18,7 @@
         hide_on_focus_loss = false;
         background_opacity = 1.0;
         margin_left = 40;
-        margin_right = 5;
+        margin_right = 40;
         margin_top = 40;
         lines = 15;
         edge = "top";
