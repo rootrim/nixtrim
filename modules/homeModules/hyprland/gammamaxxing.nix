@@ -22,6 +22,7 @@
             if active then
               hl.config({ decoration = { screen_shader = "" } })
               reboot_monitor()
+              active = false
               return
             end
 
