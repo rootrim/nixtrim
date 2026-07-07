@@ -18,6 +18,7 @@
           require("settings")
           require("dvd")
           require("zawarudo")
+          require("gammamaxxing")
           require("stairs")
           hl.config({
             general = {

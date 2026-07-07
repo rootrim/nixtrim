@@ -12,7 +12,9 @@
         inputs.zen-browser.homeModules.beta
         self.homeModules.bacon
         self.homeModules.btop
+        self.homeModules.gammamaxxing
         self.homeModules.delta
+        self.homeModules.dwarf-fortress
         self.homeModules.emacs
         self.homeModules.fastfetch
         self.homeModules.fish
