@@ -1,5 +1,8 @@
 {
-  flake.homeModules.btop = {
-    programs.btop = {enable = true;};
+  flake.homeModules.btop = {pkgs, ...}: {
+    programs.btop = {
+      enable = true;
+      package = pkgs.btop-cuda;
+    };
   };
 }
