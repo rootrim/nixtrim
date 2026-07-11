@@ -9,6 +9,7 @@
     fsel = inputs.fsel.packages.${system}.default;
     whoisgod = inputs.whoisgod.packages.${system}.default;
     kanarenshu = inputs.kanarenshu.packages.${system}.default;
+    fjordlauncher = inputs.fjordlauncher.packages.${system}.default;
     selfPackages = self.packages.${system};
   in {
     home.packages = with pkgs;
@@ -91,6 +92,7 @@
         yt-dlp
         zig
         zoxide
+        fjordlauncher
       ]
       ++ (with selfPackages; [savesave]);
   };

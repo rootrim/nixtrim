@@ -39,6 +39,9 @@
     kanarenshu = {
       url = "github:nuixyz/kanarenshu";
     };
+    fjordlauncher = {
+      url = "github:rootrim/FjordLauncherUnlocked";
+    };
   };
 
   outputs = inputs:
