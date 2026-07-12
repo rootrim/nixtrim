@@ -23,6 +23,7 @@
       self.nixosModules.packages
       self.nixosModules.plymouth
       self.nixosModules.secrets
+      self.nixosModules.security
       self.nixosModules.services
       self.nixosModules.sound
       self.nixosModules.steam

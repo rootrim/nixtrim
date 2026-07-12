@@ -6,9 +6,5 @@
       enable = true;
       allowedTCPPorts = [22];
     };
-
-    networking.nftables = {
-      enable = true;
-    };
   };
 }
