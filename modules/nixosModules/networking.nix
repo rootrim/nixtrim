@@ -1,7 +1,7 @@
 {
   flake.nixosModules.networking = {
     networking = {
-      nameservers = ["1.1.1.1"];
+      nameservers = ["127.0.0.1"];
       nftables.enable = true;
 
       enableIPv6 = false;
@@ -16,8 +16,14 @@
         150.171.110.54 api.mojang.com
       '';
 
+      resolvconf = {
+        enable = true;
+        useLocalResolver = true;
+      };
+
       networkmanager = {
         enable = true;
+        dns = "none";
         wifi.powersave = true;
         settings = {
           connection = {
@@ -26,5 +32,37 @@
         };
       };
     };
+
+    services.dnscrypt-proxy = {
+      enable = true;
+
+      settings = {
+        listen_addresses = ["127.0.0.1:53"];
+
+        ipv4_servers = true;
+        ipv6_servers = false;
+
+        dnscrypt_servers = false;
+        doh_servers = true;
+
+        require_dnssec = true;
+        require_nolog = true;
+        require_nofilter = false;
+
+        # Disable downloading resolver lists
+        sources = {};
+
+        # Define Quad9 manually
+        static = {
+          quad9 = {
+            stamp = "sdns://AgMAAAAAAAAABzkuOS45LjkgsBkgdEu7dsmrBT4B4Ht-BQ5HPSD3n3vqQ1-v5DydJC8SZG5zOS5xdWFkOS5uZXQ6NDQzCi9kbnMtcXVlcnk";
+          };
+        };
+
+        server_names = ["quad9"];
+      };
+    };
+
+    services.resolved.enable = false;
   };
 }
