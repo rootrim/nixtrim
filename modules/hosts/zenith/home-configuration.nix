@@ -12,13 +12,13 @@
         inputs.zen-browser.homeModules.beta
         self.homeModules.bacon
         self.homeModules.btop
-        self.homeModules.gammamaxxing
         self.homeModules.delta
         self.homeModules.dwarf-fortress
         self.homeModules.emacs
         self.homeModules.fastfetch
         self.homeModules.fish
         self.homeModules.fsel
+        self.homeModules.gammamaxxing
         self.homeModules.ghostty
         self.homeModules.git
         self.homeModules.gtk
@@ -32,6 +32,7 @@
         self.homeModules.kitty
         self.homeModules.lazygit
         self.homeModules.mangohud
+        self.homeModules.mpv
         self.homeModules.nix-index
         self.homeModules.pointerCursor
         self.homeModules.qt

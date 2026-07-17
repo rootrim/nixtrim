@@ -61,7 +61,6 @@
         ltrace
         lutgen
         mpc
-        mpv
         mpvpaper
         mtr
         nitch
