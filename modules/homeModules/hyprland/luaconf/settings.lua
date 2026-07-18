@@ -13,7 +13,7 @@ hl.config({
 
 	input = {
 		kb_layout = "tr",
-		kb_options = "caps:swapescape",
+		kb_options = "caps:escape",
 		repeat_rate = 35,
 		repeat_delay = 200,
 		follow_mouse = 1,
