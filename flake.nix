@@ -40,7 +40,7 @@
       url = "github:nuixyz/kanarenshu";
     };
     fjordlauncher = {
-      url = "github:rootrim/FjordLauncherUnlocked";
+      url = "github:hero-persson/FjordLauncherUnlocked";
     };
   };
 
