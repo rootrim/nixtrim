@@ -4,6 +4,24 @@
       enable = true;
       enableGitIntegration = true;
       themeFile = "GruvboxMaterialDarkMedium";
+      keybindings = {
+        "alt+enter" = "new_window";
+        "--allow-fallback=shifted,ascii alt+q" = "close_window";
+        "--allow-fallback=shifted,ascii alt+r" = "start_resizing_window";
+        "ctrl+enter" = "focus_visible_window";
+        "--allow-fallback=shifted,ascii ctrl+n" = "new_tab";
+        "--allow-fallback=shifted,ascii ctrl+q" = "close_tab";
+        "ctrl+shift+l" = "next_tab";
+        "ctrl+shift+h" = "previous_tab";
+        "--allow-fallback=shifted,ascii ctrl+shit+9" = "change_font_size all -2.0";
+        "--allow-fallback=shifted,ascii ctrl+shit+0" = "change_font_size all +2.0";
+        "--allow-fallback=shifted,ascii ctrl+shift+e" = "open_url_with_hints";
+        "--allow-fallback=shifted,ascii ctrl+shift+u" = "kitten unicode_input";
+      };
+      settings = {
+        enabled_layouts = "tall:bias=50;full_size=1;mirrored=false";
+        enable_audio_bell = true;
+      };
       font = {
         size = 12;
         name = "Maple Mono NF";

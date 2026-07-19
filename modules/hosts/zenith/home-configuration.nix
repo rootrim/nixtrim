@@ -45,7 +45,6 @@
         self.homeModules.yazi
         self.homeModules.zathura
         self.homeModules.zawarudo
-        self.homeModules.zellij
         self.homeModules.zen-browser
         self.homeModules.zoxide
       ];
