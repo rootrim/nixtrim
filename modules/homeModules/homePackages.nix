@@ -35,6 +35,7 @@
         feh
         ffmpeg
         file
+        fjordlauncher
         fsel
         fzf
         gcc
@@ -49,6 +50,7 @@
         hyprshade
         hyprshot
         imagemagick
+        iproute2
         jq
         kanarenshu
         kdePackages.kdenlive
@@ -91,7 +93,6 @@
         yt-dlp
         zig
         zoxide
-        fjordlauncher
       ]
       ++ (with selfPackages; [savesave]);
   };
