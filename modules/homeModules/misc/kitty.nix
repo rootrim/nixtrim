@@ -5,12 +5,10 @@
       enableGitIntegration = true;
       themeFile = "GruvboxMaterialDarkMedium";
       keybindings = {
-        "alt+enter" = "new_window";
-        "--allow-fallback=shifted,ascii alt+q" = "close_window";
-        "--allow-fallback=shifted,ascii alt+r" = "start_resizing_window";
+        "--allow-fallback=shifted,ascii alt+shift+q" = "close_window";
+        "--allow-fallback=shifted,ascii alt+shift+r" = "start_resizing_window";
         "ctrl+enter" = "focus_visible_window";
-        "--allow-fallback=shifted,ascii ctrl+n" = "new_tab";
-        "--allow-fallback=shifted,ascii ctrl+q" = "close_tab";
+        "--allow-fallback=shifted,ascii ctrl+shift+n" = "new_tab";
         "ctrl+shift+l" = "next_tab";
         "ctrl+shift+h" = "previous_tab";
         "--allow-fallback=shifted,ascii ctrl+shit+9" = "change_font_size all -2.0";
