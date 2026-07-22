@@ -19,6 +19,8 @@
       settings = {
         enabled_layouts = "tall:bias=50;full_size=1;mirrored=false";
         enable_audio_bell = true;
+        tab_bar_style = "powerline";
+        tab_powerline_style = "slanted";
       };
       font = {
         size = 12;
