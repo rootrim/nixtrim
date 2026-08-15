@@ -19,6 +19,8 @@
         "lg" = "lazygit";
 
         "weather" = "curl wttr.in";
+
+        "clear" = "pyroclear";
       };
       shellAbbrs = {
         "shut" = "shutdown now";

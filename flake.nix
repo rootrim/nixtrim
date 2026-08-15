@@ -36,6 +36,15 @@
       url = "github:rootrim/whoisgod";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    pyroclear = {
+      url = "github:shreyanth-sureshkrishnaa/pyroclear";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    playit = {
+      url = "github:pedorich-n/playit-nixos-module";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
+    };
     kanarenshu = {
       url = "github:nuixyz/kanarenshu";
     };
