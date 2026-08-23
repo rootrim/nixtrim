@@ -87,6 +87,7 @@
         strace
         tealdeer
         udisks
+        vulkan-tools
         wf-recorder
         wget
         whoisgod
