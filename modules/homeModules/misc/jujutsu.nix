@@ -3,8 +3,8 @@
     programs.jujutsu = {
       enable = true;
       settings = {
-        user.name = "nixtrim";
-        user.email = "omuaz01@gmail.com";
+        user.name = "jonitrium";
+        user.email = "jonitrium@noreply.codeberg.org";
         ui.default-command = "log";
       };
     };

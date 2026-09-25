@@ -19,6 +19,11 @@
       url = "github:rootrim/aegis";
       inputs.flake-parts.follows = "flake-parts";
     };
+    snc = {
+      url = "git+https://codeberg.org/jonitrium/snc";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
+    };
     cclip = {
       url = "github:rootrim/cclip";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -27,10 +32,6 @@
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
-    };
-    fsel = {
-      url = "github:Mjoyufull/fsel";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     whoisgod = {
       url = "github:rootrim/whoisgod";

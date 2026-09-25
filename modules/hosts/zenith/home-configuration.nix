@@ -39,6 +39,7 @@
         self.homeModules.quickshell
         self.homeModules.rofi
         self.homeModules.rootrimHome
+        self.homeModules.ssh
         self.homeModules.stairs
         self.homeModules.starship
         self.homeModules.televison
