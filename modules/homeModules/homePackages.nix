@@ -7,16 +7,16 @@
     system = pkgs.stdenv.hostPlatform.system;
     cclip = inputs.cclip.packages.${system}.default;
     fjordlauncher = inputs.fjordlauncher.packages.${system}.default;
-    fsel = inputs.fsel.packages.${system}.default;
     kanarenshu = inputs.kanarenshu.packages.${system}.default;
     playit = inputs.playit.packages.${system}.default;
     pyroclear = inputs.pyroclear.packages.${system}.default;
+    snc = inputs.snc.packages.${system}.default;
     whoisgod = inputs.whoisgod.packages.${system}.default;
     selfPackages = self.packages.${system};
   in {
     home.packages = with pkgs;
       [
-        aegis
+        snc
         bat
         binutils
         brightnessctl
