@@ -204,6 +204,28 @@
     },
     "flake-parts_4": {
       "inputs": {
+        "nixpkgs-lib": [
+          "snc",
+          "neovim-nightly-overlay",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1788450739,
+        "narHash": "sha256-glZLQlzIn1fXH6PazR2iUmTo7kzzyYSshrWhLS9TqCU=",
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "rev": "31729ca8cbdb4fa927b34e5f4353e6a83f39e993",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "type": "github"
+      }
+    },
+    "flake-parts_5": {
+      "inputs": {
         "nixpkgs-lib": "nixpkgs-lib_4"
       },
       "locked": {
@@ -716,6 +738,42 @@
         "type": "github"
       }
     },
+    "neovim-nightly-overlay": {
+      "inputs": {
+        "flake-parts": "flake-parts_4",
+        "neovim-src": "neovim-src",
+        "nixpkgs": "nixpkgs_7"
+      },
+      "locked": {
+        "lastModified": 1790294648,
+        "narHash": "sha256-4XIFDjsoLWuzDiL533Z70fWnuJ//Tfd2rqSxmqn6uZo=",
+        "owner": "nix-community",
+        "repo": "neovim-nightly-overlay",
+        "rev": "526a7aaaa298d092301b54acd19a8942c8e919e5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "neovim-nightly-overlay",
+        "type": "github"
+      }
+    },
+    "neovim-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1790283763,
+        "narHash": "sha256-XWNNKoZ3jGaWtfgnV7MsFtVOjCo65s1WTMvm5Sb836o=",
+        "owner": "neovim",
+        "repo": "neovim",
+        "rev": "b39f80209c0516232888965f0ae0338558a39814",
+        "type": "github"
+      },
+      "original": {
+        "owner": "neovim",
+        "repo": "neovim",
+        "type": "github"
+      }
+    },
     "nix-index-database": {
       "inputs": {
         "nixpkgs": [
@@ -918,6 +976,22 @@
         "type": "github"
       }
     },
+    "nixpkgs_7": {
+      "locked": {
+        "lastModified": 1790238896,
+        "narHash": "sha256-ym4BG18Pu2awiJIehla1Lo9xiB2QYRcCzW3SB74gEBY=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "34ca302a9572963c02e385c056be37c85ff51b77",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "playit": {
       "inputs": {
         "flake-parts": [
@@ -1026,16 +1100,17 @@
         "flake-parts": [
           "flake-parts"
         ],
+        "neovim-nightly-overlay": "neovim-nightly-overlay",
         "nixpkgs": [
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1790335857,
-        "narHash": "sha256-PNMPTqa3R1YQZn06vYeKZg5ynVZUx63q9L7gtuVNdBA=",
+        "lastModified": 1790416926,
+        "narHash": "sha256-onrZbnFWdxWX1AtT0GUtOiSzz5a36f38gLXKGMTLuIQ=",
         "ref": "refs/heads/master",
-        "rev": "6f1c42af84f6d5c7ed1ad6c6ff06bae344f610c8",
-        "revCount": 16,
+        "rev": "7232b21cc7693500e7c7308045697350e7d7bcad",
+        "revCount": 38,
         "type": "git",
         "url": "https://codeberg.org/jonitrium/snc"
       },
@@ -1076,7 +1151,7 @@
     },
     "whoisgod": {
       "inputs": {
-        "flake-parts": "flake-parts_4",
+        "flake-parts": "flake-parts_5",
         "naersk": "naersk",
         "nixpkgs": [
           "nixpkgs"
