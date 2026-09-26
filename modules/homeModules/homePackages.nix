@@ -16,7 +16,6 @@
   in {
     home.packages = with pkgs;
       [
-        snc
         bat
         binutils
         brightnessctl
@@ -59,7 +58,7 @@
         kicad
         krita
         lavat
-        libreoffice-fresh
+        libreoffice-stable
         lsfg-vk
         lsfg-vk-ui
         ltrace
@@ -84,6 +83,7 @@
         rmpc
         sbctl
         sd
+        snc
         strace
         tealdeer
         udisks
