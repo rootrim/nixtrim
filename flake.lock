@@ -1106,11 +1106,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1790426734,
-        "narHash": "sha256-RT26ikSg3Jp5f6QMyQjSRO82woRkhULpnQYkJPGQfx8=",
+        "lastModified": 1790786915,
+        "narHash": "sha256-ZMfYd7R04Lj4dqkwyrFNuCcusitdBEnaHNd7Ecn/uHI=",
         "ref": "refs/heads/master",
-        "rev": "bb519261186e1a61b528972ba080907085e42dea",
-        "revCount": 39,
+        "rev": "7e84c73f1723a98c44fa86cf78ef55a29aae1ae8",
+        "revCount": 40,
         "type": "git",
         "url": "https://codeberg.org/jonitrium/snc"
       },
