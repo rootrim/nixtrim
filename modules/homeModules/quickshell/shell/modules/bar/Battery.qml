@@ -30,7 +30,7 @@ Rectangle {
       font.family: Globals.fontFamily
       font.pointSize: Globals.fontSize
       font.bold: false
-      color: root.level <= 20 && !root.charging ? Globals.base08 : Globals.base07
+      color: root.level <= 20 && !root.charging ? Globals.base08 : Globals.fg
       text: root.level === 100 ? "00" : root.level.toString()
     }
   }

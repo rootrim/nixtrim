@@ -97,7 +97,7 @@ Scope {
                 Layout.fillWidth: true
                 visible: text !== ""
                 text: card.modelData.body
-                color: Globals.base07
+                color: Globals.fg
                 font.pixelSize: Globals.fontSize - 1
                 font.family: Globals.fontFamily
                 wrapMode: Text.WordWrap

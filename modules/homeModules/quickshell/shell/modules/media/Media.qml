@@ -40,7 +40,7 @@ Scope {
           id: songName
           font.family: Globals.fontFamily
           font.pointSize: Globals.fontSize - 4
-          color: Globals.base07
+          color: Globals.fg
           text: root.player ? root.player.trackTitle : ""
         }
       }

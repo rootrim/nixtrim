@@ -35,7 +35,7 @@ Rectangle {
       Layout.alignment: Qt.AlignHCenter
       text: root.muted ? "XX" : root.volume === 100 ? "00" : root.volume.toString()
       font.pointSize: Globals.fontSize
-      color: Globals.base07
+      color: Globals.fg
     }
   }
 }

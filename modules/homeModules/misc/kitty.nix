@@ -3,7 +3,7 @@
     programs.kitty = {
       enable = true;
       enableGitIntegration = true;
-      themeFile = "GruvboxMaterialDarkMedium";
+      themeFile = "kanagawa";
       keybindings = {
         "--allow-fallback=shifted,ascii alt+shift+q" = "close_window";
         "--allow-fallback=shifted,ascii alt+shift+r" = "start_resizing_window";
