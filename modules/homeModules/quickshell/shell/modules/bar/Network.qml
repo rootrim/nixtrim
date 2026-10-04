@@ -21,7 +21,7 @@ Rectangle {
     font.family: Globals.fontFamily
     font.pointSize: Globals.fontSize
     font.bold: false
-    color: Globals.base07
+    color: Globals.fg
     text: {
       if (root.isCabled) {
         return "";

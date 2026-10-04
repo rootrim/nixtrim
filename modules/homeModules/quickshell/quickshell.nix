@@ -39,6 +39,7 @@
         property color base0D: "${self.theme.base0D}"
         property color base0E: "${self.theme.base0E}"
         property color base0F: "${self.theme.base0F}"
+        property color fg: "${self.theme.fg}"
       }
     '';
   };

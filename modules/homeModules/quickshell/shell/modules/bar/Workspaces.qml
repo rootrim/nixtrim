@@ -28,7 +28,7 @@ ColumnLayout {
         anchors.centerIn: parent
         font.family: Globals.fontFamily
         font.pointSize: Globals.fontSize + 2
-        color: wsItem.modelData.focused ? Globals.base00 : Globals.base07
+        color: wsItem.modelData.focused ? Globals.base00 : Globals.fg
         // text: Funcs.toKanji(wsItem.modelData.id.toString())
         text: Funcs.toKanji(wsItem.modelData.id)
       }

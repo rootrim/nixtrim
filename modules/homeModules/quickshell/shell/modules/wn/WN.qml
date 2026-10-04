@@ -26,7 +26,7 @@ Scope {
         anchors.centerIn: parent
         font.family: Globals.fontFamily
         font.pointSize: Globals.fontSize - 2
-        color: Globals.base07
+        color: Globals.fg
         text: Funcs.getActiveToplevel()
       }
     }

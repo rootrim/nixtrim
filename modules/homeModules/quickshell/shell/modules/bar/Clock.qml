@@ -20,7 +20,7 @@ Rectangle {
     font.family: Globals.fontFamily
     font.pointSize: Globals.fontSize
     font.bold: false
-    color: Globals.base07
+    color: Globals.fg
     horizontalAlignment: Text.AlignHCenter
     text: Qt.formatDateTime(clock.date, "hh\nmm\nss")
   }

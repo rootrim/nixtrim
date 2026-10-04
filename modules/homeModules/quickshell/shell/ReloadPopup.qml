@@ -98,7 +98,7 @@ Scope {
         // popup is removed.
         Rectangle {
           id: bar
-          color: Globals.base07
+          color: Globals.fg
           anchors.bottom: parent.bottom
           anchors.left: parent.left
           height: 20
