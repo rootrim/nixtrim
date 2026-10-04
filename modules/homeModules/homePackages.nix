@@ -87,6 +87,7 @@
         strace
         tealdeer
         udisks
+        viu
         vulkan-tools
         wf-recorder
         wget

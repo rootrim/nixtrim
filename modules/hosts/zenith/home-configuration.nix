@@ -12,8 +12,6 @@
         inputs.zen-browser.homeModules.beta
         self.homeModules.bacon
         self.homeModules.btop
-        self.homeModules.delta
-        self.homeModules.dwarf-fortress
         self.homeModules.emacs
         self.homeModules.fastfetch
         self.homeModules.fish
@@ -29,7 +27,6 @@
         self.homeModules.hyprlock
         self.homeModules.hyprpaper
         self.homeModules.jujutsu
-        self.homeModules.kitty
         self.homeModules.lazygit
         self.homeModules.mangohud
         self.homeModules.mpv
@@ -37,12 +34,9 @@
         self.homeModules.pointerCursor
         self.homeModules.qt
         self.homeModules.quickshell
-        self.homeModules.rofi
         self.homeModules.rootrimHome
         self.homeModules.ssh
         self.homeModules.stairs
-        self.homeModules.starship
-        self.homeModules.televison
         self.homeModules.yazi
         self.homeModules.zathura
         self.homeModules.zawarudo

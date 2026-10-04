@@ -1,5 +1,5 @@
-local terminal = "kitty -1"
-local launcher = "kitten quick-access-terminal fsel -d"
+local terminal = "ghostty +new-window"
+local launcher = "ghostty -e fsel -d"
 local clipboard = launcher .. " --cclip"
 local screenshot = "hyprshot -m region -z"
 local colorpicker = "hyprpicker | wl-copy"
