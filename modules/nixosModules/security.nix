@@ -1,17 +1,12 @@
 {
   flake.nixosModules.security = {
-    security.pam.loginLimits = [
+    security.sudo.enable = false;
+    security.doas.enable = true;
+    security.doas.extraRules = [
       {
-        domain = "*";
-        type = "soft";
-        item = "nofile";
-        value = "65536";
-      }
-      {
-        domain = "*";
-        type = "hard";
-        item = "nofile";
-        value = "65536";
+        groups = ["wheel"];
+        keepEnv = true;
+        persist = true;
       }
     ];
   };

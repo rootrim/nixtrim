@@ -15,10 +15,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland = {url = "github:hyprwm/Hyprland";};
-    aegis = {
-      url = "github:rootrim/aegis";
-      inputs.flake-parts.follows = "flake-parts";
-    };
     snc = {
       url = "git+https://codeberg.org/jonitrium/snc";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -40,11 +36,6 @@
     pyroclear = {
       url = "github:shreyanth-sureshkrishnaa/pyroclear";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-    playit = {
-      url = "github:pedorich-n/playit-nixos-module";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-parts.follows = "flake-parts";
     };
     kanarenshu = {
       url = "github:nuixyz/kanarenshu";

@@ -1,8 +1,8 @@
 {
   flake.homeModules.hyprpaper = {pkgs, ...}: let
     wall = pkgs.fetchurl {
-      url = "https://w.wallhaven.cc/full/x1/wallhaven-x13qzz.jpg";
-      sha256 = "1flb25lyxmcmvmmb22d5xx6djik4jjh48bp2ad286dza3gcs7v4r";
+      url = "https://w.wallhaven.cc/full/1q/wallhaven-1qpeq3.png";
+      sha256 = "0di0gglxqswv1d88lqw2g7i64h4cvn5nrilpnmjc29829as2v832";
     };
   in {
     services.hyprpaper = {
